@@ -2,6 +2,7 @@
 <br />
 This is a repository to hold the web application to give information regarding plants using the treffle.io API.
 <br />
+
 ## Building
 
 ### Development Dependencies
