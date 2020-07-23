@@ -1,0 +1,21 @@
+@import 'themes.scss';
+@import 'themify.scss';
+
+@include themify($themes) {
+    color: themed('textColor');  
+    background-color: themed('backgroundColor');  
+}
+
+@include themify($themes) {
+    border: themed('buttonBorder');
+    color: themed('buttonTextColor'); 
+    border-color: themed('buttonTextColor');
+    background-color: themed('buttonColor');
+    text-transform: themed('buttonTextTransform');
+
+    &:hover {
+      color: themed('buttonTextHoverColor'); 
+      border-color: themed('buttonTextHoverColor');
+      background-color: themed('buttonHoverColor');
+    }
+}

@@ -1,0 +1,23 @@
+// Sourced from https://gist.githubusercontent.com/dmitru/39245f9e702dad9b04d504c549fc1814/raw/9e238f2548923644d05b19a7e3ad02da80e0ecfb/scss-theming-5-themify.scss
+@import 'themes.scss';
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
