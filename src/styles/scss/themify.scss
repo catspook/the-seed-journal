@@ -1,23 +1,34 @@
-// Sourced from https://gist.githubusercontent.com/dmitru/39245f9e702dad9b04d504c549fc1814/raw/9e238f2548923644d05b19a7e3ad02da80e0ecfb/scss-theming-5-themify.scss
 @import 'themes.scss';
 
-@mixin themify($themes: $themes) {
-  @each $theme, $map in $themes {
+// Example Functionality for this class generated code
+/*
+<div id="top">
+    <h1>Chocolate curry</h1>
+    <p>This is my recipe for making curry purely with chocolate</p>
+    <p>Mmm mm mmmmm</p>
+</div>
+*/
 
-    .theme-#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
-      }
+// How to use function
+// @debug theme_item("light", "primary");
 
-      @content;
-      $theme-map: null !global;
+@function theme_item($theme-name, $param) {
+    $theme_new : map-get($themes, $theme-name);
+    @if $theme_new {
+        @return map-get($theme_new, $param);
     }
-
-  }
 }
 
-@function themed($key) {
-    @return map-get($theme-map, $key);
+@each $theme, $params in $themes {
+    ##{$theme} {
+        @each $param-name, $color-value in $params {
+            .#{$param-name}-color {
+                color: #{$color-value};
+            }
+
+            .#{$param-name}-background {
+                background-color: #{$color-value};
+            }
+        }
+    }
 }
