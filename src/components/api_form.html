@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="trefle-form.css" />
+  </head>
+  <body>
+    <div role="main">
+      <h1>Advanced Search</h1>
+      <form id="form" action="" method="post">
+
+        <h2>Search by plant name</h2>
+        <label for="name">Name </label>
+        <input id="name" type="text" name="name" maxlength="50" class="input">
+        <br>
+        <fieldset>
+          <legend>Type of name</legend>
+          <input id="species-common" type="radio" name="name-select">
+          <label for="species-common">species common name</label>
+          <br>
+          <input id="family-common" type="radio" name="name-select">
+          <label for="family-common">family common name</label>
+          <br>
+          <input id="scientific" type="radio" name="name-select">
+          <label for="scientific">scientific name</label>
+          <br>
+        </fieldset>
+        <br>
+
+        <h2>Specifications</h2>
+        <label for="distribution">Distribution zone</label>
+        <select id="distribution" name="distribution zone" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="Northern Europe">Northern Europe</option>
+          <option value="Middle Europe">Middle Europe</option>
+          <option value="Southwestern Europe">Southwestern Europe</option>
+          <option value="Southeastern Europe">Southeastern Europe</option>
+          <option value="Eastern Europe">Eastern Europe</option>
+          <option value="Northern Africa">Northern Africa</option>
+          <option value="Macaronesia">Macaronesia</option>
+          <option value="West Tropical Africa">West Tropical Africa</option>
+          <option value="West-Central Tropical Africa">West-Central Tropical Africa</option>
+          <option value="Northeast Tropical Africa">Northeast Tropical Africa</option>
+          <option value="East Tropical Africa">East Tropical Africa</option>
+          <option value="South Tropical Africa">South Tropical Africa</option>
+          <option value="Southern Africa">Southern Africa</option>
+          <option value="Middle Atlantic Ocean">Middle Atlantic Ocean</option>
+          <option value="Western Indian Ocean">Western Indian Ocean</option>
+          <option value="Siberia">Siberia</option>
+          <option value="Russian Far East">Russian Far East</option>
+          <option value="Middle Asia">Middle Asia</option>
+          <option value="Caucasus">Caucasus</option>
+          <option value="Western Asia">Western Asia</option>
+          <option value="Arabian Peninsula">Arabian Peninsula</option>
+          <option value="China">China</option>
+          <option value="Eastern Asia">Eastern Asia</option>
+          <option value="Indian Subcontinent">Indian Subcontinent</option>
+          <option value="Indo-China">Indo-China</option>
+          <option value="Malesia">Malesia</option>
+          <option value="Papuasia">Papuasia</option>
+          <option value="Australia">Australia</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Southwestern Pacific">Southwestern Pacific</option>
+          <option value="South-Central Pacific">South-Central Pacific</option>
+          <option value="Northwestern Pacific">Northwestern Pacific</option>
+          <option value="Subarctic America">Subarctic America</option>
+          <option value="Western Canada">Western Canada</option>
+          <option value="Eastern Canada">Eastern Canada</option>
+          <option value="Northwestern U.S.A.">Northwestern U.S.A.</option>
+          <option value="North-Central U.S.A.">North-Central U.S.A.</option>
+          <option value="Northeastern U.S.A.">Northeastern U.S.A.</option>
+          <option value="Southwestern U.S.A.">Southwestern U.S.A.</option>
+          <option value="South-Central U.S.A.">South-Central U.S.A.</option>
+          <option value="Southeastern U.S.A.">Southeastern U.S.A.</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Central America">Central America</option>
+          <option value="Caribbean">Caribbean</option>
+          <option value="Northern South America">Northern South America</option>
+          <option value="Western South America">Western South America</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Southern South America">Southern South America</option>
+          <option value="Subantarctic Islands">Subantarctic Islands</option>
+        </select>
+        <fieldset>
+          <legend>Duration</legend>
+          <input id="an" type="radio" name="duration">
+          <label for="an">Annual</label>
+          <br>
+          <input id="bi" type="radio" name="duration">
+          <label for="bi">Biennial</label>
+          <br>
+          <input id="per" type="radio" name="duration">
+          <label for="per">Perennial</label>
+          <br>
+        </fieldset>
+        <label for="min-height">Minimum height (cm) </label>
+        <input id="min-height" type="text" name="height" maxlength="5" class="input">
+        <br>
+        <label for="max-height">Maximum height (cm) </label>
+        <input id="max-height" type="text" name="height" maxlength="5" class="input">
+        <br>
+        <label for="toxicity">Toxicity</label>
+        <select id="toxicity" name="toxicity" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="none">None</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <fieldset>
+          <legend>Woody plant types</legend>
+          <input id="liana" type="radio" name="woody plants">
+          <label for="liana">liana</label>
+          <br>
+          <input id="subshrub" type="radio" name="woody plants">
+          <label for="subshrub">subshrub</label>
+          <br>
+          <input id="shrub" type="radio" name="woody plants">
+          <label for="shrub">shrub</label>
+          <br>
+          <input id="tree" type="radio" name="woody plants">
+          <label for="tree">tree</label>
+          <br>
+          <input id="parasite" type="radio" name="woody plants">
+          <label for="parasite">parasite</label>
+          <br>
+        </fieldset>
+        <br>
+        <br>
+
+        <h2>Flowers and fruit</h2>
+        <label for="flower-color">Flower color</label>
+        <select id="flower-color" name="flower color" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="white">white</option>
+          <option value="pink">pink</option>
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="purple">purple</option>
+        </select>
+        <br>
+        <label for="fruit-color">Fruit color</label>
+        <select id="fruit-color" name="fruit color" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="white">white</option>
+          <option value="pink">pink</option>
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="purple">purple</option>
+        </select>
+        <div>
+          <input id="seasonal-fruit" type="checkbox" name="seasonal fruit">
+          <label for="seasonal-fruit">Seasonal only</label>
+        </div>
+        <br>
+        <br>
+
+        <h2>Foliage</h2>
+        <fieldset>
+          <legend>Leaf texture</legend>
+          <input id="fine-leaf" type="radio" name="leaf texture">
+          <label for="fine-leaf">Fine</label>
+          <br>
+          <input id="med-leaf" type="radio" name="leaf texture">
+          <label for="med-leaf">Medium</label>
+          <br>
+          <input id="coarse-leaf" type="radio" name="leaf texture">
+          <label for="coarse-leaf">Coarse</label>
+          <br>
+        </fieldset>
+        <label for="leaf-color">Leaf color</label>
+        <select id="leaf-color" name="leaf color" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="white">white</option>
+          <option value="pink">pink</option>
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="purple">purple</option>
+        </select>
+        <div>
+          <input id="seasonal-leaf" type="checkbox" name="seasonal leaf">
+          <label for="seasonal-leaf">Seasonal only</label>
+        </div>
+        <br>
+        <br>
+
+        <h2>Growth Requirements</h2>
+        <label for="light">Light</label>
+        <select id="light" name="light" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="0">0 (intense shade)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 (intense sun)</option>
+        </select>
+        <br>
+        <label for="atmos-humid">Atmospheric Humidity</label>
+        <select id="atmos-humid" name="atmospheric humidity" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="0">0 (0-10%)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 (90-100%)</option>
+        </select>
+        <fieldset>
+          <legend>Precipitation</legend>
+          <input id="high-precip" type="radio" name="precipitation">
+          <label for="high-precip">Very high</label>
+          <br>
+          <input id="low-precip" type="radio" name="precipitation">
+          <label for="low-precip">Very low</label>
+        </fieldset>
+        <label for="min-temp">Minimum temperature (F) </label>
+        <input id="min-temp" type="text" name="temp" maxlength="3" class="input">
+        <br>
+        <label for="max-temp">Maximum temperature (F) </label>
+        <input id="max-temp" type="text" name="temp" maxlength="4" class="input">
+        <br>
+        <br>
+
+        <h2>Soil Requirements</h2>
+        <fieldset>
+          <legend>pH</legend>
+          <input id="alk" type="radio" name="pH">
+          <label for="alk">Very alkaline</label>
+          <br>
+          <input id="acid" type="radio" name="pH">
+          <label for="acid">Very acidic</label>
+          <br>
+        </fieldset>
+        <br>
+        <label for="nutrients">Nutrients</label>
+        <select id="nutrients" name="nutrients" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="0">0 (oligotrophic)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 (hypereutrophic)</option>
+        </select>
+        <br>
+        <label for="saline">Salinity</label>
+        <select id="saline" name="salinity" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="0">0 (untolerant)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 (hyperhaline)</option>
+        </select>
+        <br>
+        <label for="texture">Texture</label>
+        <select id="texture" name="texture" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="0">0 (clay)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 (rock)</option>
+        </select>
+        <br>
+        <label for="soil-humid">Humidity</label>
+        <select id="soil-humid" name="humidity" class="input">
+          <option value="(choose one)">(choose one)</option>
+          <option value="0">0 (xerophile)</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10 (subaquatic)</option>
+        </select>
+        <br>
+        <br>
+
+        <div class="buttons">
+          <input id="submit" type="submit" name="submit-intro-survey" value="Search">
+          <input type="reset" name="reset-intro-survey" value="Reset">
+        </div>
+
+      </form>
+    </div>
+    <script src="trefle-form.js"></script>
+  </body>
+</html>
