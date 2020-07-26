@@ -25,6 +25,11 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### `npm run scss`
+
+Generates the CSS files and watches for changes in the `src/styles/scss` directory
+Compiles to the `src/styles/css` directory
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />

@@ -23,5 +23,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# sass
+src/styles/css
 # API key environment variable
 .env
