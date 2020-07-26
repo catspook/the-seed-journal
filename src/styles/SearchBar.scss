@@ -1,0 +1,18 @@
+.search-bar {
+    width: 100%;
+    border: 1px solid;
+    border-color: gray;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 1px rgba(122,113,122,1);
+}
+
+.search-bar input {
+    width: 95%;
+    border: none;
+}
+
+.search-bar ul {
+    list-style-type: none;
+    text-align: left;
+}

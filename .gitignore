@@ -25,3 +25,5 @@ yarn-error.log*
 
 # sass
 src/styles/css
+# API key environment variable
+.env
