@@ -3,13 +3,17 @@ import logo from '../images/logo.svg'; /*Place Holder image*/
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import SearchBar from './SearchBar'
 import '../styles/Body.scss'
 
 class Body extends React.Component {
     render() {
         return (
             <div className='body'>
-                <Info></Info>
+                <div className='sb-container'>
+                    <SearchBar />
+                </div>
+                <Info />
             </div>
         )
     }

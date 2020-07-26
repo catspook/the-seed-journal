@@ -11,22 +11,8 @@ class Header extends React.Component {
                 <Container fluid>
                     <Row>
                         <Col xs={2}><p className='title'>Plant Base</p></Col>
-                        <Col><SearchBar></SearchBar></Col>
                     </Row>
                 </Container>
-            </div>
-        )
-    }
-}
-
-class SearchBar extends React.Component {
-
-    render() {
-        return (
-            <div className='search'>
-                <input type='text' placeholder='Search...'>
-                </input>
-                <button>Search</button>
             </div>
         )
     }
