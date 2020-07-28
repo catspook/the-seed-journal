@@ -4,17 +4,7 @@ import '../styles/SearchBar.scss'
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
-        //List is hardcoded at the moment, change this later
-        this.items = [
-            'Flower',
-            'Flow',
-            'Flounder',
-            'Flood',
-            'Food',
-            'Ford',
-            'Forest',
-            'Foliage',
-        ]
+        this.plantList = JSON.parse(require('./common_names.json'));
         this.state = {
             suggestions: [],
             text: '',
@@ -27,10 +17,14 @@ class SearchBar extends React.Component {
        const value = e.target.value 
        let suggestions = [];
        if(value.length > 0){
-           const regex = new RegExp(`${value}`, 'i')
-           suggestions = this.items.sort().filter(v => regex.test(v)).slice(0, 6)
+           let first = value.charAt(0)
+           if (first in this.plantList) {
+               let plantArray = this.plantList[first];
+               const regex = new RegExp(`${value}`, 'i')
+               suggestions = plantArray.filter(v => regex.test(v))
+               console.log(suggestions)
+           }
        }
-       console.log('hi')
        this.setState(() => ({suggestions, text: value}))
     }
 
@@ -50,9 +44,12 @@ class SearchBar extends React.Component {
         if(suggestions.length === 0){
             return null
         }
+        const listStyle = {
+            height: "110px",
+            overflow: "auto"
+        };
         return(
-            <div>
-                <hr />
+            <div style={listStyle}>
                 <ul className='suggestions'>
                     {suggestions.map((item) => 
                         <li onClick={() => this.selectSuggestion(item)}>{item}</li>)}
