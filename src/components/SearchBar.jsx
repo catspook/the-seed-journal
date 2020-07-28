@@ -1,4 +1,5 @@
 import React from "react"
+import ResultList from "./SearchResults"
 import '../styles/SearchBar.scss'
 
 class SearchBar extends React.Component {
@@ -51,23 +52,48 @@ class SearchBar extends React.Component {
         return(
             <div style={listStyle}>
                 <ul className='suggestions'>
-                    {suggestions.map((item) => 
-                        <li onClick={() => this.selectSuggestion(item)}>{item}</li>)}
+                    {suggestions.map((item, index) => 
+                        <li key={index} onClick={() => this.selectSuggestion(item)}>{item}</li>)}
                 </ul>
             </div>
         )
     }
     
+    renderList(text) {
+       const value = text
+       let suggestions = [];
+       if(value.length > 0){
+           const regex = new RegExp(`${value}`, 'i')
+           suggestions = this.items.sort().filter(v => regex.test(v))
+       }
+        return(
+            <ResultList 
+                items = {suggestions}
+            />
+        )
+    }
+
     render() {
         const { text } = this.state;
+        const showSearch = this.props.showSearch
         return(
-            <div className='search-bar' onClick={() => this.myInput.focus()}>
-                <input
-                    value={text} 
-                    onChange={this.onTextChanged} 
-                    ref={(input) => this.myInput = input}
-                    type='text'/>
-                {this.renderSuggestions()}
+            <div>
+                <div className='search-bar' onClick={() => this.myInput.focus()}>
+                    <input
+                        value={text} 
+                        onChange={this.onTextChanged} 
+                        //On blur saves state of input and continues suggestion on focus
+                        onBlur={() => this.selectSuggestion(text)}
+                        onFocus={this.onTextChanged}
+                        //Only triggers when enter is pressed down
+                        onKeyDown={(event) => event.key === 'Enter' 
+                            && this.props.onKeyDown(event)
+                        }
+                        ref={(input) => this.myInput = input}
+                        type='text'/>
+                    {this.renderSuggestions()}
+                </div>
+                {showSearch && this.renderList(text)}
             </div>
         )
     }

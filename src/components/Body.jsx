@@ -7,17 +7,40 @@ import SearchBar from './SearchBar'
 import '../styles/Body.scss'
 
 class Body extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            showSearch: false,
+        }
+
+        this.handleEnter = this.handleEnter.bind(this)
+    }
+
+    handleEnter(event) {
+        // Change search value to true when eneter is pressed (in search bar)
+        this.setState(() => ({
+            showSearch: true,
+        }))
+        console.log(this.state.showSearch)
+    }
+
     render() {
         return (
             <div className='body'>
-                <div className='sb-container'>
-                    <SearchBar />
+                <div 
+                    className='sb-container' 
+                >
+                    <SearchBar 
+                        onKeyDown={this.handleEnter} 
+                        showSearch={this.state.showSearch}
+                    />
                 </div>
-                <Info />
             </div>
         )
     }
 }
+
+
 
 class Info extends React.Component {
     render() {
