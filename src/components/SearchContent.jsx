@@ -3,6 +3,23 @@ import ResultList from "./SearchResults"
 import '../styles/SearchContent.scss'
 
 class SearchContent extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            reversed: false,
+        }
+
+        this.handleReverse = this.handleReverse.bind(this)
+    }
+
+    // Reverse the order of the search results and reset it to start
+    // from the beginning
+    handleReverse(event){
+            this.setState(() => ({
+                reversed: !this.state.reversed
+            }))
+            this.props.onSubmit(event, this.props.value)
+    }
 
     // Find matching regex to input value every time it is updated
     updateResults = () => {
@@ -13,6 +30,8 @@ class SearchContent extends React.Component {
             const regex = new RegExp(`${value}`, 'i')
             items = this.props.plantList[value[0]]
             results = items.sort().filter(v => regex.test(v))
+            if(this.state.reversed)
+                results = results.reverse()
         }
         return results
     }
@@ -25,6 +44,9 @@ class SearchContent extends React.Component {
                     <div className='btn-bar'>
                         <button onClick={this.props.decrement}>previous</button>
                         <button onClick={() => this.props.increment(length)}>next</button>
+                        <button onClick={this.handleReverse}>
+                            {this.state.reversed ? 'A-Z':'Z-A'}
+                        </button>
                     </div>
                     <ResultList 
                         items={results}
