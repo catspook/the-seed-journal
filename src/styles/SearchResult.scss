@@ -1,0 +1,16 @@
+.results {
+    border: solid 1px black;
+    padding-left: 2em;
+    width: 100%;
+}
+
+.result-container ul {
+    list-style-type: none;
+    text-align: left;
+    width: 100%;
+    padding-left: 0px; //Needed to manually set to 0 for some reason
+}
+
+.result-container{
+    width: 100%;
+}

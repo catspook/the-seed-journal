@@ -1,5 +1,6 @@
 import React from "react"
 import ResultList from "./SearchResults"
+import '../styles/SearchContent.scss'
 
 class SearchContent extends React.Component {
 
@@ -20,9 +21,11 @@ class SearchContent extends React.Component {
     renderList(results, length) {
         if(length > 0) {
             return (
-                <div>
-                    <button onClick={this.decrement}>previous</button>
-                    <button onClick={() => this.props.increment(length)}>next</button>
+                <div className='search-nav'>
+                    <div className='btn-bar'>
+                        <button onClick={this.props.decrement}>previous</button>
+                        <button onClick={() => this.props.increment(length)}>next</button>
+                    </div>
                     <ResultList 
                         items={results}
                         value={this.props.value}
