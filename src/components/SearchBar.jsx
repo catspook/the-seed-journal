@@ -4,7 +4,6 @@ import '../styles/SearchBar.scss'
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
-        this.plantList = JSON.parse(require('./common_names.json'));
         this.state = {
             suggestions: [],
             text: '',
@@ -18,11 +17,10 @@ class SearchBar extends React.Component {
        let suggestions = [];
        if(value.length > 0){
            let first = value.charAt(0)
-           if (first in this.plantList) {
-               let plantArray = this.plantList[first];
+           if (first in this.props.plantList) {
+               let plantArray = this.props.plantList[first];
                const regex = new RegExp(`${value}`, 'i')
                suggestions = plantArray.filter(v => regex.test(v))
-               console.log(suggestions)
            }
        }
        this.setState(() => ({suggestions, text: value}))
@@ -51,8 +49,8 @@ class SearchBar extends React.Component {
         return(
             <div style={listStyle}>
                 <ul className='suggestions'>
-                    {suggestions.map((item) => 
-                        <li onClick={() => this.selectSuggestion(item)}>{item}</li>)}
+                    {suggestions.map((item, index) => 
+                        <li key={index} onClick={() => this.selectSuggestion(item)}>{item}</li>)}
                 </ul>
             </div>
         )
@@ -61,13 +59,22 @@ class SearchBar extends React.Component {
     render() {
         const { text } = this.state;
         return(
-            <div className='search-bar' onClick={() => this.myInput.focus()}>
-                <input
-                    value={text} 
-                    onChange={this.onTextChanged} 
-                    ref={(input) => this.myInput = input}
-                    type='text'/>
-                {this.renderSuggestions()}
+            <div>
+                <div className='search-bar' onClick={() => this.myInput.focus()}>
+                    <input
+                        value={text} 
+                        onChange={this.onTextChanged} 
+                        //On blur saves state of input and continues suggestion on focus
+                        onBlur={() => this.selectSuggestion(text)}
+                        onFocus={this.onTextChanged}
+                        //Only triggers when enter is pressed down
+                        onKeyDown={(event) => event.key === 'Enter' 
+                            && this.props.onKeyDown(event, text)
+                        }
+                        ref={(input) => this.myInput = input}
+                        type='text'/>
+                    {this.renderSuggestions()}
+                </div>
             </div>
         )
     }
