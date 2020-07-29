@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
        let suggestions = [];
        if(value.length > 0){
            let first = value.charAt(0)
-           if (first in this.plantList) {
+           if (first in this.props.plantList) {
                let plantArray = this.props.plantList[first];
                const regex = new RegExp(`${value}`, 'i')
                suggestions = plantArray.filter(v => regex.test(v))
