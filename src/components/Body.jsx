@@ -4,27 +4,62 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import SearchBar from './SearchBar'
+import SearchContent from './SearchContent'
 import '../styles/Body.scss'
+
+const names = require('./common_names.json')
 
 class Body extends React.Component {
     constructor(props) {
         super(props)
+        this.plantList = JSON.parse(names)
         this.state = {
-            showSearch: false,
+            searchValue: '',
+            limit: 30, //Number of search results to show on browser
+            start: 0, //Starting index of search results
+            end: 30, //Ending index of search results
         }
 
+        this.decrementSearchResults = this.decrementSearchResults.bind(this)
+        this.incrementSearchResults = this.incrementSearchResults.bind(this)
         this.handleEnter = this.handleEnter.bind(this)
     }
 
-    handleEnter(event) {
-        // Change search value to true when eneter is pressed (in search bar)
+    // Decrement the search result by the limit
+    // Only works if starting index is above 0
+    decrementSearchResults(){
+        if(this.state.start > 0) {
+            this.setState(() => ({
+                start: this.state.start - this.state.limit,
+                end: this.state.end - this.state.limit,
+            }))
+        }
+    }
+
+    // Increment the search result by the limit
+    // Only works if ending index is less than the total
+    // search result length
+    incrementSearchResults(length){
+        if(this.state.end < length) {
+            this.setState(() => ({
+                start: this.state.start + this.state.limit,
+                end: this.state.end + this.state.limit,
+            }))
+        }
+    }
+
+    // Change search value to true when eneter is pressed (in search bar)
+    // and reset search index on new search
+    handleEnter(event, value) {
         this.setState(() => ({
-            showSearch: true,
+            searchValue: value,
+            start: 0,
+            end: 30,
         }))
-        console.log(this.state.showSearch)
     }
 
     render() {
+        const { searchValue } = this.state
         return (
             <div className='body'>
                 <div 
@@ -32,7 +67,15 @@ class Body extends React.Component {
                 >
                     <SearchBar 
                         onKeyDown={this.handleEnter} 
-                        showSearch={this.state.showSearch}
+                        plantList={this.plantList}
+                    />
+                    <SearchContent 
+                        value={searchValue}
+                        plantList={this.plantList}
+                        start={this.state.start}
+                        end={this.state.end}
+                        increment={this.incrementSearchResults}
+                        decrement={this.decrementSearchResults}
                     />
                 </div>
             </div>

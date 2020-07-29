@@ -1,13 +1,6 @@
 import React from "react"
 
 class ResultList extends React.Component {
-    constructor(props) {
-        super(props)
-        this.limits = 30
-        this.state = {
-        }
-    }
-
     createItem(name, index) {
         return (
             <li key={index}>{ name }</li>
@@ -16,13 +9,15 @@ class ResultList extends React.Component {
 
     render() {
         return (
-            <ul>
-                {
-                    this.props.items.map((n, index) => {
-                        return this.createItem(n, index)
-                    })
-                }
-            </ul>
+            <div className='result-container'>
+                <ul>
+                    {
+                        this.props.items.map((n, index) => {
+                            return this.createItem(n, index)
+                        })
+                    }
+                </ul>
+            </div>
         )
     }
 }

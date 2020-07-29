@@ -1,11 +1,9 @@
 import React from "react"
-import ResultList from "./SearchResults"
 import '../styles/SearchBar.scss'
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
-        this.plantList = JSON.parse(require('./common_names.json'));
         this.state = {
             suggestions: [],
             text: '',
@@ -20,10 +18,9 @@ class SearchBar extends React.Component {
        if(value.length > 0){
            let first = value.charAt(0)
            if (first in this.plantList) {
-               let plantArray = this.plantList[first];
+               let plantArray = this.props.plantList[first];
                const regex = new RegExp(`${value}`, 'i')
                suggestions = plantArray.filter(v => regex.test(v))
-               console.log(suggestions)
            }
        }
        this.setState(() => ({suggestions, text: value}))
@@ -59,23 +56,8 @@ class SearchBar extends React.Component {
         )
     }
     
-    renderList(text) {
-       const value = text
-       let suggestions = [];
-       if(value.length > 0){
-           const regex = new RegExp(`${value}`, 'i')
-           suggestions = this.items.sort().filter(v => regex.test(v))
-       }
-        return(
-            <ResultList 
-                items = {suggestions}
-            />
-        )
-    }
-
     render() {
         const { text } = this.state;
-        const showSearch = this.props.showSearch
         return(
             <div>
                 <div className='search-bar' onClick={() => this.myInput.focus()}>
@@ -87,13 +69,12 @@ class SearchBar extends React.Component {
                         onFocus={this.onTextChanged}
                         //Only triggers when enter is pressed down
                         onKeyDown={(event) => event.key === 'Enter' 
-                            && this.props.onKeyDown(event)
+                            && this.props.onKeyDown(event, text)
                         }
                         ref={(input) => this.myInput = input}
                         type='text'/>
                     {this.renderSuggestions()}
                 </div>
-                {showSearch && this.renderList(text)}
             </div>
         )
     }
