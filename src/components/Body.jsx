@@ -18,11 +18,11 @@ class Body extends React.Component {
             limit: 30, //Number of search results to show on browser
             start: 0, //Starting index of search results
             end: 30, //Ending index of search results
+            //reversed: false
         }
 
         this.decrementSearchResults = this.decrementSearchResults.bind(this)
         this.incrementSearchResults = this.incrementSearchResults.bind(this)
-        //this.handleEnter = this.handleEnter.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -81,6 +81,7 @@ class Body extends React.Component {
                         end={this.state.end}
                         increment={this.incrementSearchResults}
                         decrement={this.decrementSearchResults}
+                        onSubmit={this.handleSubmit}
                     />
                 </div>
             </div>
