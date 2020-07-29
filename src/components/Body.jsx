@@ -61,29 +61,63 @@ class Body extends React.Component {
         }))
     }
 
+    // Content to render on the home screen
+    renderHome(searchValue){
+        return (
+            <div className='sb-container'>
+                <div>
+                    <SearchBar 
+                        plantList={this.plantList}
+                        onSubmit={this.handleSubmit}
+                    />
+                </div>
+                <SearchContent 
+                    value={searchValue}
+                    plantList={this.plantList}
+                    start={this.state.start}
+                    end={this.state.end}
+                    increment={this.incrementSearchResults}
+                    decrement={this.decrementSearchResults}
+                    onSubmit={this.handleSubmit}
+                />
+            </div>
+        )
+    }
+
+    // Content to render on the "insert name here" screen
+    renderTab1() {
+        return(
+            <div>
+                <p>Chart Thingy</p>
+            </div>
+        )
+    }
+
+    // Content to render on the "insert name here" screen
+    renderTab2() {
+        return(
+            <div>
+                <p>I'm a Plant!</p>
+            </div>
+        )
+    }
+
+    // Conditionally render the contents of the body depending on
+    // the pageId (Header Buttons)
+    renderBody(searchValue) {
+        if(this.props.pageId === 0)
+            return this.renderHome(searchValue)
+        if(this.props.pageId === 1)
+            return this.renderTab1()
+        if(this.props.pageId === 2)
+            return this.renderTab2()
+    }
+
     render() {
         const { searchValue } = this.state
         return (
             <div className='body'>
-                <div 
-                    className='sb-container' 
-                >
-                    <div>
-                        <SearchBar 
-                            plantList={this.plantList}
-                            onSubmit={this.handleSubmit}
-                        />
-                    </div>
-                    <SearchContent 
-                        value={searchValue}
-                        plantList={this.plantList}
-                        start={this.state.start}
-                        end={this.state.end}
-                        increment={this.incrementSearchResults}
-                        decrement={this.decrementSearchResults}
-                        onSubmit={this.handleSubmit}
-                    />
-                </div>
+                {this.renderBody(searchValue)}
             </div>
         )
     }
