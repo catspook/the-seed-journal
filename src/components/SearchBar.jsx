@@ -60,21 +60,20 @@ class SearchBar extends React.Component {
         const { text } = this.state;
         return(
             <div>
-                <div className='search-bar' onClick={() => this.myInput.focus()}>
+                <form className='search-bar' 
+                      onClick={() => this.myInput.focus()}
+                      onSubmit = {(event) => this.props.onSubmit(event, text)}
+                >
                     <input
                         value={text} 
                         onChange={this.onTextChanged} 
                         //On blur saves state of input and continues suggestion on focus
                         onBlur={() => this.selectSuggestion(text)}
                         onFocus={this.onTextChanged}
-                        //Only triggers when enter is pressed down
-                        onKeyDown={(event) => event.key === 'Enter' 
-                            && this.props.onKeyDown(event, text)
-                        }
                         ref={(input) => this.myInput = input}
                         type='text'/>
                     {this.renderSuggestions()}
-                </div>
+                </form>
             </div>
         )
     }

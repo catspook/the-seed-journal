@@ -22,7 +22,8 @@ class Body extends React.Component {
 
         this.decrementSearchResults = this.decrementSearchResults.bind(this)
         this.incrementSearchResults = this.incrementSearchResults.bind(this)
-        this.handleEnter = this.handleEnter.bind(this)
+        //this.handleEnter = this.handleEnter.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     // Decrement the search result by the limit
@@ -48,9 +49,11 @@ class Body extends React.Component {
         }
     }
 
-    // Change search value to true when eneter is pressed (in search bar)
+    // Change search to the entered text on submission
     // and reset search index on new search
-    handleEnter(event, value) {
+    handleSubmit(event, value) {
+        event.preventDefault()
+
         this.setState(() => ({
             searchValue: value,
             start: 0,
@@ -65,10 +68,12 @@ class Body extends React.Component {
                 <div 
                     className='sb-container' 
                 >
-                    <SearchBar 
-                        onKeyDown={this.handleEnter} 
-                        plantList={this.plantList}
-                    />
+                    <div>
+                        <SearchBar 
+                            plantList={this.plantList}
+                            onSubmit={this.handleSubmit}
+                        />
+                    </div>
                     <SearchContent 
                         value={searchValue}
                         plantList={this.plantList}
