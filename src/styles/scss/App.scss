@@ -15,17 +15,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -37,4 +26,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+// Main Content
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // 100% of the user's screen
+}
+
+.content-container {
+  flex: 1;
+}
+
+// Footer Section
+
+.footer {
+  padding-top: 3em;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+}
+
+.row {
+  // this is confusing the 100% page.
+  // use pads
+  margin-left: 0px;
+  margin-right: 0px;
 }

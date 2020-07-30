@@ -9946,5 +9946,10 @@ h3 {
     transform: rotate(360deg);
   }
 }
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
 
 /*# sourceMappingURL=App.css.map */

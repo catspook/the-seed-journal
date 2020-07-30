@@ -2,7 +2,9 @@ import React from 'react';
 import Header from '../Header'
 import Body from '../Body'
 import Footer from '../Footer'
-import '../../styles/css/App.css';
+
+import '../../styles/scss/App.scss';
+import '../../styles/css/themify.css';
 
 class App extends React.Component {
   constructor(props){
@@ -26,11 +28,13 @@ class App extends React.Component {
 
   render(){
       return(
-          <div className="App">
-              <Header onClick={this.handlePage}/>
-              <Body pageId={this.state.page}></Body>
-              <Footer></Footer>
-          </div>
+		<div id="light" className="page-container">
+			<div className="content-container">
+				<Header onClick={this.handlePage}/>
+				<Body pageId={this.state.page}></Body>
+			</div>
+      <Footer />
+		</div>
       )
   }
 }
