@@ -1,0 +1,82 @@
+/*
+<div id="top">
+    <h1>Chocolate curry</h1>
+    <p>This is my recipe for making curry purely with chocolate</p>
+    <p>Mmm mm mmmmm</p>
+</div>
+*/
+#light .primary-color {
+  color: #fff;
+}
+#light .primary-background {
+  background-color: #fff;
+}
+#light .secondary-color {
+  color: #408bbd;
+}
+#light .secondary-background {
+  background-color: #408bbd;
+}
+#light .accent-color {
+  color: #408bbd;
+}
+#light .accent-background {
+  background-color: #408bbd;
+}
+#light .another-name-color {
+  color: #61b0e7;
+}
+#light .another-name-background {
+  background-color: #61b0e7;
+}
+#light .buttonColor-color {
+  color: #fff;
+}
+#light .buttonColor-background {
+  background-color: #fff;
+}
+#light .borderColor-color {
+  color: #fff;
+}
+#light .borderColor-background {
+  background-color: #fff;
+}
+
+#dark .primary-color {
+  color: #333;
+}
+#dark .primary-background {
+  background-color: #333;
+}
+#dark .secondary-color {
+  color: #333;
+}
+#dark .secondary-background {
+  background-color: #333;
+}
+#dark .accent-color {
+  color: #408bbd;
+}
+#dark .accent-background {
+  background-color: #408bbd;
+}
+#dark .buttonTextHoverColor-color {
+  color: #ddd;
+}
+#dark .buttonTextHoverColor-background {
+  background-color: #ddd;
+}
+#dark .buttonColor-color {
+  color: #333;
+}
+#dark .buttonColor-background {
+  background-color: #333;
+}
+#dark .buttonBorder-color {
+  color: #aaa;
+}
+#dark .buttonBorder-background {
+  background-color: #aaa;
+}
+
+/*# sourceMappingURL=themify.css.map */

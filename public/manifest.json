@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "seed-journal",
+  "name": "The Seed Journal",
   "icons": [
     {
       "src": "favicon.ico",

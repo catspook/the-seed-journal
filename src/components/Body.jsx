@@ -5,7 +5,7 @@ import React from "react";
 //import Col from 'react-bootstrap/Col'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
-import '../styles/Body.scss'
+import '../styles/css/Body.css'
 
 const names = require('./common_names.json')
 
