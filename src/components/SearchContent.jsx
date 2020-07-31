@@ -21,26 +21,14 @@ class SearchContent extends React.Component {
             this.props.onSubmit(event, this.props.value)
     }
 
-    //Display the newest page of results
-    updateResults = () => {
-        let items = []
-        const value = this.props.value
-        if(value.length > 0){
-            items = this.props.plantList
-            if(this.state.reversed)
-                items = items.reverse()
-        }
-        return items 
-    }
-
     // Render next and previous button and the search result list
     renderList(results, length) {
         if(length > 0) {
             return (
                 <div className='search-nav'>
                     <div className='btn-bar'>
-                        <button onClick={this.props.decrement}>previous</button>
-                        <button onClick={() => this.props.increment(length)}>next</button>
+                        <button onClick={() => this.props.decrement(length, false)}>previous</button>
+                        <button onClick={() => this.props.increment(length, true)}>next</button>
                         <button onClick={this.handleReverse}>
                             {this.state.reversed ? 'A-Z':'Z-A'}
                         </button>
@@ -55,12 +43,14 @@ class SearchContent extends React.Component {
     }
 
     render() {
-        const allResults = this.updateResults()
+        //const allResults = this.props.plantList
+        const results = this.props.plantList
         //Slice the matching results to fit the limit of matches to show on browser
-        const results = allResults.slice(this.props.start, this.props.end)
+        //const results = allResults.slice(this.props.start, this.props.end)
+                //{this.renderList(results, allResults.length)}
         return (
             <div>
-                {this.renderList(results, allResults.length)}
+                {this.renderList(results, results.length)}
             </div>
         )
     }

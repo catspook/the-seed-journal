@@ -27,8 +27,7 @@ class Body extends React.Component {
             //reversed: false
         }
 
-        this.decrementSearchResults = this.decrementSearchResults.bind(this)
-        this.incrementSearchResults = this.incrementSearchResults.bind(this)
+        this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -70,8 +69,9 @@ class Body extends React.Component {
 
     // Decrement the search result by the limit
     // Only works if starting index is above 0
-    async decrementSearchResults() {
-        let url = "https://trefle.io" + this.state.prevPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+    async changePage(length, next) {
+        let newPage = (next ? this.state.nextPage : this.state.prevPage)
+        let url = "https://trefle.io" + newPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
 
         let jsonState = await this.makeApiCall(url)
         this.setState(() => ({
@@ -82,40 +82,6 @@ class Body extends React.Component {
             lastPage: jsonState.lastPage,
             currentResults: jsonState.currentResults
         }))
-        /*
-        if(this.state.start > 0) {
-            this.setState(() => ({
-                start: this.state.start - this.state.limit,
-                end: this.state.end - this.state.limit,
-            }))
-        }
-        */
-    }
-
-    // Increment the search result by the limit
-    // Only works if ending index is less than the total
-    // search result length
-    async incrementSearchResults(length){
-        let url = "https://trefle.io" + this.state.nextPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
-
-        let jsonState = await this.makeApiCall(url)
-        this.setState(() => ({
-            currentPage: jsonState.currentPage,
-            firstPage: jsonState.firstPage,
-            nextPage: jsonState.nextPage,
-            prevPage: jsonState.prevPage,
-            lastPage: jsonState.lastPage,
-            currentResults: jsonState.currentResults
-        }))
-
-        /*
-        if(this.state.end < length) {
-            this.setState(() => ({
-                start: this.state.start + this.state.limit,
-                end: this.state.end + this.state.limit,
-            }))
-        }
-        */
     }
 
     // Change search to the entered text on submission
@@ -158,8 +124,8 @@ class Body extends React.Component {
                     }, [])}
                     start={this.state.start}
                     end={this.state.end}
-                    increment={this.incrementSearchResults}
-                    decrement={this.decrementSearchResults}
+                    increment={this.changePage}
+                    decrement={this.changePage}
                     onSubmit={this.handleSubmit}
                 />
             </div>
