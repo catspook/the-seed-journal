@@ -16,6 +16,7 @@ class Body extends React.Component {
         this.plantList = JSON.parse(names)
         this.state = {
             searchValue: '',
+            filter: {},
             limit: 30, //Number of search results to show on browser
             start: 0, //Starting index of search results
             end: 30, //Ending index of search results
@@ -30,6 +31,14 @@ class Body extends React.Component {
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.updateFilterConditions = this.updateFilterConditions.bind(this)
+    }
+
+    updateFilterConditions(obj){
+        this.setState(() => ({
+            filter: obj
+        }))
+        console.log(this.state.filter)
     }
 
     async makeApiCall(url) {
@@ -114,7 +123,10 @@ class Body extends React.Component {
             <Container>
                 <Row>
                     <Col xs={2}>
-                        <SearchFilter />
+                        <SearchFilter 
+                            updateFilterConditions={this.updateFilterConditions}
+                            filter={this.state.filter}
+                        />
                     </Col>
                     <Col>
                         <div className='sb-container'>

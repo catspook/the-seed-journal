@@ -33,9 +33,6 @@ var params = {
 class SearchFilter extends React.Component{
     constructor(props){
         super(props)
-        this.state ={
-            filter: {}
-        }
 
         this.handleCheckBox = this.handleCheckBox.bind(this)
     }
@@ -43,7 +40,7 @@ class SearchFilter extends React.Component{
     // Get the current filter obj from this class and update it
     // depending on the value that is passed in. 
     updateFilters(event){
-        let obj = this.state.filter
+        let obj = this.props.filter
         const param = event.target.name
         const currentVal = event.target.value
         if(event.target.name in obj){
@@ -75,9 +72,7 @@ class SearchFilter extends React.Component{
     // Handle the event when a checkbox is checked or uncked in FilterItem
     handleCheckBox(event) {
         const obj = this.updateFilters(event)
-        this.setState(() => ({
-            filter: obj
-        }))
+        this.props.updateFilterConditions(obj)
     }
 
     // Render each filter item based on the objects at the top of this file.

@@ -12,31 +12,64 @@ class FilterItem extends React.Component{
         this.state = {
             filterObj: this.props.obj,
             open: false,
+            checked: [],
         }
 
         this.handleButton = this.handleButton.bind(this)
+        this.handleCheck = this.handleCheck.bind(this)
     }
 
     // Open and close the button on button press
-    handleButton(){
+    handleButton(event){
+        event.preventDefault()
         this.setState(() =>({
             open: !this.state.open
         }))
     }
 
+    handleCheck(event, value){
+        this.props.handleCheck(event)
+
+        const current = this.state.checked
+        const isChecked = this.isChecked(value)
+
+        // Update the condition of indivisual check boxes
+        // Checked - add to list, Unchecked - remove from list
+        if(isChecked){
+            current.splice(value, 1)        
+        } else {
+            current.push(value)        
+        }
+
+        this.setState(() =>({
+            checked: current,
+        }))
+    }
+
+    // Check if the current value is in the checked list
+    isChecked(value){
+        const current = this.state.checked
+        if(current.includes(value))
+            return true
+        return false
+    }
+
     // Render the checkboxes and it's values
     renderList(){
+        const filterObj = this.state.filterObj
         return (
-            Object.keys(this.state.filterObj['values']).map((key, index) =>
+            Object.keys(filterObj['values']).map((value, index) =>
                 <Row key = {index} >
-                    <Col>{this.state.filterObj['values'][key]}</Col>
+                    <Col>{filterObj['values'][value]}</Col>
                     <Col>
                         <input 
                             type="checkbox"
-                            value={this.state.filterObj['values'][key]}
-                            id={this.state.filterObj['type']}
-                            name={this.state.filterObj['param']}
-                            onChange={this.props.handleCheck}
+                            value={filterObj['values'][value]}
+                            id={filterObj['type']}
+                            name={filterObj['param']}
+                            onChange={(event) => 
+                                this.handleCheck(event, filterObj['values'][value])}
+                            checked={this.isChecked(filterObj['values'][value])}
                         />
                     </Col>
                 </Row>
