@@ -48,8 +48,8 @@ class Body extends React.Component {
             jsonState.currentPage = json.links.self
             jsonState.firstPage = (json.links.first ? json.links.first : null)
             jsonState.nextPage = (json.links.next ? json.links.next : null)
-            jsonState.prevPage = (json.links.prev ? json.links.next : null)
-            jsonState.lastPage = (json.links.last ? json.links.next : null)
+            jsonState.prevPage = (json.links.prev ? json.links.prev : null)
+            jsonState.lastPage = (json.links.last ? json.links.last : null)
             jsonState.currentResults = (json.data).reduce((acc, element) => {
                 let addName = (element.common_name != null ? element.common_name : element.scientific_name)
                 acc.push({
