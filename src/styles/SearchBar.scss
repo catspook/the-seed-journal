@@ -5,23 +5,10 @@
     border-radius: 5px;
     background-color: white;
     box-shadow: 2px 2px 4px 1px rgba(122,113,122,1);
-    display: flex;
-    flex-direction: column;
 }
 
-.input-buttons {
-    display: flex;
-    flex-direction: row;
-}
-
-input {
-    width: 94%;
-    border: none;
-}
-
-#searchButton {
-    width: 5%;
-    height: 100%;
+.search-bar input {
+    width: 95%;
     border: none;
 }
 
