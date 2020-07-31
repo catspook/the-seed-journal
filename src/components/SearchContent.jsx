@@ -22,13 +22,14 @@ class SearchContent extends React.Component {
     }
 
     // Render next and previous button and the search result list
-    renderList(results, length) {
+    renderList(results) {
+        let length = results.length
         if(length > 0) {
             return (
                 <div className='search-nav'>
                     <div className='btn-bar'>
-                        <button onClick={() => this.props.decrement(length, false)}>previous</button>
-                        <button onClick={() => this.props.increment(length, true)}>next</button>
+                        <button onClick={() => this.props.newPage(false)}>previous</button>
+                        <button onClick={() => this.props.newPage(true)}>next</button>
                         <button onClick={this.handleReverse}>
                             {this.state.reversed ? 'A-Z':'Z-A'}
                         </button>
@@ -43,14 +44,9 @@ class SearchContent extends React.Component {
     }
 
     render() {
-        //const allResults = this.props.plantList
-        const results = this.props.plantList
-        //Slice the matching results to fit the limit of matches to show on browser
-        //const results = allResults.slice(this.props.start, this.props.end)
-                //{this.renderList(results, allResults.length)}
         return (
             <div>
-                {this.renderList(results, results.length)}
+                {this.renderList(this.props.resultList)}
             </div>
         )
     }

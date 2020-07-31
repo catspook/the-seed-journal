@@ -24,7 +24,7 @@ class Body extends React.Component {
             prevPage: "",
             lastPage: "",
             currentResults: [],
-            //reversed: false
+            reversed: false
         }
 
         this.changePage = this.changePage.bind(this)
@@ -67,9 +67,7 @@ class Body extends React.Component {
 
     }
 
-    // Decrement the search result by the limit
-    // Only works if starting index is above 0
-    async changePage(length, next) {
+    async changePage(next) {
         let newPage = (next ? this.state.nextPage : this.state.prevPage)
         let url = "https://trefle.io" + newPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
 
@@ -86,6 +84,7 @@ class Body extends React.Component {
 
     // Change search to the entered text on submission
     // and reset search index on new search
+    // and do api call on results
     async handleSubmit(event, value) {
         event.preventDefault()
 
@@ -118,14 +117,13 @@ class Body extends React.Component {
                 </div>
                 <SearchContent 
                     value={searchValue}
-                    plantList={(this.state.currentResults).reduce((acc, element) => {
+                    resultList={(this.state.currentResults).reduce((acc, element) => {
                         acc.push(element.name)
                         return acc
                     }, [])}
                     start={this.state.start}
                     end={this.state.end}
-                    increment={this.changePage}
-                    decrement={this.changePage}
+                    newPage={this.changePage}
                     onSubmit={this.handleSubmit}
                 />
             </div>
