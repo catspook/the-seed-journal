@@ -21,29 +21,15 @@ class SearchContent extends React.Component {
             this.props.onSubmit(event, this.props.value)
     }
 
-    // Find matching regex to input value every time it is updated
-    updateResults = () => {
-        let results = [];
-        let items = []
-        const value = this.props.value
-        if(value.length > 0){
-            const regex = new RegExp(`${value}`, 'i')
-            items = this.props.plantList[value[0]]
-            results = items.sort().filter(v => regex.test(v))
-            if(this.state.reversed)
-                results = results.reverse()
-        }
-        return results
-    }
-
     // Render next and previous button and the search result list
-    renderList(results, length) {
+    renderList(results) {
+        let length = results.length
         if(length > 0) {
             return (
                 <div className='search-nav'>
                     <div className='btn-bar'>
-                        <button onClick={this.props.decrement}>previous</button>
-                        <button onClick={() => this.props.increment(length)}>next</button>
+                        <button onClick={() => this.props.newPage(false)}>previous</button>
+                        <button onClick={() => this.props.newPage(true)}>next</button>
                         <button onClick={this.handleReverse}>
                             {this.state.reversed ? 'A-Z':'Z-A'}
                         </button>
@@ -58,12 +44,9 @@ class SearchContent extends React.Component {
     }
 
     render() {
-        const allResults = this.updateResults()
-        //Slice the matching results to fit the limit of matches to show on browser
-        const results = allResults.slice(this.props.start, this.props.end)
         return (
             <div>
-                {this.renderList(results, allResults.length)}
+                {this.renderList(this.props.resultList)}
             </div>
         )
     }
