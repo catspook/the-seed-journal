@@ -18,6 +18,12 @@ class Body extends React.Component {
             limit: 30, //Number of search results to show on browser
             start: 0, //Starting index of search results
             end: 30, //Ending index of search results
+            currentPage: "",
+            firstPage: "",
+            nextPage: "",
+            prevPage: "",
+            lastPage: "",
+            currentResults: [],
             //reversed: false
         }
 
@@ -51,14 +57,53 @@ class Body extends React.Component {
 
     // Change search to the entered text on submission
     // and reset search index on new search
-    handleSubmit(event, value) {
+    async handleSubmit(event, value) {
         event.preventDefault()
+
+        let url = "https://trefle.io/api/v1/species/search?token=" + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
+        let response = await fetch(url);
+        let jsonState = {
+            currentPage: "",
+            currentResults: [],
+            firstPage: "",
+            nextPage: "",
+            prevPage: "",
+            lastPage: ""
+        }
+
+        if (response.status === 200) {
+            let json = await response.json();
+            jsonState.currentPage = json.links.self
+            jsonState.firstPage = json.links.first
+            jsonState.nextPage = json.links.next
+            jsonState.prevPage = json.links.prev
+            jsonState.lastPage = json.links.last
+            jsonState.currentResults = (json.data).reduce((acc, element) => {
+                let addName = (acc.common_name !== "" ? element.common_name : element.scientific_name)
+                acc.push({
+                    name: addName,
+                    slug: element.slug
+                })
+                return acc
+            }, []);
+            
+        }
+        else {
+            throw new Error (response.status)
+        }
 
         this.setState(() => ({
             searchValue: value,
             start: 0,
             end: 30,
+            currentPage: jsonState.currentPage,
+            firstPage: jsonState.firstPage,
+            nextPage: jsonState.nextPage,
+            prevPage: jsonState.prevPage,
+            lastPage: jsonState.lastPage,
+            currentResults: jsonState.currentResults
         }))
+        console.log(this.state)
     }
 
     // Content to render on the home screen
@@ -73,7 +118,10 @@ class Body extends React.Component {
                 </div>
                 <SearchContent 
                     value={searchValue}
-                    plantList={this.plantList}
+                    plantList={(this.state.currentResults).reduce((acc, element) => {
+                        acc.push(element.name)
+                        return acc
+                    }, [])}
                     start={this.state.start}
                     end={this.state.end}
                     increment={this.incrementSearchResults}

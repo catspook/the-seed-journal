@@ -29,12 +29,10 @@ class SearchBar extends React.Component {
     selectSuggestion(value) {
         //Update input value to selected and set the suggestion
         //list to an empty list when a suggestion is selected.
-        console.log("CATS")
         this.setState(() => ({
             text: value,
             suggestions: [],
         }))
-        console.log(this.state)
     }
 
     renderSuggestions () {

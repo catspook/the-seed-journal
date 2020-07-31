@@ -28,7 +28,7 @@ class SearchContent extends React.Component {
         const value = this.props.value
         if(value.length > 0){
             const regex = new RegExp(`${value}`, 'i')
-            items = this.props.plantList[value[0]]
+            items = this.props.plantList
             results = items.sort().filter(v => regex.test(v))
             if(this.state.reversed)
                 results = results.reverse()
