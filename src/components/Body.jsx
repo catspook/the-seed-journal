@@ -32,35 +32,8 @@ class Body extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    // Decrement the search result by the limit
-    // Only works if starting index is above 0
-    decrementSearchResults(){
-        if(this.state.start > 0) {
-            this.setState(() => ({
-                start: this.state.start - this.state.limit,
-                end: this.state.end - this.state.limit,
-            }))
-        }
-    }
+    async makeApiCall(url) {
 
-    // Increment the search result by the limit
-    // Only works if ending index is less than the total
-    // search result length
-    incrementSearchResults(length){
-        if(this.state.end < length) {
-            this.setState(() => ({
-                start: this.state.start + this.state.limit,
-                end: this.state.end + this.state.limit,
-            }))
-        }
-    }
-
-    // Change search to the entered text on submission
-    // and reset search index on new search
-    async handleSubmit(event, value) {
-        event.preventDefault()
-
-        let url = "https://trefle.io/api/v1/species/search?token=" + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
         let response = await fetch(url);
         let jsonState = {
             currentPage: "",
@@ -79,7 +52,7 @@ class Body extends React.Component {
             jsonState.prevPage = json.links.prev
             jsonState.lastPage = json.links.last
             jsonState.currentResults = (json.data).reduce((acc, element) => {
-                let addName = (acc.common_name !== "" ? element.common_name : element.scientific_name)
+                let addName = (element.common_name != null ? element.common_name : element.scientific_name)
                 acc.push({
                     name: addName,
                     slug: element.slug
@@ -91,6 +64,67 @@ class Body extends React.Component {
         else {
             throw new Error (response.status)
         }
+        return jsonState
+
+    }
+
+    // Decrement the search result by the limit
+    // Only works if starting index is above 0
+    async decrementSearchResults() {
+        let url = "https://trefle.io" + this.state.prevPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+
+        let jsonState = await this.makeApiCall(url)
+        this.setState(() => ({
+            currentPage: jsonState.currentPage,
+            firstPage: jsonState.firstPage,
+            nextPage: jsonState.nextPage,
+            prevPage: jsonState.prevPage,
+            lastPage: jsonState.lastPage,
+            currentResults: jsonState.currentResults
+        }))
+        /*
+        if(this.state.start > 0) {
+            this.setState(() => ({
+                start: this.state.start - this.state.limit,
+                end: this.state.end - this.state.limit,
+            }))
+        }
+        */
+    }
+
+    // Increment the search result by the limit
+    // Only works if ending index is less than the total
+    // search result length
+    async incrementSearchResults(length){
+        let url = "https://trefle.io" + this.state.nextPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+
+        let jsonState = await this.makeApiCall(url)
+        this.setState(() => ({
+            currentPage: jsonState.currentPage,
+            firstPage: jsonState.firstPage,
+            nextPage: jsonState.nextPage,
+            prevPage: jsonState.prevPage,
+            lastPage: jsonState.lastPage,
+            currentResults: jsonState.currentResults
+        }))
+
+        /*
+        if(this.state.end < length) {
+            this.setState(() => ({
+                start: this.state.start + this.state.limit,
+                end: this.state.end + this.state.limit,
+            }))
+        }
+        */
+    }
+
+    // Change search to the entered text on submission
+    // and reset search index on new search
+    async handleSubmit(event, value) {
+        event.preventDefault()
+
+        let url = "https://trefle.io/api/v1/species/search?token=" + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
+        let jsonState = await this.makeApiCall(url)
 
         this.setState(() => ({
             searchValue: value,

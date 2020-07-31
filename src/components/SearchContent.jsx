@@ -21,19 +21,16 @@ class SearchContent extends React.Component {
             this.props.onSubmit(event, this.props.value)
     }
 
-    // Find matching regex to input value every time it is updated
+    //Display the newest page of results
     updateResults = () => {
-        let results = [];
         let items = []
         const value = this.props.value
         if(value.length > 0){
-            const regex = new RegExp(`${value}`, 'i')
             items = this.props.plantList
-            results = items.sort().filter(v => regex.test(v))
             if(this.state.reversed)
-                results = results.reverse()
+                items = items.reverse()
         }
-        return results
+        return items 
     }
 
     // Render next and previous button and the search result list
