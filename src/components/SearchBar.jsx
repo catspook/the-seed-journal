@@ -29,10 +29,12 @@ class SearchBar extends React.Component {
     selectSuggestion(value) {
         //Update input value to selected and set the suggestion
         //list to an empty list when a suggestion is selected.
+        console.log("CATS")
         this.setState(() => ({
             text: value,
             suggestions: [],
         }))
+        console.log(this.state)
     }
 
     renderSuggestions () {
@@ -49,8 +51,8 @@ class SearchBar extends React.Component {
         return(
             <div style={listStyle}>
                 <ul className='suggestions'>
-                    {suggestions.map((item, index) => 
-                        <li key={index} onClick={() => this.selectSuggestion(item)}>{item}</li>)}
+                    {suggestions.map((item) => 
+                        <li onClick={() => this.selectSuggestion(item)}>{item}</li>)}
                 </ul>
             </div>
         )
@@ -64,14 +66,18 @@ class SearchBar extends React.Component {
                       onClick={() => this.myInput.focus()}
                       onSubmit = {(event) => this.props.onSubmit(event, text)}
                 >
-                    <input
-                        value={text} 
-                        onChange={this.onTextChanged} 
-                        //On blur saves state of input and continues suggestion on focus
-                        onBlur={() => this.selectSuggestion(text)}
-                        onFocus={this.onTextChanged}
-                        ref={(input) => this.myInput = input}
-                        type='text'/>
+                    <div className='input-buttons'> 
+                        <input
+                            value={text} 
+                            onChange={this.onTextChanged} 
+                            //On blur saves state of input and continues suggestion on focus
+                            //...which it does, but it also breaks clicking on a suggestion
+                            //onBlur={() => this.selectSuggestion(text)}
+                            //onFocus={this.onTextChanged}
+                            ref={(input) => this.myInput = input}
+                            type='text'/>
+                        <input type="image" alt="search" id="searchButton" src="https://img.icons8.com/cotton/64/000000/search--v2.png" onClick={() => this.selectSuggestion(this.state.text)}/>
+                    </div>
                     {this.renderSuggestions()}
                 </form>
             </div>
