@@ -46,10 +46,10 @@ class Body extends React.Component {
         if (response.status === 200) {
             let json = await response.json();
             jsonState.currentPage = json.links.self
-            jsonState.firstPage = json.links.first
-            jsonState.nextPage = json.links.next
-            jsonState.prevPage = json.links.prev
-            jsonState.lastPage = json.links.last
+            jsonState.firstPage = (json.links.first ? json.links.first : null)
+            jsonState.nextPage = (json.links.next ? json.links.next : null)
+            jsonState.prevPage = (json.links.prev ? json.links.next : null)
+            jsonState.lastPage = (json.links.last ? json.links.next : null)
             jsonState.currentResults = (json.data).reduce((acc, element) => {
                 let addName = (element.common_name != null ? element.common_name : element.scientific_name)
                 acc.push({
@@ -58,7 +58,6 @@ class Body extends React.Component {
                 })
                 return acc
             }, []);
-            
         }
         else {
             throw new Error (response.status)
@@ -69,17 +68,19 @@ class Body extends React.Component {
 
     async changePage(next) {
         let newPage = (next ? this.state.nextPage : this.state.prevPage)
-        let url = "https://trefle.io" + newPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+        if (newPage) {
+            let url = "https://trefle.io" + newPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
 
-        let jsonState = await this.makeApiCall(url)
-        this.setState(() => ({
-            currentPage: jsonState.currentPage,
-            firstPage: jsonState.firstPage,
-            nextPage: jsonState.nextPage,
-            prevPage: jsonState.prevPage,
-            lastPage: jsonState.lastPage,
-            currentResults: jsonState.currentResults
-        }))
+            let jsonState = await this.makeApiCall(url)
+            this.setState(() => ({
+                currentPage: jsonState.currentPage,
+                currentResults: jsonState.currentResults,
+                firstPage: jsonState.firstPage,
+                nextPage: jsonState.nextPage,
+                prevPage: jsonState.prevPage,
+                lastPage: jsonState.lastPage
+            }))
+        }
     }
 
     // Change search to the entered text on submission
@@ -102,7 +103,6 @@ class Body extends React.Component {
             lastPage: jsonState.lastPage,
             currentResults: jsonState.currentResults
         }))
-        console.log(this.state)
     }
 
     // Content to render on the home screen
