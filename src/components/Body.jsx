@@ -1,10 +1,11 @@
 import React from "react";
 //import logo from '../images/logo.svg'; /*Place Holder image*/
-//import Container from 'react-bootstrap/Container'
-//import Row from 'react-bootstrap/Row'
-//import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
+import SearchFilter from './SearchFilter'
 import '../styles/Body.scss'
 
 const names = require('./common_names.json')
@@ -69,7 +70,8 @@ class Body extends React.Component {
     async changePage(next) {
         let newPage = (next ? this.state.nextPage : this.state.prevPage)
         if (newPage) {
-            let url = "https://trefle.io" + newPage + "&token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+            let url = "https://trefle.io" + newPage + "&token=" 
+                + process.env.REACT_APP_TREFLE_API_TOKEN
 
             let jsonState = await this.makeApiCall(url)
             this.setState(() => ({
@@ -89,7 +91,8 @@ class Body extends React.Component {
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        let url = "https://trefle.io/api/v1/species/search?token=" + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
+        let url = "https://trefle.io/api/v1/species/search?token=" 
+            + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
         let jsonState = await this.makeApiCall(url)
 
         this.setState(() => ({
@@ -108,25 +111,34 @@ class Body extends React.Component {
     // Content to render on the home screen
     renderHome(searchValue){
         return (
-            <div className='sb-container'>
-                <div>
-                    <SearchBar 
-                        plantList={this.plantList}
-                        onSubmit={this.handleSubmit}
-                    />
-                </div>
-                <SearchContent 
-                    value={searchValue}
-                    resultList={(this.state.currentResults).reduce((acc, element) => {
-                        acc.push(element.name)
-                        return acc
-                    }, [])}
-                    start={this.state.start}
-                    end={this.state.end}
-                    newPage={this.changePage}
-                    onSubmit={this.handleSubmit}
-                />
-            </div>
+            <Container>
+                <Row>
+                    <Col xs={2}>
+                        <SearchFilter />
+                    </Col>
+                    <Col>
+                        <div className='sb-container'>
+                            <div>
+                                <SearchBar 
+                                    plantList={this.plantList}
+                                    onSubmit={this.handleSubmit}
+                                />
+                            </div>
+                            <SearchContent 
+                                value={searchValue}
+                                resultList={(this.state.currentResults).reduce((acc, element) => {
+                                    acc.push(element.name)
+                                    return acc
+                                }, [])}
+                                start={this.state.start}
+                                end={this.state.end}
+                                newPage={this.changePage}
+                                onSubmit={this.handleSubmit}
+                            />
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 
