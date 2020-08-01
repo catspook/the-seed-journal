@@ -1,6 +1,7 @@
 import React from "react";
 //import logo from '../images/logo.svg'; /*Place Holder image*/
 import SearchBase from './Search/SearchBase'
+import ChartBase from './Chart/ChartBase'
 import '../styles/Body.scss'
 
 class Body extends React.Component {
@@ -15,7 +16,7 @@ class Body extends React.Component {
     renderTab1() {
         return(
             <div>
-                <p>Chart Thingy</p>
+                <ChartBase />
             </div>
         )
     }

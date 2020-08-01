@@ -1,0 +1,2 @@
+{"light":{"title":"Light","type":"range","param":"light","values":["0","1","2","3","4","5","6","7","8","9","10"]},
+"leafColor":{"title":"Leaf Color","type":"filter","param":"leaf_color","values":["white","pink","red","orange","yellow","green","blue","purple"]}}
