@@ -4,10 +4,18 @@
 // Reference to some awesome documentation on how this works and where it came from: https://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/
 // This might work on most compatiable browsers - my personal favorite - shawn
 
+// this is for all other text
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// this is just for the title pretty much
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.title-text {
+    font-family: 'Playfair Display', 'Roboto', sans-serif;
 }
 
 $p-font-sizes: (
@@ -19,9 +27,9 @@ $p-font-sizes: (
 
 $h1-font-sizes: (
   null  : 28px,
-  480px : 31px,
-  640px : 33px,
-  1024px: 36px,
+  480px : 35px,
+  640px : 45px,
+  1024px: 40px,
 );
 
 @mixin font-size($fs-map) {

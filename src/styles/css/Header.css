@@ -1,14 +1,11 @@
 .header {
-  background-color: #125C0A;
   display: flex;
   align-content: center;
   padding-top: 0.5vw;
 }
 
 .title {
-  color: #F7FAF0;
   text-align: left;
-  font-size: 1em;
 }
 
 .search {
