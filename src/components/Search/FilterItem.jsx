@@ -36,7 +36,8 @@ class FilterItem extends React.Component{
         // Update the condition of indivisual check boxes
         // Checked - add to list, Unchecked - remove from list
         if(isChecked){
-            current.splice(value, 1)        
+            const index = current.indexOf(value)
+            current.splice(index, 1)        
         } else {
             current.push(value)        
         }
@@ -51,7 +52,8 @@ class FilterItem extends React.Component{
         const current = this.state.checked
         if(current.includes(value))
             return true
-        return false
+        else
+            return false
     }
 
     // Render the checkboxes and it's values
