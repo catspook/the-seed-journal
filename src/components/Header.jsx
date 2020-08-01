@@ -18,7 +18,7 @@ class Header extends React.Component {
                 <Container fluid>
                     <Row>
                         <Col xs={2}><h1 className='title title-text'>The Seed Journal</h1></Col>
-                        <Col><button className="btn secondary-background float-right" onClick={(event) => this.props.onClick(event)} id='Theme'><i class="fa fa-home primary"></i></button></Col>
+                        <Col><button className="btn secondary-background float-right" onClick={(event) => this.props.onClick(event)} id='Theme'><i class="fa fa-paint-brush primary"></i></button></Col>
                     </Row>
                 </Container>
             </div>
