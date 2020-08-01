@@ -1,0 +1,46 @@
+// This file is to make response text sizes based off the min-screen size for the generic elements
+// It's done this way so that we can override them if necessary
+// I might modify it later to provide custom mappings for our specific functions as well as font stylings
+// Reference to some awesome documentation on how this works and where it came from: https://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/
+// This might work on most compatiable browsers - my personal favorite - shawn
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+$p-font-sizes: (
+  null  : 15px,
+  480px : 16px,
+  640px : 17px,
+  1024px: 19px
+);
+
+$h1-font-sizes: (
+  null  : 28px,
+  480px : 31px,
+  640px : 33px,
+  1024px: 36px,
+);
+
+@mixin font-size($fs-map) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint == null {
+            font-size: $fs-font-size;
+        }
+        @else {
+            @media screen and (min-width: $fs-breakpoint) {
+            font-size: $fs-font-size;
+            }
+        }
+    }
+}
+
+p {
+    @include font-size($p-font-sizes);
+}
+
+h1 {
+    @include font-size($h1-font-sizes);
+}

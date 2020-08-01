@@ -5,6 +5,7 @@ import Footer from '../Footer'
 
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
+import '../../styles/css/typography.css';
 
 class App extends React.Component {
   constructor(props){
