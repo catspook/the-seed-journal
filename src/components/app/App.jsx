@@ -3,6 +3,13 @@ import Header from '../Header'
 import Body from '../Body'
 import Footer from '../Footer'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
 import '../../styles/css/typography.css';
@@ -50,17 +57,35 @@ class App extends React.Component {
     }
   }
 
-  render(){
-      return(
-		<div id={this.state.theme} className="page-container">
+  	render(){
+		return(
+		<Router>
+			<div id={this.state.theme} className="page-container">
+
 			<div className="content-container">
 				<Header onClick={this.handlePage}/>
-				<Body pageId={this.state.page}></Body>
+				<Switch>
+					<Route path="/about">
+					</Route>
+
+					<Route path="/plant/:plantID">
+					</Route>
+
+					<Route path="/search">
+						<Body pageId={this.state.page}></Body>
+					</Route>
+
+					<Route path="/">
+						<Redirect to="/search" />
+					</Route>
+				</Switch>
 			</div>
-      <Footer />
-		</div>
-      )
-  }
+
+			<Footer />
+			</div>
+		</Router>
+		)
+    }
 }
 
 export default App;
