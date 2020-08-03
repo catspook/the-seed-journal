@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-content: center;
+  padding-top: 0.5vw;
+}
+
+.title {
+  text-align: left;
+}
+
+.search {
+  text-align: left;
+}
+
+/*# sourceMappingURL=Header.css.map */

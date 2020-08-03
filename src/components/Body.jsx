@@ -1,7 +1,10 @@
 import React from "react";
 //import logo from '../images/logo.svg'; /*Place Holder image*/
+//import Container from 'react-bootstrap/Container'
+//import Row from 'react-bootstrap/Row'
+//import Col from 'react-bootstrap/Col'
 import SearchBase from './Search/SearchBase'
-import '../styles/Body.scss'
+import '../styles/scss/Body.scss'
 
 class Body extends React.Component {
     // Content to render on the home screen

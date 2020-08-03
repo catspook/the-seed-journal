@@ -14,6 +14,7 @@ This is a repository to hold the web application to give information regarding p
 
 1. clone
 2. ` npm i `
+2.5 ` npm install boostrap ` - if you are building the style sheets
 3. ` npm start ` - this will compile the webpage and open it at http://localhost:3000
 
 ## Available Scripts
@@ -25,10 +26,16 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run scss`
+### `npm run scss-watch`
+
+Note: For active stylesheet development
 
 Generates the CSS files and watches for changes in the `src/styles/scss` directory
 Compiles to the `src/styles/css` directory
+
+### `npm run scss-compile`
+
+Generates the code for every scss file in the `src/styles/scss' directory and stores them in the `src/styles/css` directory.
 
 ### `npm test`
 
