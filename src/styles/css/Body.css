@@ -1,0 +1,20 @@
+.body {
+  padding-top: 2em;
+  height: auto;
+}
+
+.info {
+  text-align: left;
+  padding-top: 3em;
+}
+
+.fav-btn {
+  display: flex;
+}
+
+.sb-container {
+  margin: auto;
+  width: 40%;
+}
+
+/*# sourceMappingURL=Body.css.map */
