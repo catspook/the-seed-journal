@@ -44,6 +44,7 @@ class Body extends React.Component {
         }
 
         if (response.status === 200) {
+            console.log("HERE")
             let json = await response.json();
             jsonState.currentPage = json.links.self
             jsonState.firstPage = (json.links.first ? json.links.first : null)
@@ -60,7 +61,8 @@ class Body extends React.Component {
             }, []);
         }
         else {
-            throw new Error (response.status)
+            //throw new Error (response.status)
+            console.log(response.status)
         }
         return jsonState
 
