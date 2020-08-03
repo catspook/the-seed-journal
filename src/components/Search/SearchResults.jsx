@@ -1,5 +1,5 @@
 import React from "react"
-import '../styles/css/SearchResult.css'
+import '../../styles/SearchResult.scss'
 
 class ResultList extends React.Component {
     createItem(name, index) {
