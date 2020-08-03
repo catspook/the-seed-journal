@@ -59,31 +59,31 @@ class App extends React.Component {
 
   	render(){
 		return(
-		<Router>
-			<div id={this.state.theme} className="page-container">
+			<Router>
+				<div id={this.state.theme} className="page-container">
 
-			<div className="content-container">
-				<Header onClick={this.handlePage}/>
-				<Switch>
-					<Route path="/about">
-					</Route>
+				<div className="content-container">
+					<Header onClick={this.handlePage}/>
+					<Switch>
+						<Route path="/about">
+						</Route>
 
-					<Route path="/plant/:plantID">
-					</Route>
+						<Route path="/plant/:plantID">
+						</Route>
 
-					<Route path="/search">
-						<Body pageId={this.state.page}></Body>
-					</Route>
+						<Route path="/search">
+							<Body pageId={this.state.page}></Body>
+						</Route>
 
-					<Route path="/">
-						<Redirect to="/search" />
-					</Route>
-				</Switch>
-			</div>
+						<Route path="/">
+							<Redirect to="/search" />
+						</Route>
+					</Switch>
+				</div>
 
-			<Footer />
-			</div>
-		</Router>
+				<Footer />
+				</div>
+			</Router>
 		)
     }
 }
