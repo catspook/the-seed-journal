@@ -1,6 +1,6 @@
 import React from "react"
 import ResultList from "./SearchResults"
-import '../../styles/SearchContent.scss'
+import '../../styles/scss/SearchContent.scss'
 
 class SearchContent extends React.Component {
     constructor(props){
