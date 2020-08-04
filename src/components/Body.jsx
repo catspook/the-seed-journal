@@ -15,7 +15,7 @@ class Body extends React.Component {
     }
 
     // Content to render on the "insert name here" screen
-    renderTab1() {
+    renderPlantResult() {
         return(
             <div>
                 <p>Chart Thingy</p>
@@ -35,15 +35,18 @@ class Body extends React.Component {
     // Conditionally render the contents of the body depending on
     // the pageId (Header Buttons)
     renderBody() {
-        if(this.props.pageId === 0)
+        console.log("CATS3")
+        if (this.props.pageId === 0)
             return this.renderHome()
-        if(this.props.pageId === 1)
-            return this.renderTab1()
-        if(this.props.pageId === 2)
+        if (this.props.pageId === "plant") {
+            return this.renderPlantResult()
+        }
+        if (this.props.pageId === 2)
             return this.renderTab2()
     }
 
     render() {
+        console.log("CATS2")
         return (
             <div className='body'>
                 {this.renderBody()}
@@ -51,8 +54,6 @@ class Body extends React.Component {
         )
     }
 }
-
-
 
 //class Info extends React.Component {
 //    render() {

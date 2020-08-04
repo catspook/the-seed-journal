@@ -30,7 +30,6 @@ class SearchBase extends React.Component{
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateFilterConditions = this.updateFilterConditions.bind(this)
-        this.displayPlant = this.displayPlant.bind(this)
     }
 
     updateFilterConditions(obj){
@@ -40,7 +39,7 @@ class SearchBase extends React.Component{
         console.log(this.state.filter)
     }
 
-    async makeApiCall(url, search) {
+    async makeApiCall(url) {
 
         let response = await fetch(url);
         let jsonState = {
@@ -55,24 +54,19 @@ class SearchBase extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
-            if (search) {
-                jsonState.currentPage = json.links.self
-                jsonState.firstPage = (json.links.first ? json.links.first : null)
-                jsonState.nextPage = (json.links.next ? json.links.next : null)
-                jsonState.prevPage = (json.links.prev ? json.links.prev : null)
-                jsonState.lastPage = (json.links.last ? json.links.last : null)
-                jsonState.currentResults = (json.data).reduce((acc, element) => {
-                    let addName = (element.common_name != null ? element.common_name : element.scientific_name)
-                    acc.push({
-                        name: addName,
-                        slug: element.slug
-                    })
-                    return acc
-                }, []);
-            }
-            else {
-                jsonState.data = json.data
-            }
+            jsonState.currentPage = json.links.self
+            jsonState.firstPage = (json.links.first ? json.links.first : null)
+            jsonState.nextPage = (json.links.next ? json.links.next : null)
+            jsonState.prevPage = (json.links.prev ? json.links.prev : null)
+            jsonState.lastPage = (json.links.last ? json.links.last : null)
+            jsonState.currentResults = (json.data).reduce((acc, element) => {
+                let addName = (element.common_name != null ? element.common_name : element.scientific_name)
+                acc.push({
+                    name: addName,
+                    slug: element.slug
+                })
+                return acc
+            }, []);
             this.setState(() => ({
                 trefleDown: false
             }))
@@ -93,7 +87,7 @@ class SearchBase extends React.Component{
             let url = "https://trefle.io" + newPage + "&token=" 
                 + process.env.REACT_APP_TREFLE_API_TOKEN
 
-            let jsonState = await this.makeApiCall(url, true)
+            let jsonState = await this.makeApiCall(url)
             this.setState(() => ({
                 currentPage: jsonState.currentPage,
                 currentResults: jsonState.currentResults,
@@ -113,7 +107,7 @@ class SearchBase extends React.Component{
 
         let url = "https://trefle.io/api/v1/species/search?token=" 
             + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
-        let jsonState = await this.makeApiCall(url, true)
+        let jsonState = await this.makeApiCall(url)
 
         this.setState(() => ({
             searchValue: value,
@@ -124,16 +118,6 @@ class SearchBase extends React.Component{
             lastPage: jsonState.lastPage,
             currentResults: jsonState.currentResults
         }))
-    }
-
-    async displayPlant(name, index) {
-        let currentPlant = (this.state.currentResults)[index]
-        let url = "https://trefle.io/api/v1/plants/" + currentPlant.slug + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
-        let jsonState = await this.makeApiCall(url, false)
-        this.setState(() => ({
-            plantResult: jsonState.data
-        }))
-        console.log(this.state.plantResult)
     }
 
     renderSearchList(searchValue){
@@ -178,7 +162,10 @@ class SearchBase extends React.Component{
                                 }, [])}
                                 newPage={this.changePage}
                                 onSubmit={this.handleSubmit}
-                                lookupPlant={this.displayPlant}
+                                slugs={(this.state.currentResults).reduce((acc, element) => {
+                                    acc.push(element.slug)
+                                    return acc
+                                }, [])}
                             />
                         </div>
                     </Col>

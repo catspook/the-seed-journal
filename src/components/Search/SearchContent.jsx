@@ -37,7 +37,7 @@ class SearchContent extends React.Component {
                     <ResultList 
                         items={results}
                         value={this.props.value}
-                        lookupPlant={this.props.lookupPlant}
+                        slugs={this.props.slugs}
                     />
                 </div>
             )

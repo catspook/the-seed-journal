@@ -1,11 +1,9 @@
 import React from 'react';
 import Header from '../Header'
 import Body from '../Body'
-import Footer from '../Footer'
-
+import Footer from '../Footer' 
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter as Router, Switch,
   Route,
   Redirect
 } from "react-router-dom";
@@ -69,6 +67,8 @@ class App extends React.Component {
 						</Route>
 
 						<Route path="/plant/:plantID">
+                            {console.log("CATS")}
+							<Body pageId="plant"></Body>
 						</Route>
 
 						<Route path="/search">
