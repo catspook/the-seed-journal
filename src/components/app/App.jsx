@@ -1,12 +1,17 @@
 import React from 'react';
-import Header from '../Header'
-import Body from '../Body'
-import Footer from '../Footer' 
+import Header from '../Header';
+import Body from '../Body';
+import Footer from '../Footer';
+import Result from '../Result/Result';
+import About from '../About';
+
 import {
   BrowserRouter as Router, Switch,
   Route,
   Redirect
 } from "react-router-dom";
+
+import Cookies from 'universal-cookie';
 
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
@@ -15,9 +20,21 @@ import '../../styles/css/typography.css';
 class App extends React.Component {
   constructor(props){
       super(props)
+
+      const cookies = new Cookies();
+
+      var fav = cookies.get('favorites', { path: '/' });
+
+      if (fav === null) {
+        fav = [];
+      }
+
+      // only ever add to the favorites list as we re-write it each time.
       this.state ={
           page: 0,
-          theme: "light"
+          theme: "light",
+          favorites: fav,
+          cookies: cookies
       }
 
       this.handlePage = this.handlePage.bind(this)
@@ -25,11 +42,11 @@ class App extends React.Component {
 
   
   componentDidMount() {
-    // add a function to look for saved cookies.
+
   }
 
   componentWillUnmount() {
-      // add a function to save preference cookies.
+    this.state.cookies.set('favorites', JSON.stringify(this.state.favorites));
   }
 
   // Change the page number depeding on the button that was
@@ -59,16 +76,16 @@ class App extends React.Component {
 		return(
 			<Router>
 				<div id={this.state.theme} className="page-container">
-
 				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
 						<Route path="/about">
+                            <About/>
 						</Route>
 
 						<Route path="/plant/:plantID">
                             {console.log("CATS")}
-							<Body pageId="plant"></Body>
+                            <Result></Result>
 						</Route>
 
 						<Route path="/search">
