@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from '../Header'
-import Body from '../Body'
-import Footer from '../Footer'
+import Header from '../Header';
+import Body from '../Body';
+import Footer from '../Footer';
+import Result from '../Result/Result';
+import About from '../About';
 
 import {
   BrowserRouter as Router,
@@ -41,7 +43,7 @@ class App extends React.Component {
 
   
   componentDidMount() {
-    
+
   }
 
   componentWillUnmount() {
@@ -79,9 +81,11 @@ class App extends React.Component {
 					<Header onClick={this.handlePage}/>
 					<Switch>
 						<Route path="/about">
+              <About/>
 						</Route>
 
 						<Route path="/plant/:plantID">
+              <Result></Result>
 						</Route>
 
 						<Route path="/search">
