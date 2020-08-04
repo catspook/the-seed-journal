@@ -24,7 +24,9 @@ class App extends React.Component {
 
       var fav = cookies.get('favorites', { path: '/' });
 
-      console.log(fav);
+      if (fav === null) {
+        fav = [];
+      }
 
       // only ever add to the favorites list as we re-write it each time.
       this.state ={
@@ -39,14 +41,11 @@ class App extends React.Component {
 
   
   componentDidMount() {
-    // This is a test - not to be included in the final product
-    var favorites = ["roses" , "plant1", "plant7"];
-    this.state.cookies.set('favorites', JSON.stringify(favorites));
+    
   }
 
   componentWillUnmount() {
-      // will automatically save favorite plants on exit to the cookie and update the browser
-      this.state.cookies.set('favorites', JSON.stringify(this.state.favorites));
+    this.state.cookies.set('favorites', JSON.stringify(this.state.favorites));
   }
 
   // Change the page number depeding on the button that was
