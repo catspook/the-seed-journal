@@ -10,6 +10,8 @@ import {
   Redirect
 } from "react-router-dom";
 
+import Cookies from 'universal-cookie';
+
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
 import '../../styles/css/typography.css';
@@ -17,9 +19,19 @@ import '../../styles/css/typography.css';
 class App extends React.Component {
   constructor(props){
       super(props)
+
+      const cookies = new Cookies();
+
+      var fav = cookies.get('favorites', { path: '/' });
+
+      console.log(fav);
+
+      // only ever add to the favorites list as we re-write it each time.
       this.state ={
           page: 0,
-          theme: "light"
+          theme: "light",
+          favorites: fav,
+          cookies: cookies
       }
 
       this.handlePage = this.handlePage.bind(this)
@@ -27,11 +39,14 @@ class App extends React.Component {
 
   
   componentDidMount() {
-    // add a function to look for saved cookies.
+    // This is a test - not to be included in the final product
+    var favorites = ["roses" , "plant1", "plant7"];
+    this.state.cookies.set('favorites', JSON.stringify(favorites));
   }
 
   componentWillUnmount() {
-      // add a function to save preference cookies.
+      // will automatically save favorite plants on exit to the cookie and update the browser
+      this.state.cookies.set('favorites', JSON.stringify(this.state.favorites));
   }
 
   // Change the page number depeding on the button that was
@@ -61,7 +76,6 @@ class App extends React.Component {
 		return(
 			<Router>
 				<div id={this.state.theme} className="page-container">
-
 				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
