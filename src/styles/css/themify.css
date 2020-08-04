@@ -13,6 +13,9 @@
   outline-color: #178949 !important;
   border-color: #133D28 !important;
 }
+#light ::-webkit-scrollbar-thumb {
+  background-color: #178949;
+}
 
 #light .primary {
   color: #EDEFF1;
@@ -74,6 +77,9 @@
   box-shadow: none !important;
   outline-color: #178949 !important;
   border-color: #133D28 !important;
+}
+#dark ::-webkit-scrollbar-thumb {
+  background-color: #178949;
 }
 
 #dark .primary {

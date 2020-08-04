@@ -57,3 +57,11 @@
   margin-left: 0px;
   margin-right: 0px;
 }
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: none;
+}

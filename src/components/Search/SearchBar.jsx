@@ -81,7 +81,7 @@ class SearchBar extends React.Component {
                                 ref = {(input) => this.myInput = input}
                             />
                         </InputGroup>
-                    {this.renderSuggestions()}
+                        {this.renderSuggestions()}
                 </form>
             </div>
         )
