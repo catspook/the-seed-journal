@@ -4,7 +4,7 @@ import '../../styles/scss/SearchResult.scss'
 class ResultList extends React.Component {
     createItem(name, index) {
         return (
-            <li className='results' key={index}>{ name }</li>
+            <li className='results' key={index} onClick={() => this.props.lookupPlant(name, index)}>{ name }</li>
         )
     }
 
