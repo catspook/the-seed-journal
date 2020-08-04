@@ -2,6 +2,7 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
 import SearchFilter from './SearchFilter'
@@ -15,15 +16,14 @@ class SearchBase extends React.Component{
         this.state = {
             searchValue: '',
             filter: {},
-            start: 0, //Starting index of search results
-            end: 30, //Ending index of search results
             currentPage: "",
             firstPage: "",
             nextPage: "",
             prevPage: "",
             lastPage: "",
             currentResults: [],
-            reversed: false
+            reversed: false,
+            trefleDown: false
         }
 
         this.changePage = this.changePage.bind(this)
@@ -65,9 +65,15 @@ class SearchBase extends React.Component{
                 })
                 return acc
             }, []);
+            this.setState(() => ({
+                trefleDown: false
+            }))
         }
         else {
-            throw new Error (response.status)
+            console.log(response.status)
+            this.setState(() => ({
+                trefleDown: true
+            }))
         }
         return jsonState
 
@@ -103,8 +109,6 @@ class SearchBase extends React.Component{
 
         this.setState(() => ({
             searchValue: value,
-            start: 0,
-            end: 30,
             currentPage: jsonState.currentPage,
             firstPage: jsonState.firstPage,
             nextPage: jsonState.nextPage,
@@ -115,6 +119,12 @@ class SearchBase extends React.Component{
     }
 
     renderSearchList(searchValue){
+        
+        const showTrefleDown = this.state.trefleDown
+        const toggleShowTrefleDown = () => this.setState(() => ({
+            trefleDown: false
+        }));
+
         return (
             <Container>
                 <Row>
@@ -132,14 +142,22 @@ class SearchBase extends React.Component{
                                     onSubmit={this.handleSubmit}
                                 />
                             </div>
+
+                            <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
+                                <Toast.Header>
+                                    <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
+                                    <strong className="mr-auto">Search Error</strong>
+                                    <small>Now</small>
+                                </Toast.Header>
+                                <Toast.Body>Our data source is currently unavailable. Please try your search again later!</Toast.Body>
+                            </Toast>
+
                             <SearchContent 
                                 value={searchValue}
                                 resultList={(this.state.currentResults).reduce((acc, element) => {
                                     acc.push(element.name)
                                     return acc
                                 }, [])}
-                                start={this.state.start}
-                                end={this.state.end}
                                 newPage={this.changePage}
                                 onSubmit={this.handleSubmit}
                             />
