@@ -1,5 +1,12 @@
-import React from "react"
-import '../../styles/scss/SearchBar.scss'
+import React from "react";
+
+import {
+    InputGroup,
+    FormControl,
+    Button
+} from 'react-bootstrap';
+
+import '../../styles/scss/SearchBar.scss';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -60,22 +67,20 @@ class SearchBar extends React.Component {
         const { text } = this.state;
         return(
             <div>
-                <form className='search-bar' 
-                      onClick={() => this.myInput.focus()}
-                      onSubmit = {(event) => this.props.onSubmit(event, text)}
-                >
-                    <div className='input-buttons'> 
-                        <input
-                            value={text} 
-                            onChange={this.onTextChanged} 
-                            //On blur saves state of input and continues suggestion on focus
-                            //...which it does, but it also breaks clicking on a suggestion
-                            //onBlur={() => this.selectSuggestion(text)}
-                            //onFocus={this.onTextChanged}
-                            ref={(input) => this.myInput = input}
-                            type='text'/>
-                        <input type="image" alt="search" id="searchButton" src="https://img.icons8.com/cotton/64/000000/search--v2.png" onClick={() => this.selectSuggestion(this.state.text)}/>
-                    </div>
+                <form className='' onSubmit = {(event) => this.props.onSubmit(event, text)}>
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <Button variant="btn secondary-background" onClick={() => this.selectSuggestion(this.state.text)}><i className="fa fa-search primary"></i></Button>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                value={text} 
+                                onChange={this.onTextChanged}
+                                placeholder="Roses are Red"
+                                aria-label="Plant Search Box"
+                                aria-describedby="search-p"
+                                ref = {(input) => this.myInput = input}
+                            />
+                        </InputGroup>
                     {this.renderSuggestions()}
                 </form>
             </div>

@@ -26,6 +26,15 @@
         // specifics
         text-emphasis-color: theme_item("#{$theme}", "accent-dark");    // this could just be the above variable .darken.
         border-color: theme_item("#{$theme}", "accent-darker");         // this could just be the above variable .darken.
+
+        *:focus, *.active {
+            // these are strictly for the bootstrap fixes
+            outline: none !important;
+            box-shadow: none !important;
+
+            outline-color: theme_item("#{$theme}", "accent") !important;
+            border-color: theme_item("#{$theme}", "accent-darker") !important;
+        }
     }
 
     ##{$theme} {

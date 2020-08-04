@@ -7,6 +7,12 @@
   text-emphasis-color: #115937;
   border-color: #133D28;
 }
+#light *:focus, #light *.active {
+  outline: none !important;
+  box-shadow: none !important;
+  outline-color: #178949 !important;
+  border-color: #133D28 !important;
+}
 
 #light .primary {
   color: #EDEFF1;
@@ -62,6 +68,12 @@
   column-rule-color: #178949;
   text-emphasis-color: #115937;
   border-color: #133D28;
+}
+#dark *:focus, #dark *.active {
+  outline: none !important;
+  box-shadow: none !important;
+  outline-color: #178949 !important;
+  border-color: #133D28 !important;
 }
 
 #dark .primary {
