@@ -1,0 +1,158 @@
+    "data": {
+        "common_name": "Italian stone pine",
+        "scientific_name": "Pinus pinea",
+        "image_url": "https://bs.floristic.org/image/o/99ce473b2c8a60a3491bfde8d15345449e8feb92",
+        "year": 1753,
+        "bibliography": "Sp. Pl.: 1000 (1753)",
+        "author": "L.",
+
+        "main_species": {
+            "common_name": "Italian stone pine",
+            "scientific_name": "Pinus pinea",
+            "duration": [
+                "perennial"
+            ],
+            "common_names": {
+                "eng": [
+                    "pignolia-nut pine",
+                    "parasol pine",
+                    "umbrella pine",
+                    "stone pine",
+                    "italian stone pine"
+                ]
+            },
+            "distribution": {
+                "native": [
+                    "Albania",
+                    "Greece",
+                    "Turkey",
+                    "Lebanon-Syria",
+                    "East Aegean Is.",
+                    "Italy",
+                    "Sicilia",
+                    "Baleares",
+                    "Corse",
+                    "France",
+                    "Kriti",
+                    "Portugal",
+                    "Spain",
+                    "Cyprus"
+                ],
+                "introduced": [
+                    "Turkey-in-Europe",
+                    "Yugoslavia",
+                    "Palestine",
+                    "Canary Is.",
+                    "Morocco",
+                    "Algeria",
+                    "New South Wales",
+                    "Libya",
+                    "Tunisia"
+                ]
+            },
+            "flower": {
+                "color": [
+                    "yellow"
+                ],
+                "conspicuous": null
+            },
+            "foliage": {
+                "texture": null,
+                "color": null,
+                "leaf_retention": null
+            },
+            "fruit_or_seed": {
+                "conspicuous": null,
+                "color": null,
+                "shape": null,
+                "seed_persistence": null
+            },
+            "specifications": {
+                "ligneous_type": "tree",
+                "growth_form": null,
+                "growth_habit": "Tree",
+                "growth_rate": null,
+                "average_height": {
+                    "cm": 1666
+                },
+                "maximum_height": {
+                    "cm": 2000
+                },
+                "nitrogen_fixation": null,
+                "shape_and_orientation": null,
+                "toxicity": null
+            },
+            "growth": {
+                "description": null,
+                "sowing": null,
+                "days_to_harvest": null,
+                "row_spacing": {
+                    "cm": null
+                },
+                "spread": {
+                    "cm": null
+                },
+                "ph_maximum": 7.5,
+                "ph_minimum": 7.0,
+                "light": 8,
+                "atmospheric_humidity": 4,
+                "growth_months": null,
+                "bloom_months": [
+                    "apr",
+                    "may"
+                ],
+                "fruit_months": null,
+                "minimum_precipitation": {
+                    "mm": null
+                },
+                "maximum_precipitation": {
+                    "mm": null
+                },
+                "minimum_root_depth": {
+                    "cm": null
+                },
+                "minimum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "maximum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "soil_nutriments": 4,
+                "soil_salinity": 0,
+                "soil_texture": 5,
+                "soil_humidity": null
+            },
+            "synonyms": [
+                {
+                    "name": "Pinus sativa"
+                }
+            ]
+        },
+
+        "genus": {
+            "name": "Pinus"
+        },
+        "family": {
+            "name": "Pinaceae",
+            "common_name": "Pine family"
+        },
+        "species": [
+            {
+                "common_name": "Italian stone pine",
+                "scientific_name": "Pinus pinea"
+            }
+        ],
+        "subspecies": [],
+        "varieties": [],
+        "hybrids": [],
+        "forms": [],
+        "subvarieties": [],
+        "sources": [
+            {
+                "name": "POWO",
+                "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:263221-1"
+            }
+        ]
+    },
