@@ -15,7 +15,7 @@ class Body extends React.Component {
     }
 
     // Content to render on the "insert name here" screen
-    renderPlantResult() {
+    renderTab1() {
         return(
             <div>
                 <p>Chart Thingy</p>
@@ -35,18 +35,16 @@ class Body extends React.Component {
     // Conditionally render the contents of the body depending on
     // the pageId (Header Buttons)
     renderBody() {
-        console.log("CATS3")
         if (this.props.pageId === 0)
             return this.renderHome()
-        if (this.props.pageId === "plant") {
-            return this.renderPlantResult()
+        if (this.props.pageId === 1) {
+            return this.renderTab1()
         }
         if (this.props.pageId === 2)
             return this.renderTab2()
     }
 
     render() {
-        console.log("CATS2")
         return (
             <div className='body'>
                 {this.renderBody()}
@@ -54,29 +52,5 @@ class Body extends React.Component {
         )
     }
 }
-
-//class Info extends React.Component {
-//    render() {
-//        return(
-//           <Container>
-//                <Row>
-//                    <Col>
-//                        <img src={logo} alt='place holder'></img>
-//                    </Col>
-//                    <Col>
-//                        <div className='info'>
-//                            {/*Chang displayed info as needed*/}
-//                            <p>Common Name:</p>
-//                            <p>Scientific Name:</p>
-//                            <p>Growth Zone:</p>
-//                            <p>pH:</p>
-//                        </div>
-//                        <button className='fav-btn'>Add to favorites</button>
-//                    </Col>
-//                </Row>
-//            </Container> 
-//        )
-//    }
-//}
 
 export default Body

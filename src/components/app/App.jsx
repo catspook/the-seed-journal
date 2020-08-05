@@ -84,7 +84,6 @@ class App extends React.Component {
 						</Route>
 
 						<Route path="/plant/:plantID">
-                            {console.log("CATS")}
                             <Result></Result>
 						</Route>
 

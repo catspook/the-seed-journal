@@ -49,7 +49,6 @@ class SearchBase extends React.Component{
             nextPage: "",
             prevPage: "",
             lastPage: "",
-            data: ""
         }
 
         if (response.status === 200) {
