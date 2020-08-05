@@ -1,13 +1,5 @@
+@use "sass:list";
 @import 'themes.scss';
-
-// Example Functionality for this class generated code
-/*
-<div id="top">
-    <h1>Chocolate curry</h1>
-    <p>This is my recipe for making curry purely with chocolate</p>
-    <p>Mmm mm mmmmm</p>
-</div>
-*/
 
 // How to use function
 // @debug theme_item("light", "primary");
@@ -20,15 +12,36 @@
 }
 
 @each $theme, $params in $themes {
+    // generates the overall theme attributes
+    ##{$theme} {
+        // primary
+        background-color: theme_item("#{$theme}", "primary");
+        color: theme_item("#{$theme}", "secondary");
+
+        // accents
+        text-decoration-color: theme_item("#{$theme}", "accent");
+        outline-color: theme_item("#{$theme}", "accent");
+        column-rule-color: theme_item("#{$theme}", "accent");
+
+        // specifics
+        text-emphasis-color: theme_item("#{$theme}", "accent-dark");    // this could just be the above variable .darken.
+        border-color: theme_item("#{$theme}", "accent-darker");         // this could just be the above variable .darken.
+    }
+
     ##{$theme} {
         @each $param-name, $color-value in $params {
-            .#{$param-name}-color {
+            .#{$param-name} {
                 color: #{$color-value};
             }
 
             .#{$param-name}-background {
                 background-color: #{$color-value};
             }
+
+            .#{$param-name}::selection {
+                background: #{$color-value};
+            }
         }
     }
+
 }

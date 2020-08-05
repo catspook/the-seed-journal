@@ -1,0 +1,113 @@
+#light {
+  background-color: #EDEFF1;
+  color: #0B0B0B;
+  text-decoration-color: #178949;
+  outline-color: #178949;
+  column-rule-color: #178949;
+  text-emphasis-color: #115937;
+  border-color: #133D28;
+}
+
+#light .primary {
+  color: #EDEFF1;
+}
+#light .primary-background {
+  background-color: #EDEFF1;
+}
+#light .primary::selection {
+  background: #EDEFF1;
+}
+#light .secondary {
+  color: #0B0B0B;
+}
+#light .secondary-background {
+  background-color: #0B0B0B;
+}
+#light .secondary::selection {
+  background: #0B0B0B;
+}
+#light .accent {
+  color: #178949;
+}
+#light .accent-background {
+  background-color: #178949;
+}
+#light .accent::selection {
+  background: #178949;
+}
+#light .accent-dark {
+  color: #115937;
+}
+#light .accent-dark-background {
+  background-color: #115937;
+}
+#light .accent-dark::selection {
+  background: #115937;
+}
+#light .accent-darker {
+  color: #133D28;
+}
+#light .accent-darker-background {
+  background-color: #133D28;
+}
+#light .accent-darker::selection {
+  background: #133D28;
+}
+
+#dark {
+  background-color: #0B0B0B;
+  color: #EDEFF1;
+  text-decoration-color: #178949;
+  outline-color: #178949;
+  column-rule-color: #178949;
+  text-emphasis-color: #115937;
+  border-color: #133D28;
+}
+
+#dark .primary {
+  color: #0B0B0B;
+}
+#dark .primary-background {
+  background-color: #0B0B0B;
+}
+#dark .primary::selection {
+  background: #0B0B0B;
+}
+#dark .secondary {
+  color: #EDEFF1;
+}
+#dark .secondary-background {
+  background-color: #EDEFF1;
+}
+#dark .secondary::selection {
+  background: #EDEFF1;
+}
+#dark .accent {
+  color: #178949;
+}
+#dark .accent-background {
+  background-color: #178949;
+}
+#dark .accent::selection {
+  background: #178949;
+}
+#dark .accent-dark {
+  color: #115937;
+}
+#dark .accent-dark-background {
+  background-color: #115937;
+}
+#dark .accent-dark::selection {
+  background: #115937;
+}
+#dark .accent-darker {
+  color: #133D28;
+}
+#dark .accent-darker-background {
+  background-color: #133D28;
+}
+#dark .accent-darker::selection {
+  background: #133D28;
+}
+
+/*# sourceMappingURL=themify.css.map */

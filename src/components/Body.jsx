@@ -1,8 +1,11 @@
 import React from "react";
 //import logo from '../images/logo.svg'; /*Place Holder image*/
+//import Container from 'react-bootstrap/Container'
+//import Row from 'react-bootstrap/Row'
+//import Col from 'react-bootstrap/Col'
 import SearchBase from './Search/SearchBase'
-import ChartBase from './Chart/ChartBase'
 import '../styles/Body.scss'
+import '../styles/scss/Body.scss'
 
 class Body extends React.Component {
     // Content to render on the home screen
@@ -16,7 +19,6 @@ class Body extends React.Component {
     renderTab1() {
         return(
             <div>
-                <ChartBase />
             </div>
         )
     }
