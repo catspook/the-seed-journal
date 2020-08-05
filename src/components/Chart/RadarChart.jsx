@@ -3,58 +3,21 @@ import { Radar } from 'react-chartjs-2';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import "../../styles/RadarChart.scss"
-
-// Take these out later once an object is passed in
-const id = 190500
-const url = `https://trefle.io/api/v1/species/${id}?token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
-
-var makeApiCall = async(url) => {
-    let response = await fetch(url);
-    let json
-    if (response.status === 200) {
-        json = await response.json();
-    }
-    else {
-        throw new Error (response.status)
-    }
-    return json
-}
-
+import "../../styles/scss/RadarChart.scss"
 
 class PlantRadar extends React.Component{
     constructor(props) {
         super(props)
-
         this.myRef = null
         this.state = {
-            json: {},
-            light: 0,
-            humidity: 0,
-            salinity: 0,
-            nutriments: 0,
-            texture: 0,
+            light: this.props.light,
+            humidity: this.props.humidity,
+            salinity: this.props.salinity,
+            nutriments: this.props.nutriments,
+            texture: this.props.texture,
 
             lengend: <></>,
         }
-    }
-    
-    async componentWillMount(){
-        const json = await makeApiCall(url)
-        const light = json.data.growth.light
-        const humidity = json.data.growth.atmospheric_humidity
-        const salinity = json.data.growth.soil_salinity
-        const nutriments = json.data.growth.soil_nutriments
-        const texture = json.data.growth.soil_texture
-
-        this.setState(() => ({
-            json: json,
-            light: light,
-            humidity: humidity,
-            salinity: salinity,
-            nutriments: nutriments,
-            texture: texture,
-        }))
     }
 
     componentDidMount(){
