@@ -4,7 +4,6 @@ import React from "react";
 //import Row from 'react-bootstrap/Row'
 //import Col from 'react-bootstrap/Col'
 import SearchBase from './Search/SearchBase'
-import '../styles/Body.scss'
 import '../styles/scss/Body.scss'
 
 class Body extends React.Component {
