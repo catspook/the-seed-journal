@@ -4,14 +4,17 @@ import React from "react";
 //import Row from 'react-bootstrap/Row'
 //import Col from 'react-bootstrap/Col'
 import SearchBase from './Search/SearchBase'
-import '../styles/Body.scss'
+import PhBar from './Chart/pHBar'
 import '../styles/scss/Body.scss'
 
 class Body extends React.Component {
     // Content to render on the home screen
     renderHome(searchValue){
         return(
-            <SearchBase />
+            <div>
+                <SearchBase />
+                <PhBar />
+            </div>
         )
     }
 
