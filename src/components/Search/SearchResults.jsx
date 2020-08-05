@@ -3,8 +3,11 @@ import '../../styles/scss/SearchResult.scss'
 
 class ResultList extends React.Component {
     createItem(name, index) {
+        let url = "http://localhost:3000/plant/" + (this.props.slugs)[index]
         return (
-            <li className='results' key={index}>{ name }</li>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+                <li className='results' key={index}>{ name }</li>
+            </a>
         )
     }
 

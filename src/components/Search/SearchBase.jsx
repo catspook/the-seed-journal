@@ -23,7 +23,8 @@ class SearchBase extends React.Component{
             lastPage: "",
             currentResults: [],
             reversed: false,
-            trefleDown: false
+            trefleDown: false,
+            plantResult: ""
         }
 
         this.changePage = this.changePage.bind(this)
@@ -47,7 +48,7 @@ class SearchBase extends React.Component{
             firstPage: "",
             nextPage: "",
             prevPage: "",
-            lastPage: ""
+            lastPage: "",
         }
 
         if (response.status === 200) {
@@ -149,7 +150,7 @@ class SearchBase extends React.Component{
                                     <strong className="mr-auto">Search Error</strong>
                                     <small>Now</small>
                                 </Toast.Header>
-                                <Toast.Body>Our data source is currently unavailable. Please try your search again later!</Toast.Body>
+                                <Toast.Body>Our data source is currently unavailable. Please try again later!</Toast.Body>
                             </Toast>
 
                             <SearchContent 
@@ -160,6 +161,10 @@ class SearchBase extends React.Component{
                                 }, [])}
                                 newPage={this.changePage}
                                 onSubmit={this.handleSubmit}
+                                slugs={(this.state.currentResults).reduce((acc, element) => {
+                                    acc.push(element.slug)
+                                    return acc
+                                }, [])}
                             />
                         </div>
                     </Col>
