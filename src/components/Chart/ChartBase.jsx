@@ -1,5 +1,6 @@
 import React from "react";
 import FilterPieChart from './FilterPieChart'
+import RadarChart from './RadarChart'
 
 class ChartBase extends React.Component {
     constructor(props){

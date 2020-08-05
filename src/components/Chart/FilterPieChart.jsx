@@ -58,7 +58,6 @@ const names = require('../Search/search_filter.json')
     }
 
     async getData(){
-        console.log(this.state.key)
         const param = names[this.state.key].param
         const type = names[this.state.key].type
         const values = names[this.state.key].values
@@ -94,18 +93,18 @@ const names = require('../Search/search_filter.json')
         return (
             <div>
                 <Doughnut
-                data={this.state.chartData}
-                options={{
-                    title:{
-                    display:true,
-                    text:'Chart',
-                    fontSize:20
-                    },
-                    legend:{
-                    display:true,
-                    position:'bottom'
-                    },
-                }}
+                    data={this.state.chartData}
+                    options={{
+                        title:{
+                        display:true,
+                        text:'Chart',
+                        fontSize:20
+                        },
+                        legend:{
+                        display:true,
+                        position:'bottom'
+                        },
+                    }}
                 />
             </div>
         );
@@ -119,6 +118,7 @@ const names = require('../Search/search_filter.json')
                         {
                             Object.keys(names).map((key, index) => 
                                 <DropdownItem 
+                                    key={index}
                                     onClick={this.handleDropDown}
                                     id={names[key].param}
                                 >
