@@ -18,7 +18,6 @@ class Body extends React.Component {
     renderTab1() {
         return(
             <div>
-                <p>Chart Thingy</p>
             </div>
         )
     }
