@@ -82,6 +82,11 @@ class Result extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
+                
+            let eng_common_names = "not listed"
+            if (json.data.main_species.common_names.eng !== undefined) {
+                eng_common_names = (json.data.main_species.common_names.eng).join(", ")
+            }
 
             let flower_conspic = "not listed"
             if (json.data.main_species.flower.conspicuous != null) {
@@ -175,10 +180,10 @@ class Result extends React.Component{
                 main_common_name: (json.data.main_species.common_name != null ? json.data.main_species.common_name : this.state.main_common_name),
                 main_scientific_name: (json.data.main_species.scientific_name != null ? json.data.main_species.scientific_name : this.state.main_scientific_name),
                 duration: (json.data.main_species.duration != null ? (json.data.main_species.duration).join(", ") : this.state.duration),
-                common_names: (json.data.main_species.common_names.eng !== [] ? (json.data.main_species.common_names.eng).join(", ") : this.state.common_names),
+                common_names: eng_common_names,
                 //distribution
-                native: (json.data.main_species.distribution.native !== [] ? (json.data.main_species.distribution.native).join(", ") : this.state.native),
-                introduced: (json.data.main_species.distribution.introduced !== [] ? (json.data.main_species.distribution.introduced).join(", ") : this.state.introduced),
+                native: (json.data.main_species.distribution.native != null ? (json.data.main_species.distribution.native).join(", ") : this.state.native),
+                introduced: (json.data.main_species.distribution.introduced != null ? (json.data.main_species.distribution.introduced).join(", ") : this.state.introduced),
                 //flower
                 flower_color: (json.data.main_species.flower.color != null ? (json.data.main_species.flower.color).join(", ") : this.state.flower_color),
                 flower_conspicuous: flower_conspic,
@@ -209,9 +214,14 @@ class Result extends React.Component{
                 spread: (json.data.main_species.growth.spread.cm != null ? json.data.main_species.growth.spread.cm : this.state.spread),
                 ph_max: (json.data.main_species.growth.ph_maximum != null ? json.data.main_species.growth.ph_maximum : this.state.ph_max),
                 ph_min: (json.data.main_species.growth.ph_minimum != null ? json.data.main_species.growth.ph_minimum : this.state.ph_min),
-                growth_months: (json.data.main_species.growth.growth_months != null ? (json.data.main_species.growth.growth_months).join(", ") : this.state.growth_months),
-                bloom_months: (json.data.main_species.growth.bloom_months != null ? (json.data.main_species.growth.bloom_months).join(", ") : this.state.bloom_months),
-                fruit_months: (json.data.main_species.growth.fruit_months != null ? (json.data.main_species.growth.fruit_months).join(", ") : this.state.fruit_months),
+
+                growth_months: (json.data.main_species.growth.growth_months != null ? 
+                    ((json.data.main_species.growth.growth_months).map(word => word.charAt(0).toUpperCase() + word.slice(1))).join(', ') : this.state.growth_months),
+                bloom_months: (json.data.main_species.growth.bloom_months != null ?
+                    ((json.data.main_species.growth.bloom_months).map(word => word.charAt(0).toUpperCase() + word.slice(1))).join(', ') : this.state.bloom_months),
+                fruit_months: (json.data.main_species.growth.fruit_months != null ? 
+                    ((json.data.main_species.growth.fruit_months).map(word => word.charAt(0).toUpperCase() + word.slice(1))).join(', ') : this.state.fruit_months),
+
                 min_precip: (json.data.main_species.growth.minimum_precipitation.mm != null ? json.data.main_species.growth.minimum_precipitation.mm : this.state.min_precip),
                 max_precip: (json.data.main_species.growth.maximum_precipitation.mm != null ? json.data.main_species.growth.maximum_precipitation.mm : this.state.max_precip),
                 min_root_depth: (json.data.main_species.growth.minimum_root_depth.cm != null ? json.data.main_species.growth.minimum_root_depth.cm : this.state.min_root_depth),
