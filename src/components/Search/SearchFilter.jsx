@@ -44,7 +44,6 @@ class SearchFilter extends React.Component{
         this.setState(() => ({
             filter: obj,
         }))
-        console.log(obj)
     }
 
     // Handle the event when a checkbox is checked or uncked in FilterItem

@@ -73,7 +73,6 @@ class SearchBase extends React.Component{
         if(value)
             url = url.concat(`&q=${value}`)
 
-        console.log(url)
         return url
     }
 
