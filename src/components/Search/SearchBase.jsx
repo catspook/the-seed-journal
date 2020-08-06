@@ -71,7 +71,6 @@ class SearchBase extends React.Component{
             }))
         }
         else {
-            console.log(process.env.REACT_APP_TREFLE_API_TOKEN)
             console.log(response.status)
             this.setState(() => ({
                 trefleDown: true
