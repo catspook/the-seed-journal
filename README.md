@@ -3,7 +3,7 @@
 This is a repository to hold the web application to give information regarding plants using the treffle.io API.
 <br />
 
-The app is hosted by Heroku at [the-seed-journal.herokuapp.com](the-seed-journal.herokuapp.com).
+The app is hosted by Heroku at [http://the-seed-journal.herokuapp.com](http://the-seed-journal.herokuapp.com).
 
 ## Building
 
