@@ -18,12 +18,6 @@
     width: 40%;
 }
 
-@media print {
-    body> :not(.print-parent):not(.print-me) {
-        display: none;
-    }
-
-    .print-parent> :not(.print-parent):not(.print-me) {
-        display: none;
-    }
+.chart {
+    margin: 30%;
 }
