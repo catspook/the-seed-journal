@@ -76,14 +76,14 @@ class App extends React.Component {
 		return(
 			<Router>
 				<div id={this.state.theme} className="page-container">
-				<div className="content-container print-parent">
+				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
 					<Route path="/about">
                             <About/>
 						</Route>
 
-						<Route path="/plant/:plantID" className='print-parent'>
+						<Route path="/plant/:plantID">
                             <Result></Result>
 						</Route>
 
