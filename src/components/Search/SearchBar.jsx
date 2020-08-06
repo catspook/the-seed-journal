@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
     }
 
     onTextChanged = (e) => {
-        //Find matchin regex to input value every time it is updated
+        //Find matching regex to input value every time it is updated
         //Change slice to change the max number of matches to show
        const value = e
        let suggestions = [];

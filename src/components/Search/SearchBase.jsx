@@ -24,12 +24,21 @@ class SearchBase extends React.Component{
             currentResults: [],
             reversed: false,
             trefleDown: false,
-            plantResult: ""
+            plantResult: "",
+            option: "lower",
         }
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateFilterConditions = this.updateFilterConditions.bind(this)
+        this.handleOrderOption = this.handleOrderOption.bind(this)
+    }
+
+    handleOrderOption(event){
+        const id = event.target.id
+        this.setState(() => ({
+            option: id,
+        }))
     }
 
     updateFilterConditions(obj){
@@ -38,39 +47,37 @@ class SearchBase extends React.Component{
         }))
     }
 
-    addFilterToURL(){
+    addFilterToURL(value){
         const filter_obj = this.state.filter
-        let url = "https://trefle.io/api/v1/species?token=" 
-            + process.env.REACT_APP_TREFLE_API_TOKEN
         let filter_str = ''
-        if(this.state.filter) {
-            Object.keys(filter_obj).map((key) => 
+        let key = Object.keys(filter_obj)[0]
+        let url = "https://trefle.io/api/v1/species/search?token=" 
+            + process.env.REACT_APP_TREFLE_API_TOKEN
+        if(!value){
+            url = "https://trefle.io/api/v1/species?token=" 
+                + process.env.REACT_APP_TREFLE_API_TOKEN
+        }
+
+        if(this.state.filter[key]) {
+            if(this.state.option === "lower"){
                 filter_str = filter_str.concat(`&${filter_obj[key]
-                    .filter}[${key}]=${filter_obj[key].values}`)
-            )
+                    .type}[${key}]=,${filter_obj[key].values}`)
+            } 
+            else {
+                filter_str = filter_str.concat(`&${filter_obj[key]
+                    .type}[${key}]=${filter_obj[key].values}`)
+            }
+
             url = url.concat(filter_str)
         }
+        if(value)
+            url = url.concat(`&q=${value}`)
+
+        console.log(url)
         return url
     }
 
-    parseJSON(json, value){
-        const len = json.data.length
-        let count_del = 0
-        const val_lower = value.toLowerCase()
-        //Change includes
-        if(json.data.length > 0){
-            for(let i = 0; i < len; ++i){
-                if(!json.data[i].common_name.toLowerCase().includes(val_lower)){
-                    delete json.data[i]
-                    ++count_del
-                }
-            }
-        }
-        json.meta.total -= count_del
-    }
-
-    async makeApiCall(url, init=false, value=this.state.searchValue) {
-
+    async makeApiCall(url) {
         let response = await fetch(url);
         let jsonState = {
             currentPage: "",
@@ -83,9 +90,6 @@ class SearchBase extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
-            //Don't parse the JSON if it is no the initial search (if not next and previous button)
-            if(init)
-                this.parseJSON(json, value)
             jsonState.currentPage = json.links.self
             jsonState.firstPage = (json.links.first ? json.links.first : null)
             jsonState.nextPage = (json.links.next ? json.links.next : null)
@@ -137,9 +141,8 @@ class SearchBase extends React.Component{
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        let url = this.addFilterToURL()
-        // Needs to pass search value in directly, after set state does not work
-        let jsonState = await this.makeApiCall(url, true, value)
+        let url = this.addFilterToURL(value)
+        let jsonState = await this.makeApiCall(url)
 
         this.setState(() => ({
             searchValue: value,
@@ -162,9 +165,11 @@ class SearchBase extends React.Component{
         return (
             <Container>
                 <Row>
-                    <Col xs={2}>
-                        <SearchFilter 
+                    <Col>
+                        <SearchFilter calssName="filter"
                             updateFilterConditions={this.updateFilterConditions}
+                            handleOrder={this.handleOrderOption}
+                            option={this.state.option}
                             filter={this.state.filter}
                         />
                     </Col>
