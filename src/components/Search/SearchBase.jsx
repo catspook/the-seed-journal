@@ -36,10 +36,40 @@ class SearchBase extends React.Component{
         this.setState(() => ({
             filter: obj
         }))
-        console.log(this.state.filter)
     }
 
-    async makeApiCall(url) {
+    addFilterToURL(){
+        const filter_obj = this.state.filter
+        let url = "https://trefle.io/api/v1/species?token=" 
+            + process.env.REACT_APP_TREFLE_API_TOKEN
+        let filter_str = ''
+        if(this.state.filter) {
+            Object.keys(filter_obj).map((key) => 
+                filter_str = filter_str.concat(`&${filter_obj[key]
+                    .filter}[${key}]=${filter_obj[key].values}`)
+            )
+            url = url.concat(filter_str)
+        }
+        return url
+    }
+
+    parseJSON(json, value){
+        const len = json.data.length
+        let count_del = 0
+        const val_lower = value.toLowerCase()
+        //Change includes
+        if(json.data.length > 0){
+            for(let i = 0; i < len; ++i){
+                if(!json.data[i].common_name.toLowerCase().includes(val_lower)){
+                    delete json.data[i]
+                    ++count_del
+                }
+            }
+        }
+        json.meta.total -= count_del
+    }
+
+    async makeApiCall(url, init=false, value=this.state.searchValue) {
 
         let response = await fetch(url);
         let jsonState = {
@@ -53,6 +83,9 @@ class SearchBase extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
+            //Don't parse the JSON if it is no the initial search (if not next and previous button)
+            if(init)
+                this.parseJSON(json, value)
             jsonState.currentPage = json.links.self
             jsonState.firstPage = (json.links.first ? json.links.first : null)
             jsonState.nextPage = (json.links.next ? json.links.next : null)
@@ -104,9 +137,9 @@ class SearchBase extends React.Component{
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        let url = "https://trefle.io/api/v1/species/search?token=" 
-            + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
-        let jsonState = await this.makeApiCall(url)
+        let url = this.addFilterToURL()
+        // Needs to pass search value in directly, after set state does not work
+        let jsonState = await this.makeApiCall(url, true, value)
 
         this.setState(() => ({
             searchValue: value,

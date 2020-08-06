@@ -4,28 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import FilterItem from "./FilterItem"
 
-// Maybe make a JSON file for this
-var light = {
-    title: 'Light',
-    type: 'range',
-    param: 'light',
-    values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
-}
-
-var leafColor = {
-    title: 'Leaf Color',
-    type: 'filter',
-    param: 'leaf_color',
-    values: ['white', 'pink', 'red', 'orange', 'yellow',
-             'green', 'blue', 'purple'],
-}
-
-var params = {
-    light: light,
-    leafColor: leafColor
-}
-
-// *****************************************************
+const filters = require('./search_filter.json')
 
 // Wrapper component to hold a list of buttons that open and close
 // to show a list of FilterItems with checkboxes that update what the
@@ -78,10 +57,10 @@ class SearchFilter extends React.Component{
     // Render each filter item based on the objects at the top of this file.
     renderList() {
         return (
-            Object.keys(params).map((key, index) =>
+            Object.keys(filters).map((key, index) =>
                 <FilterItem 
                     key={index}
-                    obj={params[key]}
+                    obj={filters[key]}
                     handleCheck={this.handleCheckBox}
                 >
                 </FilterItem>
