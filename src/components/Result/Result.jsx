@@ -264,7 +264,7 @@ class Result extends React.Component{
         }));
 
         return (
-            <Container>
+            <Container className='print-parent'>
                 <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
                     <Toast.Header>
                         <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
@@ -274,15 +274,18 @@ class Result extends React.Component{
                     <Toast.Body>Our data source is currently unavailable. Please refresh this page in a few moments!</Toast.Body>
                 </Toast>
 
-                <Row>
+                <Row className='print-parent'>
                     <Col>
                         <div className='image-holder' height='500px'>
                             <img src={this.state.image_url} height='100%' width='100%' alt={this.state.common_name}></img>
                         </div>
                     </Col>
-                    <Col show={!showTrefleDown}>
-                        <button className='fav-button'>Favorite</button>
-                        <div className='results-container-pic' overflow='auto'>
+                    <Col className='print-parent'>
+                        <form>
+                            <button className='print-button' onclick="window.print()">Print</button>
+                            <button className='fav-button'>Favorite</button>
+                        </form> 
+                        <div className='results-container-pic print-this' overflow='auto'>
                             <h1><b>{this.state.common_name}</b></h1>
                             <h3><b>{this.state.scientific_name}</b></h3>
                             <p><b>Genus</b> {this.state.genus}</p>
