@@ -334,8 +334,8 @@ class Result extends React.Component{
                             <p><b>Ligneous type</b> {this.state.ligneous_type}</p>
                             <p><b>Growth form</b> {this.state.growth_form}</p>
                             <p><b>Growth rate</b> {this.state.growth_rate}</p>
-                            <p><b>Average height</b> {this.state.ave_height} cm</p>
-                            <p><b>Maximum height</b> {this.state.max_height} cm</p>
+                            <p><b>Average height (cm)</b> {this.state.ave_height}</p>
+                            <p><b>Maximum height (cm)</b> {this.state.max_height}</p>
                             <p><b>Nitrogen fixation</b> {this.state.nitrogen}</p>
                             <p><b>Toxicity</b> {this.state.toxicity}</p>
                             <br />
@@ -346,10 +346,10 @@ class Result extends React.Component{
                             <p><b>Plant grows during</b> {this.state.growth_months}</p>
                             <p><b>Sowing</b> {this.state.sowing}</p>
                             <p><b>Days to harvest</b> {this.state.days_to_harvest}</p>
-                            <p><b>Row spacing</b> {this.state.row_spacing} cm</p>
-                            <p><b>Spread</b> {this.state.spread} cm</p>
-                            <p><b>Precipitation needed</b> {this.state.min_precip} mm to {this.state.max_precip} mm</p>
-                            <p><b>Minimum root depth</b> {this.state.min_root_depth} cm</p>
+                            <p><b>Row spacing (cm)</b> {this.state.row_spacing}</p>
+                            <p><b>Spread (cm)</b> {this.state.spread}</p>
+                            <p><b>Precipitation needed (mm)</b> {this.state.min_precip} to {this.state.max_precip}</p>
+                            <p><b>Minimum root depth (cm)</b> {this.state.min_root_depth}</p>
                             <p><b>Temperature range (degrees Fahrenheight)</b> {this.state.min_temp_f} to {this.state.max_temp_f}</p>
                             <br />
                                 
