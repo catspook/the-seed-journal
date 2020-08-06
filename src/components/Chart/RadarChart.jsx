@@ -32,14 +32,27 @@ class PlantRadar extends React.Component{
     }
 
     createLegend(){
-        if(!this.myRef)
+        if (!this.myRef) {
             return null
+        }
+        let props_valid = ([this.props.light, this.props.humidity, this.props.salinity, this.props.nutriments, this.props.texture]).reduce((acc, element) => {
+            return acc && (element !== 'none listed' && element !== undefined)
+        }, true)
+        this.setState(() => ({
+            valid: props_valid
+        }))
         return this.myRef.chartInstance.generateLegend()
     }
 
     legendCBWrapper(chart){
 
     }
+
+   renderInvalid(){
+       return(
+           <span className="error">Some Information Unvailable</span>
+       )
+   }
 
     render() {
         const data = {
@@ -70,9 +83,10 @@ class PlantRadar extends React.Component{
           };
 
         return (
-            <Container>
+            <Container className='chart'>
                 <Row>
                     <Col>
+                        <h5>Plant Specifications</h5>
                         <Radar 
                             ref={(element) => this.setRefrence(element)}
                             data={data}
@@ -82,11 +96,11 @@ class PlantRadar extends React.Component{
                                     var text = [];
                                     var item = chart.data.datasets[0]
                                     const scale_low = [
-                                        "(Intense Shade)", "(<=10%) ","(Intolerant)",
-                                        "(Oligotrophic)", "(Clay)"]
+                                        " Intense Shade, ", " <= 10%, ", " Intolerant, ",
+                                        " Oligotrophic, ", " Clay, "]
                                     const scale_high =[
-                                        "(Intense Light)", "(>=90%)", "(Hyperhaline)",
-                                        "(Hypereutrophic)", "(Rock)"]
+                                        " Intense Light", " >= 90%", " Hyperhaline",
+                                        " Hypereutrophic", " Rock"]
                                     text.push('<ul>')
                                         for (var i=0; i < chart.data.labels.length; i++) {
                                             text.push('<li>')
@@ -95,8 +109,8 @@ class PlantRadar extends React.Component{
                                                 style="background-color:
                                                 ${item.pointBackgroundColor[i]}">
                                                 </div>`)
-                                            text.push(`<div>${chart.data.labels[i]}: 
-                                                0:${scale_low[i]} 10:${scale_high[i]}</div>`)
+                                            text.push(`<div><b>${chart.data.labels[i]}</b>
+                                                0:${scale_low[i]} 10: ${scale_high[i]}</div>`)
                                             text.push("</div>")
                                             text.push('</li>')
                                         }
@@ -127,9 +141,8 @@ class PlantRadar extends React.Component{
                                 }
                             }}
                         />
-                    </Col>
-                    <Col>
                         <div dangerouslySetInnerHTML ={{__html: this.state.legend}}/>
+                        {!this.state.valid && this.renderInvalid()}
                     </Col>
                 </Row>
             </Container>

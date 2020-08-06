@@ -79,7 +79,7 @@ class App extends React.Component {
 				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
-						<Route path="/about">
+					<Route path="/about">
                             <About/>
 						</Route>
 

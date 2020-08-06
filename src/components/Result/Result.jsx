@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
+import PhBar from '../Chart/pHBar'
+import PlantRadar from '../Chart/RadarChart'
 
 class Result extends React.Component{
     constructor(props) {
@@ -60,6 +62,12 @@ class Result extends React.Component{
             min_temp_f: "none listed",
             max_temp_f: "none listed",
             synonyms: "none listed",
+            light: "none listed",
+            atmospheric_humidity: "none listed",
+            soil_salinity: "none listed",
+            soil_nutriments: "none listed",
+            soil_texture: "none listed",
+
             genus: "none listed",
             family_common: "none listed",
             family: "none listed",
@@ -214,20 +222,24 @@ class Result extends React.Component{
                 spread: (json.data.main_species.growth.spread.cm != null ? json.data.main_species.growth.spread.cm : this.state.spread),
                 ph_max: (json.data.main_species.growth.ph_maximum != null ? json.data.main_species.growth.ph_maximum : this.state.ph_max),
                 ph_min: (json.data.main_species.growth.ph_minimum != null ? json.data.main_species.growth.ph_minimum : this.state.ph_min),
-
                 growth_months: (json.data.main_species.growth.growth_months != null ? 
                     ((json.data.main_species.growth.growth_months).map(word => word.charAt(0).toUpperCase() + word.slice(1))).join(', ') : this.state.growth_months),
                 bloom_months: (json.data.main_species.growth.bloom_months != null ?
                     ((json.data.main_species.growth.bloom_months).map(word => word.charAt(0).toUpperCase() + word.slice(1))).join(', ') : this.state.bloom_months),
                 fruit_months: (json.data.main_species.growth.fruit_months != null ? 
                     ((json.data.main_species.growth.fruit_months).map(word => word.charAt(0).toUpperCase() + word.slice(1))).join(', ') : this.state.fruit_months),
-
                 min_precip: (json.data.main_species.growth.minimum_precipitation.mm != null ? json.data.main_species.growth.minimum_precipitation.mm : this.state.min_precip),
                 max_precip: (json.data.main_species.growth.maximum_precipitation.mm != null ? json.data.main_species.growth.maximum_precipitation.mm : this.state.max_precip),
                 min_root_depth: (json.data.main_species.growth.minimum_root_depth.cm != null ? json.data.main_species.growth.minimum_root_depth.cm : this.state.min_root_depth),
                 min_temp_f: (json.data.main_species.growth.minimum_temperature.deg_f != null ? json.data.main_species.growth.minimum_temperature.deg_f : this.state.min_temp_f),
                 max_temp_f: (json.data.main_species.growth.maximum_temperature.deg_f != null ? json.data.main_species.growth.maximum_temperature.deg_f : this.state.max_temp_f),
                 synonyms: synonymsList,
+                light: (json.data.main_species.growth.light != null ? json.data.main_species.growth.light : this.state.light),
+                atmospheric_humidity: (json.data.main_species.growth.atmospheric_humidity != null ? json.data.main_species.growth.atmospheric_humidity : this.state.atmospheric_humidity),
+                soil_nutriments: (json.data.main_species.growth.soil_nutriments != null ? json.data.main_species.growth.soil_nutriments : this.state.soil_nutriments),
+                soil_salinity: (json.data.main_species.growth.soil_salinity != null ? json.data.main_species.growth.soil_salinity : this.state.soil_salinity),
+                soil_texture: (json.data.main_species.growth.soil_texture != null ? json.data.main_species.growth.soil_texture : this.state.soil_texture),
+
                 genus: (json.data.genus.name != null ? json.data.genus.name : this.state.genus),
                 family_common: (json.data.family.common_name != null ? json.data.family.common_name : this.state.family_common),
                 family: (json.data.family.name != null ? json.data.family.name : this.state.family),
@@ -278,10 +290,24 @@ class Result extends React.Component{
                     <Col>
                         <div className='image-holder' height='500px'>
                             <img src={this.state.image_url} height='100%' width='100%' alt={this.state.common_name}></img>
+                            <PlantRadar>
+                                light={this.state.light}
+                                humidity={this.state.atmospheric_humidity}
+                                salinity={this.state.soil_salinity}
+                                nutriments={this.state.soil_nutriments}
+                                texture={this.state.soil_texture}
+                            </PlantRadar>
+                            <PhBar>
+                                max={this.state.ph_max}
+                                min={this.state.ph_min}
+                            </PhBar>
                         </div>
                     </Col>
-                    <Col show={!showTrefleDown}>
-                        <button className='fav-button'>Favorite</button>
+                    <Col>
+                        <form>
+                            <button className='print-button' onclick="window.print()">Print</button>
+                            <button className='fav-button'>Favorite</button>
+                        </form> 
                         <div className='results-container-pic' overflow='auto'>
                             <h1><b>{this.state.common_name}</b></h1>
                             <h3><b>{this.state.scientific_name}</b></h3>
@@ -308,8 +334,8 @@ class Result extends React.Component{
                             <p><b>Ligneous type</b> {this.state.ligneous_type}</p>
                             <p><b>Growth form</b> {this.state.growth_form}</p>
                             <p><b>Growth rate</b> {this.state.growth_rate}</p>
-                            <p><b>Average height</b> {this.state.ave_height} cm</p>
-                            <p><b>Maximum height</b> {this.state.max_height} cm</p>
+                            <p><b>Average height (cm)</b> {this.state.ave_height}</p>
+                            <p><b>Maximum height (cm)</b> {this.state.max_height}</p>
                             <p><b>Nitrogen fixation</b> {this.state.nitrogen}</p>
                             <p><b>Toxicity</b> {this.state.toxicity}</p>
                             <br />
@@ -320,11 +346,10 @@ class Result extends React.Component{
                             <p><b>Plant grows during</b> {this.state.growth_months}</p>
                             <p><b>Sowing</b> {this.state.sowing}</p>
                             <p><b>Days to harvest</b> {this.state.days_to_harvest}</p>
-                            <p><b>Row spacing</b> {this.state.row_spacing} cm</p>
-                            <p><b>Spread</b> {this.state.spread} cm</p>
-                            <p><b>pH range</b> {this.state.ph_min} to {this.state.ph_max}</p>
-                            <p><b>Precipitation needed</b> {this.state.min_precip} mm to {this.state.max_precip} mm</p>
-                            <p><b>Minimum root depth</b> {this.state.min_root_depth} cm</p>
+                            <p><b>Row spacing (cm)</b> {this.state.row_spacing}</p>
+                            <p><b>Spread (cm)</b> {this.state.spread}</p>
+                            <p><b>Precipitation needed (mm)</b> {this.state.min_precip} to {this.state.max_precip}</p>
+                            <p><b>Minimum root depth (cm)</b> {this.state.min_root_depth}</p>
                             <p><b>Temperature range (degrees Fahrenheight)</b> {this.state.min_temp_f} to {this.state.max_temp_f}</p>
                             <br />
                                 

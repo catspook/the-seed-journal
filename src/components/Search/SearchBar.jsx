@@ -14,16 +14,17 @@ class SearchBar extends React.Component {
         //Find matching regex to input value every time it is updated
         //Change slice to change the max number of matches to show
        const value = e
+       let fixed_value = value.replace(/[^'`\-A-Za-z\s]/gi, '')
        let suggestions = [];
-       if(value.length > 0){
-           let first = value.charAt(0)
+       if(fixed_value.length > 0){
+           let first = fixed_value.charAt(0)
            if (first in this.props.plantList) {
                let plantArray = this.props.plantList[first];
-               const regex = new RegExp(`${value}`, 'i')
+               const regex = new RegExp(`${fixed_value}`, 'i')
                suggestions = plantArray.filter(v => regex.test(v))
            }
        }
-       this.setState(() => ({suggestions, text: value}))
+       this.setState(() => ({suggestions, text: fixed_value}))
     }
 
     selectSuggestion(value) {
