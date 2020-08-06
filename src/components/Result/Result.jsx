@@ -78,6 +78,7 @@ class Result extends React.Component{
             forms: "none listed",
             subvarieties: "none listed",
             trefleDown: false,
+            load: false,
         }
     }
 
@@ -249,7 +250,8 @@ class Result extends React.Component{
                 hybrids: hybridsList,
                 forms: formsList,
                 subvarieties: subvarietiesList,
-                trefleDown: false
+                trefleDown: false,
+                load: false,
             }))
         }
         else {
@@ -266,6 +268,7 @@ class Result extends React.Component{
 
         this.setState(() => ({
             slug: ((window.location.href).split("/"))[4],
+            load: true,
         }))
     }
 
@@ -274,7 +277,6 @@ class Result extends React.Component{
         const toggleShowTrefleDown = () => this.setState(() => ({
             trefleDown: false
         }));
-
         return (
             <Container>
                 <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
@@ -290,17 +292,17 @@ class Result extends React.Component{
                     <Col>
                         <div className='image-holder' height='500px'>
                             <img src={this.state.image_url} height='100%' width='100%' alt={this.state.common_name}></img>
-                            <PlantRadar>
+                            <PlantRadar
                                 light={this.state.light}
                                 humidity={this.state.atmospheric_humidity}
                                 salinity={this.state.soil_salinity}
                                 nutriments={this.state.soil_nutriments}
                                 texture={this.state.soil_texture}
-                            </PlantRadar>
-                            <PhBar>
+                            />
+                            <PhBar
                                 max={this.state.ph_max}
                                 min={this.state.ph_min}
-                            </PhBar>
+                            />
                         </div>
                     </Col>
                     <Col>
@@ -376,7 +378,7 @@ class Result extends React.Component{
 
     render(){
         return(
-            this.renderResults()
+            this.state.load && this.renderResults()
         )
     }
 }

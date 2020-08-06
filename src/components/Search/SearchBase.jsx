@@ -24,23 +24,59 @@ class SearchBase extends React.Component{
             currentResults: [],
             reversed: false,
             trefleDown: false,
-            plantResult: ""
+            plantResult: "",
+            option: "lower",
         }
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateFilterConditions = this.updateFilterConditions.bind(this)
+        this.handleOrderOption = this.handleOrderOption.bind(this)
+    }
+
+    handleOrderOption(event){
+        const id = event.target.id
+        this.setState(() => ({
+            option: id,
+        }))
     }
 
     updateFilterConditions(obj){
         this.setState(() => ({
             filter: obj
         }))
-        console.log(this.state.filter)
+    }
+
+    addFilterToURL(value){
+        const filter_obj = this.state.filter
+        let filter_str = ''
+        let key = Object.keys(filter_obj)[0]
+        let url = "https://trefle.io/api/v1/species/search?token=" 
+            + process.env.REACT_APP_TREFLE_API_TOKEN
+        if(!value){
+            url = "https://trefle.io/api/v1/species?token=" 
+                + process.env.REACT_APP_TREFLE_API_TOKEN
+        }
+
+        if(this.state.filter[key]) {
+            if(this.state.option === "lower"){
+                filter_str = filter_str.concat(`&${filter_obj[key]
+                    .type}[${key}]=,${filter_obj[key].values}`)
+            } 
+            else {
+                filter_str = filter_str.concat(`&${filter_obj[key]
+                    .type}[${key}]=${filter_obj[key].values}`)
+            }
+
+            url = url.concat(filter_str)
+        }
+        if(value)
+            url = url.concat(`&q=${value}`)
+
+        return url
     }
 
     async makeApiCall(url) {
-
         let response = await fetch(url);
         let jsonState = {
             currentPage: "",
@@ -104,8 +140,7 @@ class SearchBase extends React.Component{
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        let url = "https://trefle.io/api/v1/species/search?token=" 
-            + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
+        let url = this.addFilterToURL(value)
         let jsonState = await this.makeApiCall(url)
 
         this.setState(() => ({
@@ -129,9 +164,11 @@ class SearchBase extends React.Component{
         return (
             <Container>
                 <Row>
-                    <Col xs={2}>
-                        <SearchFilter 
+                    <Col>
+                        <SearchFilter calssName="filter"
                             updateFilterConditions={this.updateFilterConditions}
+                            handleOrder={this.handleOrderOption}
+                            option={this.state.option}
                             filter={this.state.filter}
                         />
                     </Col>
