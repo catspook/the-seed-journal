@@ -14,7 +14,7 @@ class SearchBar extends React.Component {
         //Find matchin regex to input value every time it is updated
         //Change slice to change the max number of matches to show
        const value = e.target.value 
-       let fixed_value = value.replace(/[^'`A-Za-z\s]/gi, '')
+       let fixed_value = value.replace(/[^'`\-A-Za-z\s]/gi, '')
        let suggestions = [];
        if(fixed_value.length > 0){
            let first = fixed_value.charAt(0)
