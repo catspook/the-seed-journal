@@ -49,8 +49,13 @@ class SearchBar extends React.Component {
         return(
             <div style={listStyle}>
                 <ul className='suggestions'>
-                    {suggestions.map((item) => 
-                        <li onClick={() => this.selectSuggestion(item)}>{item}</li>)}
+                    {
+                        suggestions.map((item, index) => 
+                        <li 
+                            onClick={() => this.selectSuggestion(item)}
+                            key={index}
+                        >{item}</li>)
+                    }
                 </ul>
             </div>
         )

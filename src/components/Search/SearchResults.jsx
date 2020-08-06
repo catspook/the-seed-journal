@@ -5,7 +5,7 @@ class ResultList extends React.Component {
     createItem(name, index) {
         let url = "http://localhost:3000/plant/" + (this.props.slugs)[index]
         return (
-            <a href={url} target="_blank" rel="noopener noreferrer">
+            <a key={index} href={url} target="_blank" rel="noopener noreferrer">
                 <li className='results' key={index}>{ name }</li>
             </a>
         )
