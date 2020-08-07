@@ -1,0 +1,325 @@
+{
+    "data": {
+        "id": 530621,
+        "common_name": "Striated daphne",
+        "slug": "daphne-striata",
+        "scientific_name": "Daphne striata",
+        "main_species_id": 1136965,
+        "image_url": "https://bs.floristic.org/image/o/286c3f6f21e5acfb4d4313b0a8482adb8def365e",
+        "year": 1811,
+        "bibliography": "Archiv der Gewachskunde 1:120, t. 133.  1812",
+        "author": "Tratt.",
+        "family_common_name": null,
+        "genus_id": 2312,
+        "observations": "Alps",
+        "vegetable": false,
+        "links": {
+            "self": "/api/v1/plants/daphne-striata",
+            "species": "/api/v1/plants/daphne-striata/species",
+            "genus": "/api/v1/genus/daphne"
+        },
+        "main_species": {
+            "id": 1136965,
+            "common_name": "Striated daphne",
+            "slug": "daphne-striata",
+            "scientific_name": "Daphne striata",
+            "year": 1811,
+            "bibliography": "Archiv der Gewachskunde 1:120, t. 133.  1812",
+            "author": "Tratt.",
+            "status": "accepted",
+            "rank": "species",
+            "family_common_name": null,
+            "genus_id": 2312,
+            "observations": "Alps",
+            "image_url": "https://bs.floristic.org/image/o/286c3f6f21e5acfb4d4313b0a8482adb8def365e",
+            "genus": "Daphne",
+            "family": "Thymelaeaceae",
+            "duration": null,
+            "images": {
+                "flower": [
+                    {
+                        "id": 3285293,
+                        "image_url": "https://bs.floristic.org/image/o/02ddad9baf6af888657903f310bab5a9a935a8e0",
+                        "copyright": "Taken Jul 28, 2014 by Tela Botanica − Louise Boulangeat (cc-by-sa)"
+                    },
+                    {
+                        "id": 3285292,
+                        "image_url": "https://bs.floristic.org/image/o/240cfc841363caad735de6dc7600fcba8b59d412",
+                        "copyright": "Taken May 30, 2020 by Adamo Davide (cc-by-sa)"
+                    },
+                    {
+                        "id": 3285291,
+                        "image_url": "https://bs.floristic.org/image/o/97cb7e2650dfa9383163f317117f24b2c7a6acad",
+                        "copyright": "Taken Jan 21, 2020 by marlies schneider (cc-by-sa)"
+                    },
+                    {
+                        "id": 3285290,
+                        "image_url": "https://bs.floristic.org/image/o/ae43a4c7fa1ffca7c2659d369624cdf72ab9592c",
+                        "copyright": "Taken Jun 9, 2019 by Frederic Baltzinger (cc-by-sa)"
+                    },
+                    {
+                        "id": 3285289,
+                        "image_url": "https://bs.floristic.org/image/o/82e58965bc97d6e70d8de47e1a4d67f6f0c505cf",
+                        "copyright": "Taken Mar 26, 2020 by Guillaume Labeyrie (cc-by-sa)"
+                    }
+                ],
+                "leaf": [
+                    {
+                        "id": 3285296,
+                        "image_url": "https://bs.floristic.org/image/o/00195a97021bdf608b590020f75d29f2934b26da",
+                        "copyright": "Taken Aug 10, 2015 by Tela Botanica − Yoan MARTIN (cc-by-sa)"
+                    },
+                    {
+                        "id": 3285295,
+                        "image_url": "https://bs.floristic.org/image/o/95a871a09d1b0bca45441fd397be882bd35ae192",
+                        "copyright": "Taken Aug 10, 2015 by Tela Botanica − Yoan MARTIN (cc-by-sa)"
+                    },
+                    {
+                        "id": 3285294,
+                        "image_url": "https://bs.floristic.org/image/o/39336fed3f8adb6c9dcc0d459e9629dfdad7e2e1",
+                        "copyright": "Taken Jul 2, 2019 by Franco Colnago (cc-by-sa)"
+                    }
+                ],
+                "habit": [
+                    {
+                        "id": 3285297,
+                        "image_url": "https://bs.floristic.org/image/o/286c3f6f21e5acfb4d4313b0a8482adb8def365e",
+                        "copyright": "Taken Jul 28, 2014 by Tela Botanica − Louise Boulangeat (cc-by-sa)"
+                    }
+                ],
+                "fruit": [],
+                "bark": [],
+                "other": []
+            },
+            "common_names": {
+                "swe": [
+                    "strimtibast"
+                ],
+                "deu": [
+                    "steinröschen",
+                    "gestreifter seidelbast"
+                ],
+                "sv": [
+                    "Strimtibast"
+                ],
+                "sl": [
+                    "Progasti volčin"
+                ],
+                "sk": [
+                    "Lykovec pruhovaný"
+                ],
+                "pl": [
+                    "Wawrzynek kreskowany"
+                ],
+                "it": [
+                    "Dafne rosea"
+                ],
+                "de": [
+                    "Gestreifter Seidelbast",
+                    "Steinröschen"
+                ],
+                "fr": [
+                    "Camélée striée",
+                    "Daphné strié",
+                    "Daphne strie"
+                ],
+                "nl": [
+                    "Gestreept Peperboompje"
+                ],
+                "cs": [
+                    "Lýkovec žíhaný"
+                ],
+                "ar": [
+                    "دفنة مخططة"
+                ],
+                "en": [
+                    "Striped Daphne",
+                    "Striated mezereon",
+                    "Striated daphne"
+                ]
+            },
+            "distribution": {},
+            "flower": {
+                "color": [
+                    "purple"
+                ],
+                "conspicuous": null
+            },
+            "foliage": {
+                "texture": null,
+                "color": null,
+                "leaf_retention": null
+            },
+            "fruit_or_seed": {
+                "conspicuous": null,
+                "color": null,
+                "shape": null,
+                "seed_persistence": null
+            },
+            "specifications": {
+                "ligneous_type": "subshrub",
+                "growth_form": null,
+                "growth_habit": "Subshrub",
+                "growth_rate": null,
+                "average_height": {
+                    "cm": 33
+                },
+                "maximum_height": {
+                    "cm": 40
+                },
+                "nitrogen_fixation": null,
+                "shape_and_orientation": null,
+                "toxicity": null
+            },
+            "growth": {
+                "description": null,
+                "sowing": null,
+                "days_to_harvest": null,
+                "row_spacing": {
+                    "cm": null
+                },
+                "spread": {
+                    "cm": null
+                },
+                "ph_maximum": 7.5,
+                "ph_minimum": 7.0,
+                "light": 7,
+                "atmospheric_humidity": 5,
+                "growth_months": null,
+                "bloom_months": [
+                    "jun",
+                    "jul",
+                    "aug"
+                ],
+                "fruit_months": null,
+                "minimum_precipitation": {
+                    "mm": null
+                },
+                "maximum_precipitation": {
+                    "mm": null
+                },
+                "minimum_root_depth": {
+                    "cm": null
+                },
+                "minimum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "maximum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "soil_nutriments": 2,
+                "soil_salinity": 0,
+                "soil_texture": 3,
+                "soil_humidity": null
+            },
+            "links": {
+                "self": "/api/v1/species/daphne-striata",
+                "plant": "/api/v1/plants/daphne-striata",
+                "genus": "/api/v1/genus/daphne"
+            },
+            "synonyms": [],
+            "sources": [
+                {
+                    "last_update": "2020-07-04T19:10:32.477Z",
+                    "id": "14/4.0.2.0.1",
+                    "name": "CATMINAT",
+                    "url": null,
+                    "citation": null
+                },
+                {
+                    "last_update": "2020-06-16T22:02:04.982Z",
+                    "id": "5523875",
+                    "name": "GBIF",
+                    "url": "https://www.gbif.org/species/5523875",
+                    "citation": null
+                },
+                {
+                    "last_update": "2020-06-16T22:02:04.967Z",
+                    "id": "Daphne striata Tratt.",
+                    "name": "PlantNet",
+                    "url": "https://identify.plantnet.org/species/the-plant-list/Daphne striata Tratt.",
+                    "citation": null
+                }
+            ]
+        },
+        "genus": {
+            "id": 2312,
+            "name": "Daphne",
+            "slug": "daphne",
+            "links": {
+                "self": "/api/v1/genus/daphne",
+                "plants": "/api/v1/genus/daphne/plants",
+                "species": "/api/v1/genus/daphne/species",
+                "family": "/api/v1/families/thymelaeaceae"
+            }
+        },
+        "family": {
+            "id": 300,
+            "name": "Thymelaeaceae",
+            "common_name": "Mezereum family",
+            "slug": "thymelaeaceae",
+            "links": {
+                "self": "/api/v1/families/thymelaeaceae",
+                "division_order": "/api/v1/division_orders/myrtales",
+                "genus": "/api/v1/families/thymelaeaceae/genus"
+            }
+        },
+        "species": [
+            {
+                "id": 1136965,
+                "common_name": "Striated daphne",
+                "slug": "daphne-striata",
+                "scientific_name": "Daphne striata",
+                "year": 1811,
+                "bibliography": "Archiv der Gewachskunde 1:120, t. 133.  1812",
+                "author": "Tratt.",
+                "status": "accepted",
+                "rank": "species",
+                "family_common_name": null,
+                "genus_id": 2312,
+                "image_url": "https://bs.floristic.org/image/o/286c3f6f21e5acfb4d4313b0a8482adb8def365e",
+                "synonyms": [],
+                "genus": "Daphne",
+                "family": "Thymelaeaceae",
+                "links": {
+                    "self": "/api/v1/species/daphne-striata",
+                    "plant": "/api/v1/plants/daphne-striata",
+                    "genus": "/api/v1/genus/daphne"
+                }
+            }
+        ],
+        "subspecies": [],
+        "varieties": [],
+        "hybrids": [],
+        "forms": [],
+        "subvarieties": [],
+        "sources": [
+            {
+                "last_update": "2020-07-04T19:10:32.477Z",
+                "id": "14/4.0.2.0.1",
+                "name": "CATMINAT",
+                "url": null,
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-16T22:02:04.982Z",
+                "id": "5523875",
+                "name": "GBIF",
+                "url": "https://www.gbif.org/species/5523875",
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-16T22:02:04.967Z",
+                "id": "Daphne striata Tratt.",
+                "name": "PlantNet",
+                "url": "https://identify.plantnet.org/species/the-plant-list/Daphne striata Tratt.",
+                "citation": null
+            }
+        ]
+    },
+    "meta": {
+        "last_modified": "2020-07-04T19:10:32.533Z"
+    }
+}

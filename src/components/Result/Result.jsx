@@ -6,6 +6,11 @@ import Toast from 'react-bootstrap/Toast'
 import PhBar from '../Chart/pHBar'
 import PlantRadar from '../Chart/RadarChart'
 import ClickToShow from './ClickToShow'
+import '../../styles/scss/Result.scss'
+
+const canina = require('./trefle-rosa-canina.json')
+const daphne = require('./trefle-daphne-striata.json')
+const hypericum = require('./trefle-hypericum-mutilum.json')
 
 class Result extends React.Component{
     constructor(props) {
@@ -88,12 +93,32 @@ class Result extends React.Component{
         this.afterPageLoads()
     }
 
-    async makeApiCall(url) {
-        let response = await fetch(url);
+    async makeApiCall(url, plantName) {
+        let okayToSet = false
+        let json = {}
+        let response = {}
 
-        if (response.status === 200) {
-            let json = await response.json();
+        if (plantName === 'rosa-canina') {
+            okayToSet = true
+            json = canina
+        }
+        else if (plantName === 'daphne-striata') {
+            okayToSet = true
+            json = daphne
+        }
+        else if (plantName === 'hypericum-mutilum') {
+            okayToSet = true
+            json = hypericum
+        }
+        else {
+            response = await fetch(url);
+            if (response.status === 200) {
+                okayToSet = true
+                json = await response.json()
+            }
+        }
 
+        if (okayToSet) {
             let eng_common_names = "not listed"
             if (json.data.main_species.common_names.eng !== undefined) {
                 eng_common_names = (json.data.main_species.common_names.eng).join(", ")
@@ -267,8 +292,9 @@ class Result extends React.Component{
 
     async afterPageLoads() {
         let cors_url = "https://cors-anywhere.herokuapp.com/"
-        let url = cors_url + "https://trefle.io/api/v1/plants/" + ((window.location.href).split("/"))[4] + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
-        await this.makeApiCall(url)
+        let plantName = ((window.location.href).split("/"))[4]
+        let url = cors_url + "https://trefle.io/api/v1/plants/" + plantName + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+        await this.makeApiCall(url, plantName)
 
         this.setState(() => ({
             slug: ((window.location.href).split("/"))[4],

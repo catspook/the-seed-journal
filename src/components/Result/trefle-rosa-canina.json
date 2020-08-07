@@ -1,0 +1,1719 @@
+{
+    "data": {
+        "id": 170091,
+        "common_name": "dog rose",
+        "slug": "rosa-canina",
+        "scientific_name": "Rosa canina",
+        "main_species_id": 175724,
+        "image_url": "https://bs.floristic.org/image/o/658bff43fbf3b22296b0206094ab2d01852c41e5",
+        "year": 1753,
+        "bibliography": "Sp. Pl.: 491 (1753)",
+        "author": "L.",
+        "family_common_name": "Rose family",
+        "genus_id": 5912,
+        "observations": "Macaronesia, NW. Africa, Europe to C. Asia and Pakistan",
+        "vegetable": false,
+        "links": {
+            "self": "/api/v1/plants/rosa-canina",
+            "species": "/api/v1/plants/rosa-canina/species",
+            "genus": "/api/v1/genus/rosa"
+        },
+        "main_species": {
+            "id": 175724,
+            "common_name": "dog rose",
+            "slug": "rosa-canina",
+            "scientific_name": "Rosa canina",
+            "year": 1753,
+            "bibliography": "Sp. Pl.: 491 (1753)",
+            "author": "L.",
+            "status": "accepted",
+            "rank": "species",
+            "family_common_name": "Rose family",
+            "genus_id": 5912,
+            "observations": "Macaronesia, NW. Africa, Europe to C. Asia and Pakistan",
+            "image_url": "https://bs.floristic.org/image/o/658bff43fbf3b22296b0206094ab2d01852c41e5",
+            "genus": "Rosa",
+            "family": "Rosaceae",
+            "duration": null,
+            "images": {
+                "flower": [
+                    {
+                        "id": 3374146,
+                        "image_url": "https://bs.floristic.org/image/o/0f1a6bc8171177443af628d37a901c2a11abc07d",
+                        "copyright": "Taken May 10, 2017 by Pep Sole (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374145,
+                        "image_url": "https://bs.floristic.org/image/o/9e51747aa86ff146c7bda094023f6c77c11e7b5e",
+                        "copyright": "Taken May 13, 2017 by Marco Monari (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374144,
+                        "image_url": "https://bs.floristic.org/image/o/559f20a0bd2fa5205061960d5641405526e2db04",
+                        "copyright": "Taken May 4, 2017 by Susana López (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374143,
+                        "image_url": "https://bs.floristic.org/image/o/e6d5e8de9ce66d268b8369d3bc7c352aabf79eb0",
+                        "copyright": "Taken May 10, 2017 by Pep Sole (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374142,
+                        "image_url": "https://bs.floristic.org/image/o/426a86bd477783e8a3b854c3948233f5c94c9920",
+                        "copyright": "Taken May 27, 2017 by Kilien de Chateauvieux (cc-by-sa)"
+                    }
+                ],
+                "leaf": [
+                    {
+                        "id": 3558311,
+                        "image_url": "https://bs.floristic.org/image/o/90904c918acc894e36b5e66f8be69acde3938e22",
+                        "copyright": "Taken Sep 14, 2017 by Fejul Xeto (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374161,
+                        "image_url": "https://bs.floristic.org/image/o/606014ef0e5b7a366e7ac413a3cf5eee193d7ab7",
+                        "copyright": "Taken May 13, 2017 by Marco Monari (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374160,
+                        "image_url": "https://bs.floristic.org/image/o/dc95b02745aaa769ead4c7633cfe63bcfd9a19b0",
+                        "copyright": "Taken Aug 7, 2018 by Marcos Rivas Campoamor (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374159,
+                        "image_url": "https://bs.floristic.org/image/o/2b6d3739ce0a5eba9367b150c5303d376e59dbab",
+                        "copyright": "Taken Oct 9, 2019 by Dieter Wagner (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374158,
+                        "image_url": "https://bs.floristic.org/image/o/5a13ff816dfc935044afa9ed56389a5500ac9536",
+                        "copyright": "Taken Sep 28, 2019 by elena (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374157,
+                        "image_url": "https://bs.floristic.org/image/o/7610375a06f09564daab8f8e03e838288f81c4de",
+                        "copyright": "Taken Sep 16, 2019 by Pietro Brignoli (cc-by-sa)"
+                    }
+                ],
+                "habit": [
+                    {
+                        "id": 3374141,
+                        "image_url": "https://bs.floristic.org/image/o/658bff43fbf3b22296b0206094ab2d01852c41e5",
+                        "copyright": "Taken Feb 5, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374140,
+                        "image_url": "https://bs.floristic.org/image/o/add567ee066f641076e4e8106ba5dda884625503",
+                        "copyright": "Taken Dec 10, 2019 by Dieter Wagner (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374139,
+                        "image_url": "https://bs.floristic.org/image/o/dc91105d5b9f9ecb40939adb5c2b2bc3198530f4",
+                        "copyright": "Taken Dec 10, 2019 by Dieter Wagner (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374138,
+                        "image_url": "https://bs.floristic.org/image/o/d1d334f1d5e600d3e779e84a5343ed455f11caec",
+                        "copyright": "Taken Jul 2, 2018 by Noël Ducrot (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374137,
+                        "image_url": "https://bs.floristic.org/image/o/64547b5b77f4abac9512637e42c6141ef4e590bb",
+                        "copyright": "Taken Oct 9, 2019 by Dieter Wagner (cc-by-sa)"
+                    }
+                ],
+                "fruit": [
+                    {
+                        "id": 3558310,
+                        "image_url": "https://bs.floristic.org/image/o/5f975278a1ec3afd93c7b6ff5e28f3ec9926af7f",
+                        "copyright": "Taken Dec 16, 2017 by Dieter Wagner (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374151,
+                        "image_url": "https://bs.floristic.org/image/o/f64249923230fa991e583fc8f589772f689a1075",
+                        "copyright": "Taken Feb 6, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374150,
+                        "image_url": "https://bs.floristic.org/image/o/5169bdf590cc808ad03b52ef97608357491c36b7",
+                        "copyright": "Taken Feb 5, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374149,
+                        "image_url": "https://bs.floristic.org/image/o/88954fd1e8a6aa6b632b8387351ddc023a445a16",
+                        "copyright": "Taken Feb 5, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374148,
+                        "image_url": "https://bs.floristic.org/image/o/9811e2d171a3ce54ef6af9870febcbfc94a23644",
+                        "copyright": "Taken Feb 5, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374147,
+                        "image_url": "https://bs.floristic.org/image/o/dbe774956851598753dae74a51ddf8b68bff9aea",
+                        "copyright": "Taken Sep 17, 2019 by Angelika Reisinger-Remmers (cc-by-sa)"
+                    }
+                ],
+                "bark": [
+                    {
+                        "id": 3374156,
+                        "image_url": "https://bs.floristic.org/image/o/efc59fbbab614e73d65d271f177d3ffa6605dbe2",
+                        "copyright": "Taken Feb 6, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374155,
+                        "image_url": "https://bs.floristic.org/image/o/58c32b4dc1c8f474cd0bf616f6d647df65d1b449",
+                        "copyright": "Taken Feb 5, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374154,
+                        "image_url": "https://bs.floristic.org/image/o/d1f1cccb96ce29873339d44dde9231ebee2b092a",
+                        "copyright": "Taken Feb 5, 2019 by Manu Pacha (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374153,
+                        "image_url": "https://bs.floristic.org/image/o/5c208b83b0e26532a150ded4a6726daf212ab990",
+                        "copyright": "Taken Dec 3, 2019 by parramon marta (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374152,
+                        "image_url": "https://bs.floristic.org/image/o/ff433c26e3e728cfc1e179b6558b58fe5aa073c9",
+                        "copyright": "Taken Dec 1, 2019 by tassinari matteo (cc-by-sa)"
+                    }
+                ],
+                "other": [
+                    {
+                        "id": 3558314,
+                        "image_url": "https://bs.floristic.org/image/o/cbfba7fc28d13bf623bcc28ed0cafb8be8d19d3e",
+                        "copyright": "Taken May 6, 2019 by Renaud Brochiero (cc-by-sa)"
+                    },
+                    {
+                        "id": 3558313,
+                        "image_url": "https://bs.floristic.org/image/o/48f3781e7f15760f0145effaa2b8b094d43c942e",
+                        "copyright": "Taken Aug 30, 2019 by Waldemar Zeja (cc-by-sa)"
+                    },
+                    {
+                        "id": 3558312,
+                        "image_url": "https://bs.floristic.org/image/o/ae4720fbc0c974f7894aaf4b3907feca9aa3b9e8",
+                        "copyright": "Taken Jun 20, 2020 by Giode Tonpino (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374166,
+                        "image_url": "https://bs.floristic.org/image/o/79086891aa6ce8fd74ae83aab9339f30bf424990",
+                        "copyright": "Taken Nov 14, 2013 by Tela Botanica − Gisèle ARLIGUIE (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374165,
+                        "image_url": "https://bs.floristic.org/image/o/ab8c04ce5cdf936de282d1676efe9f77c5fef95a",
+                        "copyright": "Taken Oct 5, 2019 by perez garcia volc (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374164,
+                        "image_url": "https://bs.floristic.org/image/o/a9dba76aad2f1a5c169a21400656f60f9c6279d3",
+                        "copyright": "Taken Jun 8, 2020 by Werner Rom (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374163,
+                        "image_url": "https://bs.floristic.org/image/o/a5a41aeaa730bb12eb1200e8578d177fd25ad9bc",
+                        "copyright": "Taken Apr 20, 2013 by Tela Botanica − mireille LAFOSSE (cc-by-sa)"
+                    },
+                    {
+                        "id": 3374162,
+                        "image_url": "https://bs.floristic.org/image/o/2f795aacfb25499724f9507f7b3377e58b0f35d7",
+                        "copyright": "Taken Jun 3, 2015 by Tela Botanica − Yoan MARTIN (cc-by-sa)"
+                    }
+                ]
+            },
+            "common_names": {
+                "ka": [
+                    "Ასკილი",
+                    "ასკილი"
+                ],
+                "swe": [
+                    "kal stenros",
+                    "stenros"
+                ],
+                "por": [
+                    "rosa-mosqueta",
+                    "rosa-canina"
+                ],
+                "fin": [
+                    "koiranruusut"
+                ],
+                "nld": [
+                    "schijnhondsroos",
+                    "schijnheggenroos",
+                    "kale struweelroos",
+                    "hondsroos + rosa dumalis",
+                    "heggenroos",
+                    "beklierde heggenroos",
+                    "behaarde struweelroos",
+                    "hondsroos"
+                ],
+                "afr": [
+                    "hondsroos"
+                ],
+                "fra": [
+                    "églantier commun",
+                    "rosier des chiens",
+                    "eglantier commun"
+                ],
+                "deu": [
+                    "hundsrose",
+                    "hunds-rose"
+                ],
+                "dan": [
+                    "hunde-rose"
+                ],
+                "eng": [
+                    "dog briar",
+                    "common briar",
+                    "canker rose",
+                    "dogbrier",
+                    "dog-rose",
+                    "common-briar",
+                    "dog rose"
+                ],
+                "fy": [
+                    "Kantroas"
+                ],
+                "cy": [
+                    "Rhosyn Gwyllt"
+                ],
+                "wa": [
+                    "Såvaedje rôzî"
+                ],
+                "vi": [
+                    "Tầm xuân"
+                ],
+                "uz": [
+                    "Itburun"
+                ],
+                "uk": [
+                    "Шипшина собача"
+                ],
+                "tr": [
+                    "Kuşburnu"
+                ],
+                "tt": [
+                    "Эт борыны"
+                ],
+                "sv": [
+                    "Kal stenros",
+                    "Nyponros",
+                    "Stenros"
+                ],
+                "es": [
+                    "Escaramujo",
+                    "Rosal silvestre"
+                ],
+                "sl": [
+                    "Navadni šipek"
+                ],
+                "sk": [
+                    "Ruža šípová"
+                ],
+                "sr": [
+                    "Шипак"
+                ],
+                "ru": [
+                    "Шиповник собачий"
+                ],
+                "ro": [
+                    "Măceș"
+                ],
+                "pt": [
+                    "Rosa-mosqueta",
+                    "Rosa-canina"
+                ],
+                "pl": [
+                    "Róża dzika"
+                ],
+                "fa": [
+                    "نسترن"
+                ],
+                "nn": [
+                    "Steinnype"
+                ],
+                "nb": [
+                    "Steinnype"
+                ],
+                "no": [
+                    "Steinnype"
+                ],
+                "ml": [
+                    "റോസ കാനിന"
+                ],
+                "mk": [
+                    "Шипка"
+                ],
+                "lt": [
+                    "Paprastasis erškėtis"
+                ],
+                "lv": [
+                    "Suņu roze"
+                ],
+                "ku": [
+                    "Şîlan"
+                ],
+                "ja": [
+                    "イヌバラ"
+                ],
+                "it": [
+                    "Rosa di macchia",
+                    "Rosa canina",
+                    "Rosa selvatica comune"
+                ],
+                "ga": [
+                    "Feirdhris"
+                ],
+                "is": [
+                    "Hundarós"
+                ],
+                "hu": [
+                    "Vadrózsa"
+                ],
+                "he": [
+                    "ורד הכלב"
+                ],
+                "el": [
+                    "Αγριοτριανταφυλλιά"
+                ],
+                "de": [
+                    "Hundrose",
+                    "Heckenrose",
+                    "Echte Hunds-Rose",
+                    "Dornrose",
+                    "Hundsrose",
+                    "Hecken-Rose",
+                    "Hunds-Rose"
+                ],
+                "gl": [
+                    "Roseira brava"
+                ],
+                "fr": [
+                    "Rosier des haies",
+                    "Églantier des chiens",
+                    "Églantier commun",
+                    "Rosier des chiens",
+                    "Eglantier commun"
+                ],
+                "fi": [
+                    "Koiranruusut",
+                    "Koiranruusu"
+                ],
+                "et": [
+                    "Koer-kibuvits"
+                ],
+                "eo": [
+                    "Hundorozo"
+                ],
+                "nl": [
+                    "Gewone Hondsroos",
+                    "Schijnhondsroos",
+                    "Schijnheggenroos",
+                    "Kale struweelroos",
+                    "Hondsroos + Rosa dumalis",
+                    "Heggenroos",
+                    "Beklierde heggenroos",
+                    "Behaarde struweelroos",
+                    "Hondsroos"
+                ],
+                "da": [
+                    "Glat hunde-rose",
+                    "Hunde-Rose"
+                ],
+                "cs": [
+                    "Růže šípková"
+                ],
+                "hr": [
+                    "Pasja ruža"
+                ],
+                "ca": [
+                    "Roser caní",
+                    "Roser silvestre"
+                ],
+                "bg": [
+                    "Обикновена шипка"
+                ],
+                "br": [
+                    "Roz-ki"
+                ],
+                "be": [
+                    "Ружа сабачая"
+                ],
+                "eu": [
+                    "Arkakarats"
+                ],
+                "az": [
+                    "Həmərsin"
+                ],
+                "hy": [
+                    "Մասրենի սովորական"
+                ],
+                "an": [
+                    "Garrabón"
+                ],
+                "ar": [
+                    "نسرين"
+                ],
+                "sq": [
+                    "Trëndafili i egër"
+                ],
+                "af": [
+                    "Hondsroos"
+                ],
+                "en": [
+                    "Dog briar",
+                    "Common briar",
+                    "Canker rose",
+                    "Dog-rose",
+                    "Wild rose",
+                    "Briar",
+                    "Dogbrier",
+                    "Dog rose",
+                    "Common-briar"
+                ]
+            },
+            "distribution": {
+                "introduced": [
+                    "Wisconsin",
+                    "West Virginia",
+                    "Washington",
+                    "Virginia",
+                    "Vermont",
+                    "Utah",
+                    "Tennessee",
+                    "South Australia",
+                    "Rhode I.",
+                    "Québec",
+                    "Queensland",
+                    "Pennsylvania",
+                    "Oregon",
+                    "Ontario",
+                    "Ohio",
+                    "Nova Scotia",
+                    "North Carolina",
+                    "New Zealand South",
+                    "New Zealand North",
+                    "New York",
+                    "New South Wales",
+                    "New Mexico",
+                    "New Brunswick",
+                    "Nebraska",
+                    "Missouri",
+                    "Minnesota",
+                    "Michigan",
+                    "Masachusettes",
+                    "Maryland",
+                    "Maine",
+                    "Kentucky",
+                    "Kansas",
+                    "Indiana",
+                    "Illinois",
+                    "Idaho",
+                    "Falkland Is.",
+                    "Connecticut",
+                    "Colorado",
+                    "Chile South",
+                    "Chile Central",
+                    "California",
+                    "British Columbia",
+                    "Arkansas",
+                    "Arizona",
+                    "Argentina South",
+                    "Alabama"
+                ],
+                "native": [
+                    "Yugoslavia",
+                    "Uzbekistan",
+                    "Ukraine",
+                    "Turkmenistan",
+                    "Turkey-in-Europe",
+                    "Turkey",
+                    "Tunisia",
+                    "Transcaucasus",
+                    "Tadzhikistan",
+                    "Switzerland",
+                    "Sweden",
+                    "Spain",
+                    "South European Russi",
+                    "Sicilia",
+                    "Sardegna",
+                    "Romania",
+                    "Portugal",
+                    "Poland",
+                    "Palestine",
+                    "Pakistan",
+                    "Norway",
+                    "North Caucasus",
+                    "Netherlands",
+                    "Morocco",
+                    "Madeira",
+                    "Lebanon-Syria",
+                    "Krym",
+                    "Kriti",
+                    "Kirgizstan",
+                    "Kazakhstan",
+                    "Italy",
+                    "Ireland",
+                    "Iraq",
+                    "Iran",
+                    "Hungary",
+                    "Greece",
+                    "Great Britain",
+                    "Germany",
+                    "France",
+                    "Finland",
+                    "East European Russia",
+                    "East Aegean Is.",
+                    "Denmark",
+                    "Czechoslovakia",
+                    "Cyprus",
+                    "Corse",
+                    "Central European Rus",
+                    "Canary Is.",
+                    "Bulgaria",
+                    "Belgium",
+                    "Belarus",
+                    "Baltic States",
+                    "Baleares",
+                    "Austria",
+                    "Algeria",
+                    "Albania",
+                    "Afghanistan"
+                ]
+            },
+            "flower": {
+                "color": [
+                    "white",
+                    "purple"
+                ],
+                "conspicuous": null
+            },
+            "foliage": {
+                "texture": null,
+                "color": null,
+                "leaf_retention": null
+            },
+            "fruit_or_seed": {
+                "conspicuous": null,
+                "color": null,
+                "shape": null,
+                "seed_persistence": null
+            },
+            "specifications": {
+                "ligneous_type": "shrub",
+                "growth_form": null,
+                "growth_habit": "Vine, Subshrub",
+                "growth_rate": null,
+                "average_height": {
+                    "cm": 416
+                },
+                "maximum_height": {
+                    "cm": 500
+                },
+                "nitrogen_fixation": null,
+                "shape_and_orientation": null,
+                "toxicity": null
+            },
+            "growth": {
+                "description": null,
+                "sowing": null,
+                "days_to_harvest": null,
+                "row_spacing": {
+                    "cm": null
+                },
+                "spread": {
+                    "cm": null
+                },
+                "ph_maximum": 6.5,
+                "ph_minimum": 5.5,
+                "light": 7,
+                "atmospheric_humidity": 5,
+                "growth_months": null,
+                "bloom_months": null,
+                "fruit_months": null,
+                "minimum_precipitation": {
+                    "mm": null
+                },
+                "maximum_precipitation": {
+                    "mm": null
+                },
+                "minimum_root_depth": {
+                    "cm": null
+                },
+                "minimum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "maximum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "soil_nutriments": 5,
+                "soil_salinity": 0,
+                "soil_texture": 2,
+                "soil_humidity": null
+            },
+            "links": {
+                "self": "/api/v1/species/rosa-canina",
+                "plant": "/api/v1/plants/rosa-canina",
+                "genus": "/api/v1/genus/rosa"
+            },
+            "synonyms": [
+                {
+                    "id": 561691,
+                    "name": "Rosa oreades",
+                    "author": "Cottet & Castella",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.102Z",
+                            "id": "urn:lsid:ipni.org:names:733560-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733560-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561684,
+                    "name": "Rosa kalmiussica",
+                    "author": "Chrshan. & Lasebna",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.847Z",
+                            "id": "urn:lsid:ipni.org:names:732984-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732984-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561674,
+                    "name": "Rosa rubescens",
+                    "author": "Ripart ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.952Z",
+                            "id": "urn:lsid:ipni.org:names:734064-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734064-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 25294,
+                    "name": "Rosa pratincola",
+                    "author": "Heinr.Braun",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.843Z",
+                            "id": "urn:lsid:ipni.org:names:733767-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733767-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        },
+                        {
+                            "last_update": "2020-07-18T07:12:13.836Z",
+                            "id": "urn:lsid:ipni.org:names:222412-2",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:222412-2",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561667,
+                    "name": "Rosa willibaldii",
+                    "author": "Chrshan.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.272Z",
+                            "id": "urn:lsid:ipni.org:names:734730-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734730-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561657,
+                    "name": "Rosa sphaeroidea",
+                    "author": "Ripart ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.509Z",
+                            "id": "urn:lsid:ipni.org:names:734307-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734307-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561650,
+                    "name": "Rosa macroacantha",
+                    "author": "Ripart ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.056Z",
+                            "id": "urn:lsid:ipni.org:names:733198-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733198-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561643,
+                    "name": "Rosa scabrata",
+                    "author": "Crép.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.813Z",
+                            "id": "urn:lsid:ipni.org:names:734146-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734146-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561641,
+                    "name": "Rosa flexuosa",
+                    "author": "Raf.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.714Z",
+                            "id": "urn:lsid:ipni.org:names:732488-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732488-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561640,
+                    "name": "Rosa lutetiana",
+                    "author": "Léman",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.662Z",
+                            "id": "urn:lsid:ipni.org:names:733184-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733184-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561696,
+                    "name": "Rosa senticosa",
+                    "author": "Ach.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.427Z",
+                            "id": "urn:lsid:ipni.org:names:734219-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734219-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561695,
+                    "name": "Rosa canina var. ramosissima",
+                    "author": "A.Rau",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.361Z",
+                            "id": "urn:lsid:ipni.org:names:60473658-2",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60473658-2",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561694,
+                    "name": "Rosa glaberrima",
+                    "author": "Dumort.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.208Z",
+                            "id": "urn:lsid:ipni.org:names:732608-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732608-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561693,
+                    "name": "Rosa litigiosa",
+                    "author": "Crép.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.273Z",
+                            "id": "urn:lsid:ipni.org:names:733142-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733142-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561692,
+                    "name": "Rosa heterostyla",
+                    "author": "Chrshan.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.160Z",
+                            "id": "urn:lsid:ipni.org:names:732782-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732782-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561690,
+                    "name": "Rosa stipularis",
+                    "author": "Mérat",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.061Z",
+                            "id": "urn:lsid:ipni.org:names:734342-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734342-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561689,
+                    "name": "Rosa rougeonensis",
+                    "author": "Ozanon",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:24.030Z",
+                            "id": "urn:lsid:ipni.org:names:734050-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734050-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561688,
+                    "name": "Rosa afzeliana",
+                    "author": "Fr.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.994Z",
+                            "id": "urn:lsid:ipni.org:names:60473768-2",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60473768-2",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561687,
+                    "name": "Rosa × trichoneura",
+                    "author": "Ripart ex Crép.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.965Z",
+                            "id": "urn:lsid:ipni.org:names:734552-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734552-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561686,
+                    "name": "Rosa × ancarensis",
+                    "author": "Pau & Merino",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.934Z",
+                            "id": "urn:lsid:ipni.org:names:731573-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731573-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561685,
+                    "name": "Rosa pubens",
+                    "author": "Déségl. & Ozanon",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.887Z",
+                            "id": "urn:lsid:ipni.org:names:733865-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733865-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561683,
+                    "name": "Rosa edita",
+                    "author": "Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.781Z",
+                            "id": "urn:lsid:ipni.org:names:732376-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732376-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561682,
+                    "name": "Rosa hirtella",
+                    "author": "Ripart ex Crép.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.703Z",
+                            "id": "urn:lsid:ipni.org:names:732794-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732794-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561681,
+                    "name": "Rosa belgradensis",
+                    "author": "Pancic",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.623Z",
+                            "id": "urn:lsid:ipni.org:names:731745-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731745-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561680,
+                    "name": "Rosa caucasica",
+                    "author": "Pall.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.534Z",
+                            "id": "urn:lsid:ipni.org:names:731998-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731998-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561679,
+                    "name": "Rosa montivaga",
+                    "author": "Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.454Z",
+                            "id": "urn:lsid:ipni.org:names:733385-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733385-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561678,
+                    "name": "Rosa amansii",
+                    "author": "Déségl. & Ripart",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.377Z",
+                            "id": "urn:lsid:ipni.org:names:731547-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731547-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561677,
+                    "name": "Rosa mediata",
+                    "author": "Dubovik",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.297Z",
+                            "id": "urn:lsid:ipni.org:names:733266-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733266-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561676,
+                    "name": "Rosa curticola",
+                    "author": "Puget ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.166Z",
+                            "id": "urn:lsid:ipni.org:names:732217-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732217-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561675,
+                    "name": "Rosa prutensis",
+                    "author": "Chrshan.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:23.063Z",
+                            "id": "urn:lsid:ipni.org:names:733806-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733806-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561673,
+                    "name": "Rosa marisensis",
+                    "author": "Simonk. & Heinr.Braun",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.658Z",
+                            "id": "urn:lsid:ipni.org:names:733241-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733241-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561672,
+                    "name": "Rosa dumosa",
+                    "author": "Salisb.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.599Z",
+                            "id": "urn:lsid:ipni.org:names:732363-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732363-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561671,
+                    "name": "Rosa adenocalyx",
+                    "author": "Gren.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.527Z",
+                            "id": "urn:lsid:ipni.org:names:731468-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731468-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561670,
+                    "name": "Rosa frondosa",
+                    "author": "Steven ex Spreng.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.484Z",
+                            "id": "urn:lsid:ipni.org:names:732552-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732552-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561669,
+                    "name": "Rosa nemophila",
+                    "author": "Déségl. & Ozanon",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.422Z",
+                            "id": "urn:lsid:ipni.org:names:733453-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733453-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561668,
+                    "name": "Rosa frivaldskyi",
+                    "author": "Heinr.Braun",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.340Z",
+                            "id": "urn:lsid:ipni.org:names:732550-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732550-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561666,
+                    "name": "Rosa swartziana",
+                    "author": "Fr.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.221Z",
+                            "id": "urn:lsid:ipni.org:names:734443-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734443-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561665,
+                    "name": "Rosa canina var. glandulosa",
+                    "author": "A.Rau",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.162Z",
+                            "id": "urn:lsid:ipni.org:names:60473657-2",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60473657-2",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561664,
+                    "name": "Rosa vinealis",
+                    "author": "Ripart ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.105Z",
+                            "id": "urn:lsid:ipni.org:names:734674-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734674-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561663,
+                    "name": "Rosa canina var. vulgaris",
+                    "author": "A.Rau",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:22.028Z",
+                            "id": "urn:lsid:ipni.org:names:60473659-2",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:60473659-2",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561662,
+                    "name": "Rosa cladoleia",
+                    "author": "Ripart ex Crép.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.980Z",
+                            "id": "urn:lsid:ipni.org:names:732081-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732081-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561661,
+                    "name": "Rosa sphaerica",
+                    "author": "Gren.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.896Z",
+                            "id": "urn:lsid:ipni.org:names:734309-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734309-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561660,
+                    "name": "Rosa fissispina",
+                    "author": "Wierzb. ex Heuff.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.804Z",
+                            "id": "urn:lsid:ipni.org:names:732477-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732477-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561659,
+                    "name": "Rosa sarmentacea",
+                    "author": "Woods",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.729Z",
+                            "id": "urn:lsid:ipni.org:names:734133-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734133-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561658,
+                    "name": "Rosa touranginiana",
+                    "author": "Déségl. & Ripart",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.631Z",
+                            "id": "urn:lsid:ipni.org:names:734536-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734536-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561656,
+                    "name": "Rosa burnatii",
+                    "author": "(Christ) Burnat & Gremli",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.397Z",
+                            "id": "urn:lsid:ipni.org:names:731904-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731904-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561655,
+                    "name": "Rosa inconspicua",
+                    "author": "Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.333Z",
+                            "id": "urn:lsid:ipni.org:names:732891-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732891-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561654,
+                    "name": "Rosa maialis",
+                    "author": "Desf.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.260Z",
+                            "id": "urn:lsid:ipni.org:names:733211-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733211-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561653,
+                    "name": "Rosa erythrantha",
+                    "author": "Boreau",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.205Z",
+                            "id": "urn:lsid:ipni.org:names:732414-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732414-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561652,
+                    "name": "Rosa acanthina",
+                    "author": "Déségl. & Ozanon",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.152Z",
+                            "id": "urn:lsid:ipni.org:names:731439-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731439-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561651,
+                    "name": "Rosa separabilis",
+                    "author": "Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.104Z",
+                            "id": "urn:lsid:ipni.org:names:734221-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734221-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561649,
+                    "name": "Rosa psilophylla",
+                    "author": "A.Rau",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:21.014Z",
+                            "id": "urn:lsid:ipni.org:names:733862-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733862-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561647,
+                    "name": "Rosa sylvularum",
+                    "author": "Ripart ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.900Z",
+                            "id": "urn:lsid:ipni.org:names:734453-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734453-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561646,
+                    "name": "Rosa polyodon",
+                    "author": "Gand.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.872Z",
+                            "id": "urn:lsid:ipni.org:names:998516-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:998516-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561645,
+                    "name": "Rosa cinerosa",
+                    "author": "Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.853Z",
+                            "id": "urn:lsid:ipni.org:names:732071-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732071-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561644,
+                    "name": "Rosa flexibilis",
+                    "author": "Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.833Z",
+                            "id": "urn:lsid:ipni.org:names:732486-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732486-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561642,
+                    "name": "Rosa dilucida",
+                    "author": "Déségl. & Ozanon",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.761Z",
+                            "id": "urn:lsid:ipni.org:names:732296-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732296-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561639,
+                    "name": "Rosa spuria",
+                    "author": "Puget ex Déségl.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.631Z",
+                            "id": "urn:lsid:ipni.org:names:734319-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:734319-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561638,
+                    "name": "Rosa flavidifolia",
+                    "author": "Vuk.",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.546Z",
+                            "id": "urn:lsid:ipni.org:names:732484-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:732484-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561637,
+                    "name": "Rosa oblongata",
+                    "author": "Opiz",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.501Z",
+                            "id": "urn:lsid:ipni.org:names:733497-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733497-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                },
+                {
+                    "id": 561636,
+                    "name": "Rosa mollardiana",
+                    "author": "Moutin",
+                    "sources": [
+                        {
+                            "last_update": "2020-07-18T07:12:20.468Z",
+                            "id": "urn:lsid:ipni.org:names:733221-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:733221-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                        }
+                    ]
+                }
+            ],
+            "sources": [
+                {
+                    "last_update": "2020-07-18T07:12:20.395Z",
+                    "id": "urn:lsid:ipni.org:names:731955-1",
+                    "name": "POWO",
+                    "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731955-1",
+                    "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+                },
+                {
+                    "last_update": "2020-07-04T19:18:58.168Z",
+                    "id": "15/1.",
+                    "name": "CATMINAT",
+                    "url": null,
+                    "citation": null
+                },
+                {
+                    "last_update": "2020-06-21T20:41:44.065Z",
+                    "id": "ROCA3",
+                    "name": "USDA",
+                    "url": "https://plants.usda.gov/core/profile?symbol=ROCA3",
+                    "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=ROCA3"
+                },
+                {
+                    "last_update": "2020-06-17T03:10:17.651Z",
+                    "id": "3002461",
+                    "name": "GBIF",
+                    "url": "https://www.gbif.org/species/3002461",
+                    "citation": null
+                },
+                {
+                    "last_update": "2020-06-17T03:10:17.641Z",
+                    "id": "Rosa canina L.",
+                    "name": "PlantNet",
+                    "url": "https://identify.plantnet.org/species/the-plant-list/Rosa canina L.",
+                    "citation": null
+                }
+            ]
+        },
+        "genus": {
+            "id": 5912,
+            "name": "Rosa",
+            "slug": "rosa",
+            "links": {
+                "self": "/api/v1/genus/rosa",
+                "plants": "/api/v1/genus/rosa/plants",
+                "species": "/api/v1/genus/rosa/species",
+                "family": "/api/v1/families/rosaceae"
+            }
+        },
+        "family": {
+            "id": 11,
+            "name": "Rosaceae",
+            "common_name": "Rose family",
+            "slug": "rosaceae",
+            "links": {
+                "self": "/api/v1/families/rosaceae",
+                "division_order": "/api/v1/division_orders/rosales",
+                "genus": "/api/v1/families/rosaceae/genus"
+            }
+        },
+        "species": [
+            {
+                "id": 175724,
+                "common_name": "dog rose",
+                "slug": "rosa-canina",
+                "scientific_name": "Rosa canina",
+                "year": 1753,
+                "bibliography": "Sp. Pl.: 491 (1753)",
+                "author": "L.",
+                "status": "accepted",
+                "rank": "species",
+                "family_common_name": "Rose family",
+                "genus_id": 5912,
+                "image_url": "https://bs.floristic.org/image/o/658bff43fbf3b22296b0206094ab2d01852c41e5",
+                "synonyms": [
+                    "Rosa oreades",
+                    "Rosa kalmiussica",
+                    "Rosa rubescens",
+                    "Rosa pratincola",
+                    "Rosa willibaldii",
+                    "Rosa sphaeroidea",
+                    "Rosa macroacantha",
+                    "Rosa scabrata",
+                    "Rosa flexuosa",
+                    "Rosa lutetiana",
+                    "Rosa senticosa",
+                    "Rosa canina var. ramosissima",
+                    "Rosa glaberrima",
+                    "Rosa litigiosa",
+                    "Rosa heterostyla",
+                    "Rosa stipularis",
+                    "Rosa rougeonensis",
+                    "Rosa afzeliana",
+                    "Rosa × trichoneura",
+                    "Rosa × ancarensis",
+                    "Rosa pubens",
+                    "Rosa edita",
+                    "Rosa hirtella",
+                    "Rosa belgradensis",
+                    "Rosa caucasica",
+                    "Rosa montivaga",
+                    "Rosa amansii",
+                    "Rosa mediata",
+                    "Rosa curticola",
+                    "Rosa prutensis",
+                    "Rosa marisensis",
+                    "Rosa dumosa",
+                    "Rosa adenocalyx",
+                    "Rosa frondosa",
+                    "Rosa nemophila",
+                    "Rosa frivaldskyi",
+                    "Rosa swartziana",
+                    "Rosa canina var. glandulosa",
+                    "Rosa vinealis",
+                    "Rosa canina var. vulgaris",
+                    "Rosa cladoleia",
+                    "Rosa sphaerica",
+                    "Rosa fissispina",
+                    "Rosa sarmentacea",
+                    "Rosa touranginiana",
+                    "Rosa burnatii",
+                    "Rosa inconspicua",
+                    "Rosa maialis",
+                    "Rosa erythrantha",
+                    "Rosa acanthina",
+                    "Rosa separabilis",
+                    "Rosa psilophylla",
+                    "Rosa sylvularum",
+                    "Rosa polyodon",
+                    "Rosa cinerosa",
+                    "Rosa flexibilis",
+                    "Rosa dilucida",
+                    "Rosa spuria",
+                    "Rosa flavidifolia",
+                    "Rosa oblongata",
+                    "Rosa mollardiana"
+                ],
+                "genus": "Rosa",
+                "family": "Rosaceae",
+                "links": {
+                    "self": "/api/v1/species/rosa-canina",
+                    "plant": "/api/v1/plants/rosa-canina",
+                    "genus": "/api/v1/genus/rosa"
+                }
+            }
+        ],
+        "subspecies": [],
+        "varieties": [],
+        "hybrids": [],
+        "forms": [],
+        "subvarieties": [],
+        "sources": [
+            {
+                "last_update": "2020-07-18T07:12:20.395Z",
+                "id": "urn:lsid:ipni.org:names:731955-1",
+                "name": "POWO",
+                "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:731955-1",
+                "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-07-18"
+            },
+            {
+                "last_update": "2020-07-04T19:18:58.168Z",
+                "id": "15/1.",
+                "name": "CATMINAT",
+                "url": null,
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-21T20:41:44.065Z",
+                "id": "ROCA3",
+                "name": "USDA",
+                "url": "https://plants.usda.gov/core/profile?symbol=ROCA3",
+                "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=ROCA3"
+            },
+            {
+                "last_update": "2020-06-17T03:10:17.651Z",
+                "id": "3002461",
+                "name": "GBIF",
+                "url": "https://www.gbif.org/species/3002461",
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-17T03:10:17.641Z",
+                "id": "Rosa canina L.",
+                "name": "PlantNet",
+                "url": "https://identify.plantnet.org/species/the-plant-list/Rosa canina L.",
+                "citation": null
+            }
+        ]
+    },
+    "meta": {
+        "last_modified": "2020-07-04T19:18:58.214Z"
+    }
+}

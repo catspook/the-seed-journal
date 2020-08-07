@@ -1,0 +1,601 @@
+{
+    "data": {
+        "id": 138635,
+        "common_name": "dwarf St. Johnswort",
+        "slug": "hypericum-mutilum",
+        "scientific_name": "Hypericum mutilum",
+        "main_species_id": 144268,
+        "image_url": "https://bs.floristic.org/image/o/53e7a6bc69aaf1911ce21410e492be488fdd70c8",
+        "year": 1753,
+        "bibliography": "Sp. Pl.: 787 (1753)",
+        "author": "L.",
+        "family_common_name": "Mangosteen family",
+        "genus_id": 3707,
+        "observations": "E. Canada to E. Mexico",
+        "vegetable": false,
+        "links": {
+            "self": "/api/v1/plants/hypericum-mutilum",
+            "species": "/api/v1/plants/hypericum-mutilum/species",
+            "genus": "/api/v1/genus/hypericum"
+        },
+        "main_species": {
+            "id": 144268,
+            "common_name": "dwarf St. Johnswort",
+            "slug": "hypericum-mutilum",
+            "scientific_name": "Hypericum mutilum",
+            "year": 1753,
+            "bibliography": "Sp. Pl.: 787 (1753)",
+            "author": "L.",
+            "status": "accepted",
+            "rank": "species",
+            "family_common_name": "Mangosteen family",
+            "genus_id": 3707,
+            "observations": "E. Canada to E. Mexico",
+            "image_url": "https://bs.floristic.org/image/o/53e7a6bc69aaf1911ce21410e492be488fdd70c8",
+            "genus": "Hypericum",
+            "family": "Hypericaceae",
+            "duration": [
+                "annual",
+                "perennial"
+            ],
+            "images": {
+                "flower": [
+                    {
+                        "id": 3549985,
+                        "image_url": "https://bs.floristic.org/image/o/eb064f049a7668309caba7602b4e7b798e8e5c41",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Mary Keim (cc-by-nc-sa)"
+                    },
+                    {
+                        "id": 3422745,
+                        "image_url": "https://bs.floristic.org/image/o/05cd16ba07282b4dcd75c92de64573b18642a436",
+                        "copyright": "Taken Sep 4, 2019 by Yvon REPÉRANT (cc-by-sa)"
+                    },
+                    {
+                        "id": 3422744,
+                        "image_url": "https://bs.floristic.org/image/o/0a7ceafb5a14c68066aa247986f802c28fb787d4",
+                        "copyright": "Taken Dec 20, 2016 by EOL − John Hilty (cc-by-nc)"
+                    },
+                    {
+                        "id": 3422743,
+                        "image_url": "https://bs.floristic.org/image/o/6f79e8e1ac3a68a06558a58fe50ae8783fd05a38",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Ron Thomas (cc-by-nc-sa)"
+                    },
+                    {
+                        "id": 3422742,
+                        "image_url": "https://bs.floristic.org/image/o/0548486a622e37bcd62024335b0eb43bee5e07e3",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Suzanne Cadwell (cc-by-nc)"
+                    },
+                    {
+                        "id": 3422740,
+                        "image_url": "https://bs.floristic.org/image/o/44a2048c8ffd874abbc94d28fb4b3b38e2fc43c0",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Suzanne Cadwell (cc-by-nc)"
+                    }
+                ],
+                "leaf": [
+                    {
+                        "id": 3422748,
+                        "image_url": "https://bs.floristic.org/image/o/da3f93601b7494029063e325166931bfe34d3d9b",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Ron Thomas (cc-by-nc-sa)"
+                    },
+                    {
+                        "id": 3422747,
+                        "image_url": "https://bs.floristic.org/image/o/e568859d11116e07afb6d9c13fef01c283072617",
+                        "copyright": "Taken Apr 18, 2018 by Tela Botanica − La Spada ARTURO (cc-by-sa)"
+                    },
+                    {
+                        "id": 3422746,
+                        "image_url": "https://bs.floristic.org/image/o/cdba4729ee0d3904975a57d9161c0829b66055a5",
+                        "copyright": "Taken Apr 18, 2018 by Tela Botanica − La Spada ARTURO (cc-by-sa)"
+                    }
+                ],
+                "habit": [
+                    {
+                        "id": 3422753,
+                        "image_url": "https://bs.floristic.org/image/o/53e7a6bc69aaf1911ce21410e492be488fdd70c8",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Ron Thomas (cc-by-nc-sa)"
+                    },
+                    {
+                        "id": 3422752,
+                        "image_url": "https://bs.floristic.org/image/o/faccbafb212bf1389413f3ac9ea8525a0217a669",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Ron Thomas (cc-by-nc-sa)"
+                    },
+                    {
+                        "id": 3422751,
+                        "image_url": "https://bs.floristic.org/image/o/48b8d42db43ebb5446b419fac9910b6a2a268b29",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Ron Thomas (cc-by-nc-sa)"
+                    },
+                    {
+                        "id": 3422750,
+                        "image_url": "https://bs.floristic.org/image/o/d89b175187f1e3c8327206f5bd0bd3cd77483052",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Susan Elliott (cc-by-nc)"
+                    },
+                    {
+                        "id": 3422749,
+                        "image_url": "https://bs.floristic.org/image/o/7c1451e408adda82c45252610cefd3a73feb3131",
+                        "copyright": "Taken Dec 20, 2016 by EOL − Cooper, G.A. (cc-by-nc-sa)"
+                    }
+                ],
+                "fruit": [],
+                "bark": [],
+                "other": [
+                    {
+                        "id": 3422755,
+                        "image_url": "https://bs.floristic.org/image/o/7888c161025471a025c423e08fe77fa71234c7e9",
+                        "copyright": "Taken Apr 18, 2018 by Tela Botanica − La Spada ARTURO (cc-by-sa)"
+                    },
+                    {
+                        "id": 3422754,
+                        "image_url": "https://bs.floristic.org/image/o/21eabf9c0568a50f50839d30fd7ba0b426ce1b26",
+                        "copyright": "Taken Apr 18, 2018 by Tela Botanica − La Spada ARTURO (cc-by-sa)"
+                    }
+                ]
+            },
+            "common_names": {
+                "eng": [
+                    "small-flowered st. john's-wort",
+                    "small canadian st. john's-wort",
+                    "slender st. john's-wort",
+                    "dwarf st. john's-wort",
+                    "dwarf st. johnswort"
+                ],
+                "fra": [
+                    "millepertuis nain",
+                    "millepertuis"
+                ],
+                "ita": [
+                    "erba di san giovanni americana"
+                ],
+                "ru": [
+                    "Зверобой недоразвитый"
+                ],
+                "it": [
+                    "Erba di San Giovanni americana",
+                    "Erba di S. Giovanni americana"
+                ],
+                "fr": [
+                    "Millepertuis nain",
+                    "Millepertuis"
+                ],
+                "en": [
+                    "Dwarf Saint-John's-wort",
+                    "Small-flowered St. John's-wort",
+                    "Small Canadian St. John's-wort",
+                    "Slender St. John's-wort",
+                    "Dwarf St. John's-Wort",
+                    "Dwarf St. John's Wort",
+                    "Dwarf St. Johnswort"
+                ]
+            },
+            "distribution": {
+                "introduced": [
+                    "Washington",
+                    "Utah",
+                    "Uruguay",
+                    "Transcaucasus",
+                    "Saskatchewan",
+                    "Poland",
+                    "Peru",
+                    "Paraguay",
+                    "New Zealand North",
+                    "Mexico Southwest",
+                    "Mexico Central",
+                    "Japan",
+                    "Italy",
+                    "Honduras",
+                    "Hawaii",
+                    "France",
+                    "Ecuador",
+                    "Dominican Republic",
+                    "Colorado",
+                    "Colombia",
+                    "California",
+                    "British Columbia",
+                    "Brazil Southeast",
+                    "Brazil South",
+                    "Azores",
+                    "Argentina Northwest",
+                    "Argentina Northeast"
+                ],
+                "native": [
+                    "Wisconsin",
+                    "West Virginia",
+                    "Virginia",
+                    "Vermont",
+                    "Texas",
+                    "Tennessee",
+                    "South Carolina",
+                    "Rhode I.",
+                    "Québec",
+                    "Pennsylvania",
+                    "Ontario",
+                    "Oklahoma",
+                    "Ohio",
+                    "Nova Scotia",
+                    "North Carolina",
+                    "New York",
+                    "New Mexico",
+                    "New Jersey",
+                    "New Hampshire",
+                    "New Brunswick",
+                    "Nebraska",
+                    "Missouri",
+                    "Mississippi",
+                    "Minnesota",
+                    "Michigan",
+                    "Mexico Northeast",
+                    "Mexico Gulf",
+                    "Masachusettes",
+                    "Maryland",
+                    "Maine",
+                    "Louisiana",
+                    "Kentucky",
+                    "Kansas",
+                    "Iowa",
+                    "Indiana",
+                    "Illinois",
+                    "Georgia",
+                    "Florida",
+                    "District of Columbia",
+                    "Delaware",
+                    "Connecticut",
+                    "Arkansas",
+                    "Alabama"
+                ]
+            },
+            "flower": {
+                "color": [
+                    "yellow"
+                ],
+                "conspicuous": false
+            },
+            "foliage": {
+                "texture": "medium",
+                "color": [
+                    "green"
+                ],
+                "leaf_retention": false
+            },
+            "fruit_or_seed": {
+                "conspicuous": false,
+                "color": [
+                    "brown"
+                ],
+                "shape": null,
+                "seed_persistence": false
+            },
+            "specifications": {
+                "ligneous_type": null,
+                "growth_form": "Single Crown",
+                "growth_habit": "Forb/herb",
+                "growth_rate": "Moderate",
+                "average_height": {
+                    "cm": 79
+                },
+                "maximum_height": {
+                    "cm": 79
+                },
+                "nitrogen_fixation": "None",
+                "shape_and_orientation": "Semi-Erect",
+                "toxicity": "none"
+            },
+            "growth": {
+                "description": null,
+                "sowing": null,
+                "days_to_harvest": null,
+                "row_spacing": {
+                    "cm": null
+                },
+                "spread": {
+                    "cm": null
+                },
+                "ph_maximum": 7.2,
+                "ph_minimum": 4.6,
+                "light": 8,
+                "atmospheric_humidity": 8,
+                "growth_months": null,
+                "bloom_months": null,
+                "fruit_months": null,
+                "minimum_precipitation": {
+                    "mm": 762
+                },
+                "maximum_precipitation": {
+                    "mm": 1397
+                },
+                "minimum_root_depth": {
+                    "cm": 20
+                },
+                "minimum_temperature": {
+                    "deg_f": -23,
+                    "deg_c": -30
+                },
+                "maximum_temperature": {
+                    "deg_f": null,
+                    "deg_c": null
+                },
+                "soil_nutriments": 5,
+                "soil_salinity": 0,
+                "soil_texture": 4,
+                "soil_humidity": null
+            },
+            "links": {
+                "self": "/api/v1/species/hypericum-mutilum",
+                "plant": "/api/v1/plants/hypericum-mutilum",
+                "genus": "/api/v1/genus/hypericum"
+            },
+            "synonyms": [
+                {
+                    "id": 341156,
+                    "name": "Sarothra mutila",
+                    "author": "(L.) Y.Kimura",
+                    "sources": [
+                        {
+                            "last_update": "2020-06-24T17:02:42.171Z",
+                            "id": "urn:lsid:ipni.org:names:429232-1",
+                            "name": "POWO",
+                            "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:429232-1",
+                            "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-06-24"
+                        }
+                    ]
+                }
+            ],
+            "sources": [
+                {
+                    "last_update": "2020-07-04T16:44:11.968Z",
+                    "id": "04/5.0.1",
+                    "name": "CATMINAT",
+                    "url": null,
+                    "citation": null
+                },
+                {
+                    "last_update": "2020-06-24T17:02:42.133Z",
+                    "id": "urn:lsid:ipni.org:names:126289-2",
+                    "name": "POWO",
+                    "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:126289-2",
+                    "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-06-24"
+                },
+                {
+                    "last_update": "2020-06-21T20:27:00.187Z",
+                    "id": "HYMU",
+                    "name": "USDA",
+                    "url": "https://plants.usda.gov/core/profile?symbol=HYMU",
+                    "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=HYMU"
+                },
+                {
+                    "last_update": "2020-06-17T05:57:17.466Z",
+                    "id": "3189462",
+                    "name": "GBIF",
+                    "url": "https://www.gbif.org/species/3189462",
+                    "citation": null
+                },
+                {
+                    "last_update": "2020-06-17T05:57:17.455Z",
+                    "id": "Hypericum mutilum L.",
+                    "name": "PlantNet",
+                    "url": "https://identify.plantnet.org/species/the-plant-list/Hypericum mutilum L.",
+                    "citation": null
+                }
+            ]
+        },
+        "genus": {
+            "id": 3707,
+            "name": "Hypericum",
+            "slug": "hypericum",
+            "links": {
+                "self": "/api/v1/genus/hypericum",
+                "plants": "/api/v1/genus/hypericum/plants",
+                "species": "/api/v1/genus/hypericum/species",
+                "family": "/api/v1/families/hypericaceae"
+            }
+        },
+        "family": {
+            "id": 589,
+            "name": "Hypericaceae",
+            "common_name": null,
+            "slug": "hypericaceae",
+            "links": {
+                "self": "/api/v1/families/hypericaceae",
+                "division_order": null,
+                "genus": "/api/v1/families/hypericaceae/genus"
+            }
+        },
+        "species": [
+            {
+                "id": 144268,
+                "common_name": "dwarf St. Johnswort",
+                "slug": "hypericum-mutilum",
+                "scientific_name": "Hypericum mutilum",
+                "year": 1753,
+                "bibliography": "Sp. Pl.: 787 (1753)",
+                "author": "L.",
+                "status": "accepted",
+                "rank": "species",
+                "family_common_name": "Mangosteen family",
+                "genus_id": 3707,
+                "image_url": "https://bs.floristic.org/image/o/53e7a6bc69aaf1911ce21410e492be488fdd70c8",
+                "synonyms": [
+                    "Sarothra mutila"
+                ],
+                "genus": "Hypericum",
+                "family": "Hypericaceae",
+                "links": {
+                    "self": "/api/v1/species/hypericum-mutilum",
+                    "plant": "/api/v1/plants/hypericum-mutilum",
+                    "genus": "/api/v1/genus/hypericum"
+                }
+            }
+        ],
+        "subspecies": [
+            {
+                "id": 144189,
+                "common_name": "dwarf St. Johnswort",
+                "slug": "hypericum-mutilum-ssp-boreale",
+                "scientific_name": "Hypericum mutilum subsp. boreale",
+                "year": 1753,
+                "bibliography": "Sp. Pl.: 787 (1753)",
+                "author": "L.",
+                "status": "unknown",
+                "rank": "ssp",
+                "family_common_name": "Mangosteen family",
+                "genus_id": 3707,
+                "image_url": null,
+                "synonyms": [],
+                "genus": "Hypericum",
+                "family": "Hypericaceae",
+                "links": {
+                    "self": "/api/v1/species/hypericum-mutilum-ssp-boreale",
+                    "plant": "/api/v1/plants/hypericum-mutilum",
+                    "genus": "/api/v1/genus/hypericum"
+                }
+            },
+            {
+                "id": 704035,
+                "common_name": "dwarf St. Johnswort",
+                "slug": "hypericum-mutilum-subsp-mutilum",
+                "scientific_name": "Hypericum mutilum subsp. mutilum",
+                "year": 1753,
+                "bibliography": "Sp. Pl.: 787 (1753)",
+                "author": "L.",
+                "status": "accepted",
+                "rank": "ssp",
+                "family_common_name": "Mangosteen family",
+                "genus_id": 3707,
+                "image_url": null,
+                "synonyms": [
+                    "Hypericum parviflorum",
+                    "Hypericum mutilum var. foliosissimum",
+                    "Hypericum mutilum var. densiflorum",
+                    "Hypericum euphorbioides var. minus",
+                    "Sarothra parviflora",
+                    "Hypericum euphorbioides var. floribundum",
+                    "Hypericum stellarioides",
+                    "Hypericum crux-andreae f. pendulum",
+                    "Hypericum blentinense",
+                    "Hypericum impunctatum",
+                    "Hypericum liebmannii",
+                    "Hypericum euphorbioides",
+                    "Sarothra blentinensis",
+                    "Hypericum mutilum var. minimum",
+                    "Hypericum collinum var. liebmannii",
+                    "Hypericum mutilum var. minus",
+                    "Knifa brevistylis",
+                    "Brathys euphorbioides",
+                    "Sarothra quinquenervia",
+                    "Hypericum mutilum var. floribundum",
+                    "Brathys quinquenervia",
+                    "Hypericum quinquenervium",
+                    "Hypericum mutilum var. parviflorum"
+                ],
+                "genus": "Hypericum",
+                "family": "Hypericaceae",
+                "links": {
+                    "self": "/api/v1/species/hypericum-mutilum-subsp-mutilum",
+                    "plant": "/api/v1/plants/hypericum-mutilum",
+                    "genus": "/api/v1/genus/hypericum"
+                }
+            },
+            {
+                "id": 704034,
+                "common_name": "dwarf St. Johnswort",
+                "slug": "hypericum-mutilum-subsp-latisepalum",
+                "scientific_name": "Hypericum mutilum subsp. latisepalum",
+                "year": 1990,
+                "bibliography": "Bull. Brit. Mus. (Nat. Hist.), Bot. 20: 119 (1990)",
+                "author": "(Fernald) N.Robson",
+                "status": "accepted",
+                "rank": "ssp",
+                "family_common_name": "Mangosteen family",
+                "genus_id": 3707,
+                "image_url": null,
+                "synonyms": [
+                    "Hypericum mutilum var. latisepalum"
+                ],
+                "genus": "Hypericum",
+                "family": "Hypericaceae",
+                "links": {
+                    "self": "/api/v1/species/hypericum-mutilum-subsp-latisepalum",
+                    "plant": "/api/v1/plants/hypericum-mutilum",
+                    "genus": "/api/v1/genus/hypericum"
+                }
+            }
+        ],
+        "varieties": [],
+        "hybrids": [],
+        "forms": [],
+        "subvarieties": [],
+        "sources": [
+            {
+                "last_update": "2020-06-21T20:26:58.128Z",
+                "id": "HYMU",
+                "name": "USDA",
+                "url": "https://plants.usda.gov/core/profile?symbol=HYMU",
+                "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=HYMU"
+            },
+            {
+                "last_update": "2020-07-04T16:44:11.968Z",
+                "id": "04/5.0.1",
+                "name": "CATMINAT",
+                "url": null,
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-24T17:02:42.133Z",
+                "id": "urn:lsid:ipni.org:names:126289-2",
+                "name": "POWO",
+                "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:126289-2",
+                "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-06-24"
+            },
+            {
+                "last_update": "2020-06-21T20:27:00.187Z",
+                "id": "HYMU",
+                "name": "USDA",
+                "url": "https://plants.usda.gov/core/profile?symbol=HYMU",
+                "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=HYMU"
+            },
+            {
+                "last_update": "2020-06-17T05:57:17.466Z",
+                "id": "3189462",
+                "name": "GBIF",
+                "url": "https://www.gbif.org/species/3189462",
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-17T05:57:17.455Z",
+                "id": "Hypericum mutilum L.",
+                "name": "PlantNet",
+                "url": "https://identify.plantnet.org/species/the-plant-list/Hypericum mutilum L.",
+                "citation": null
+            },
+            {
+                "last_update": "2020-06-24T17:02:44.603Z",
+                "id": "urn:lsid:ipni.org:names:77173073-1",
+                "name": "POWO",
+                "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:77173073-1",
+                "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-06-24"
+            },
+            {
+                "last_update": "2020-06-21T20:53:36.137Z",
+                "id": "HYMU",
+                "name": "USDA",
+                "url": "https://plants.usda.gov/core/profile?symbol=HYMU",
+                "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=HYMU"
+            },
+            {
+                "last_update": "2020-06-24T17:02:42.926Z",
+                "id": "urn:lsid:ipni.org:names:278610-2",
+                "name": "POWO",
+                "url": "http://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:278610-2",
+                "citation": "POWO (2019). Plants of the World Online. Facilitated by the Royal Botanic Gardens, Kew. Published on the Internet; http://www.plantsoftheworldonline.org/ Retrieved 2020-06-24"
+            },
+            {
+                "last_update": "2020-06-21T20:53:36.104Z",
+                "id": "HYMU",
+                "name": "USDA",
+                "url": "https://plants.usda.gov/core/profile?symbol=HYMU",
+                "citation": "https://plants.sc.egov.usda.gov/core/profile?symbol=HYMU"
+            }
+        ]
+    },
+    "meta": {
+        "last_modified": "2020-07-04T16:44:12.012Z"
+    }
+}
