@@ -3,6 +3,11 @@
     color: #176D49;
 }
 
+.click-wrapper {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
 .click-wrapper p {
     -webkit-animation: fadein 1s; 
        -moz-animation: fadein 1s; 
