@@ -1,5 +1,4 @@
 import React from 'react'
-import Row from 'react-bootstrap/Row'
 import "../../styles/scss/ClickToShow.scss"
 
 class ClickToShow extends React.Component{
