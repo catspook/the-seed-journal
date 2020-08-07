@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
 import PhBar from '../Chart/pHBar'
 import PlantRadar from '../Chart/RadarChart'
+import ClickToShow from './ClickToShow'
 
 class Result extends React.Component{
     constructor(props) {
@@ -370,22 +371,36 @@ class Result extends React.Component{
                 </Row>
                 <Row className='result-row'>
                     <Col>
-                        <h3><b>Distribution</b></h3>
-                        <p><b className='accent-dark'>Native to</b> {this.state.native}</p>
-                        <p><b className='accent-dark'>Introduced to</b> {this.state.introduced}</p>
+                        <ClickToShow 
+                            header={"Distribution"}
+                            category={["Native To", "Introduced To"]}
+                            data={[
+                                this.state.native,
+                                this.state.introduced
+                            ]}
+                            open={false}
+                        />
                     </Col>
                 </Row>
 
                 <Row className='result-row'>
                     <Col>
-                        <h3><b>Related Plants</b></h3>
-                        <p><b className='accent-dark'>Synonyms</b> {this.state.synonyms}</p>
-                        <p><b className='accent-dark'>Species</b> {this.state.species}</p>
-                        <p><b className='accent-dark'>Subpecies</b> {this.state.subspecies}</p>
-                        <p><b className='accent-dark'>Varieties</b> {this.state.varieties}</p>
-                        <p><b className='accent-dark'>Hybrids</b> {this.state.hybrids}</p>
-                        <p><b className='accent-dark'>Forms</b> {this.state.forms}</p>
-                        <p><b className='accent-dark'>Subvarieties</b> {this.state.subvarieties}</p>
+                        <ClickToShow
+                            header={'Related Plants'}
+                            category={["Synonyms", "Species", "Subspecies", "Varieties",
+                                       "Subvarieties", "Hybrids", "Forms"]}
+                            data={[
+                                this.state.synonyms, 
+                                this.state.species, 
+                                this.state.subspecies,
+                                this.state.varieties,
+                                this.state.subvarieties,
+                                this.state.hybrids,
+                                this.state.forms
+                                ]
+                            }
+                            open={false}
+                        />
                     </Col>
                 </Row>
             </Container>
