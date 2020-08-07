@@ -6,6 +6,7 @@ import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
 import SearchFilter from './SearchFilter'
+import "../../styles/scss/SearchBase.scss"
 
 const names = require('./common_names.json')
 
@@ -162,9 +163,9 @@ class SearchBase extends React.Component{
         }));
 
         return (
-            <Container>
+            <Container className="search-container" fluid="true">
                 <Row>
-                    <Col>
+                    <Col sm={4} className="f-col">
                         <SearchFilter calssName="filter"
                             updateFilterConditions={this.updateFilterConditions}
                             handleOrder={this.handleOrderOption}
@@ -172,7 +173,7 @@ class SearchBase extends React.Component{
                             filter={this.state.filter}
                         />
                     </Col>
-                    <Col>
+                    <Col sm={8}>
                         <div className='sb-container'>
                             <div>
                                 <SearchBar 
