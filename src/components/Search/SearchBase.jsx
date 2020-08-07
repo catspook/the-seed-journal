@@ -23,7 +23,6 @@ class SearchBase extends React.Component{
             prevPage: "",
             lastPage: "",
             currentResults: [],
-            reversed: false,
             trefleDown: false,
             plantResult: "",
             option: "lower",
