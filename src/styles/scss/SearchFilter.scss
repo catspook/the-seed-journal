@@ -1,0 +1,85 @@
+.choice-con{
+   width: 100%; 
+   padding: 0;
+   margin: 0;
+   border-bottom: 1px solid lightgray;
+}
+
+.choice-btn{    
+    color: #115937;
+    font-weight: bold;
+    border: none;
+    border: 2px solid #115937;
+    background-color: #EDEFF1;
+    border-radius: 2px;
+    width: 100%;
+    padding: 0px;
+}
+
+.choice-btn:hover{
+    background-color:#115937;
+    color: #EDEFF1;
+}
+
+.f-title{
+    padding: 15px;
+    color: #EDEFF1;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    background-color:#133D28;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.f-rad input[type="radio"] {
+    display:none
+}
+
+.f-rad input[type="radio"]:checked+label,
+.Checked+label {
+    background: #178949;
+}
+
+.f-rad input[type="radio"]:disabled+label,
+.Checked+label {
+    background: rgba(111,111,111,0.5);
+    color:rgba(15,15,15,0.7);
+}
+
+.f-rad label:hover {
+    background: lightgray;
+    color:black;
+}
+
+.f-rad label {
+    padding: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    background-color:#115937;
+    color: #EDEFF1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .f-rad.col {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+.f-row {
+    display:flex;
+    justify-content: center;
+}
+
+.op-con{
+    border-bottom: 2px #EDEFF1 solid;
+}
+
+.lab-mid{
+    border-left: 1px #EDEFF1 solid;
+    border-right: 1px #EDEFF1 solid;
+}

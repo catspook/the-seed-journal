@@ -6,8 +6,7 @@ import Result from '../Result/Result';
 import About from '../About';
 
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter as Router, Switch,
   Route,
   Redirect
 } from "react-router-dom";
@@ -92,12 +91,12 @@ class App extends React.Component {
 				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
-						<Route path="/about">
-              <About/>
+					<Route path="/about">
+                            <About/>
 						</Route>
 
 						<Route path="/plant/:plantID">
-              <Result></Result>
+                            <Result></Result>
 						</Route>
 
 						<Route path="/search">

@@ -6,6 +6,8 @@ import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
 import SearchFilter from './SearchFilter'
+import LoadingSpinner from '../LoadingSpinner'
+import "../../styles/scss/SearchBase.scss"
 
 const names = require('./common_names.json')
 
@@ -22,23 +24,65 @@ class SearchBase extends React.Component{
             prevPage: "",
             lastPage: "",
             currentResults: [],
-            reversed: false,
-            trefleDown: false
+            trefleDown: false,
+            plantResult: "",
+            option: "lower",
+            loading: false,
         }
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateFilterConditions = this.updateFilterConditions.bind(this)
+        this.handleOrderOption = this.handleOrderOption.bind(this)
+    }
+
+    handleOrderOption(event){
+        const id = event.target.id
+        this.setState(() => ({
+            option: id,
+        }))
     }
 
     updateFilterConditions(obj){
         this.setState(() => ({
             filter: obj
         }))
-        console.log(this.state.filter)
+    }
+
+    addFilterToURL(value){
+        const filter_obj = this.state.filter
+        let filter_str = ''
+        let key = Object.keys(filter_obj)[0]
+        let cors_url = "https://cors-anywhere.herokuapp.com/"
+        let url = cors_url + "https://trefle.io/api/v1/species/search?token=" 
+            + process.env.REACT_APP_TREFLE_API_TOKEN
+        if(!value){
+            url = "https://trefle.io/api/v1/species?token=" 
+                + process.env.REACT_APP_TREFLE_API_TOKEN
+        }
+
+        if(this.state.filter[key]) {
+            if(this.state.option === "lower"){
+                filter_str = filter_str.concat(`&${filter_obj[key]
+                    .type}[${key}]=,${filter_obj[key].values}`)
+            } 
+            else {
+                filter_str = filter_str.concat(`&${filter_obj[key]
+                    .type}[${key}]=${filter_obj[key].values}`)
+            }
+
+            url = url.concat(filter_str)
+        }
+        if(value)
+            url = url.concat(`&q=${value}`)
+
+        return url
     }
 
     async makeApiCall(url) {
+        this.setState(() =>({
+            loading: true,
+        }))
 
         let response = await fetch(url);
         let jsonState = {
@@ -47,7 +91,7 @@ class SearchBase extends React.Component{
             firstPage: "",
             nextPage: "",
             prevPage: "",
-            lastPage: ""
+            lastPage: "",
         }
 
         if (response.status === 200) {
@@ -72,9 +116,15 @@ class SearchBase extends React.Component{
         else {
             console.log(response.status)
             this.setState(() => ({
-                trefleDown: true
+                trefleDown: true,
+                loading: false,
             }))
         }
+
+        this.setState(() =>({
+            loading: false,
+        }))
+
         return jsonState
 
     }
@@ -82,7 +132,8 @@ class SearchBase extends React.Component{
     async changePage(next) {
         let newPage = (next ? this.state.nextPage : this.state.prevPage)
         if (newPage) {
-            let url = "https://trefle.io" + newPage + "&token=" 
+            let cors_url = "https://cors-anywhere.herokuapp.com/"
+            let url = cors_url + "https://trefle.io" + newPage + "&token=" 
                 + process.env.REACT_APP_TREFLE_API_TOKEN
 
             let jsonState = await this.makeApiCall(url)
@@ -103,8 +154,7 @@ class SearchBase extends React.Component{
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        let url = "https://trefle.io/api/v1/species/search?token=" 
-            + process.env.REACT_APP_TREFLE_API_TOKEN + "&q=" + value
+        let url = this.addFilterToURL(value)
         let jsonState = await this.makeApiCall(url)
 
         this.setState(() => ({
@@ -126,42 +176,47 @@ class SearchBase extends React.Component{
         }));
 
         return (
-            <Container>
+            <Container className="search-container" fluid="true">
                 <Row>
-                    <Col xs={2}>
-                        <SearchFilter 
+                    <Col sm={4} className="f-col">
+                        <SearchFilter calssName="filter"
                             updateFilterConditions={this.updateFilterConditions}
+                            handleOrder={this.handleOrderOption}
+                            option={this.state.option}
                             filter={this.state.filter}
                         />
                     </Col>
-                    <Col>
-                        <div className='sb-container'>
-                            <div>
-                                <SearchBar 
-                                    plantList={this.plantList}
-                                    onSubmit={this.handleSubmit}
-                                />
-                            </div>
-
+                    <Col sm={8} className='sb-wrapper'>
+                            <SearchBar 
+                                className='sb' 
+                                plantList={this.plantList}
+                                onSubmit={this.handleSubmit}
+                            />
                             <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
                                 <Toast.Header>
                                     <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
                                     <strong className="mr-auto">Search Error</strong>
                                     <small>Now</small>
                                 </Toast.Header>
-                                <Toast.Body>Our data source is currently unavailable. Please try your search again later!</Toast.Body>
+                                <Toast.Body>Our data source is currently unavailable. Please try again later!</Toast.Body>
                             </Toast>
-
-                            <SearchContent 
-                                value={searchValue}
-                                resultList={(this.state.currentResults).reduce((acc, element) => {
-                                    acc.push(element.name)
-                                    return acc
-                                }, [])}
-                                newPage={this.changePage}
-                                onSubmit={this.handleSubmit}
-                            />
-                        </div>
+                            {this.state.loading ?
+                                <LoadingSpinner className="spinner" />
+                                :
+                                <SearchContent 
+                                    value={searchValue}
+                                    resultList={(this.state.currentResults).reduce((acc, element) => {
+                                        acc.push(element.name)
+                                        return acc
+                                    }, [])}
+                                    newPage={this.changePage}
+                                    onSubmit={this.handleSubmit}
+                                    slugs={(this.state.currentResults).reduce((acc, element) => {
+                                        acc.push(element.slug)
+                                        return acc
+                                    }, [])}
+                                />
+                            }
                     </Col>
                 </Row>
             </Container>
