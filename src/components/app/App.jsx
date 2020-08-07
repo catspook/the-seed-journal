@@ -41,13 +41,25 @@ class App extends React.Component {
       this.handlePage = this.handlePage.bind(this)
   }
 
+  setCookies(plantName) {
+    const cookies = new Cookies({ path: '../' });
+    var fav = cookies.get('favorites');
+
+    if (fav) {
+      fav.push(plantName);
+    }else {
+      fav = [plantName]
+    }
+
+    cookies.set('favorites', fav);
+  }
+
   
   componentDidMount() {
-
+    this.setCookies("tyoyooyoyoy");
   }
 
   componentWillUnmount() {
-    this.state.cookies.set('favorites', JSON.stringify(this.state.favorites));
   }
 
   // Change the page number depeding on the button that was
