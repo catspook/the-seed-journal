@@ -6,6 +6,7 @@ import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
 import SearchFilter from './SearchFilter'
+import LoadingSpinner from '../LoadingSpinner'
 import "../../styles/scss/SearchBase.scss"
 
 const names = require('./common_names.json')
@@ -27,6 +28,7 @@ class SearchBase extends React.Component{
             trefleDown: false,
             plantResult: "",
             option: "lower",
+            loading: false,
         }
 
         this.changePage = this.changePage.bind(this)
@@ -78,6 +80,10 @@ class SearchBase extends React.Component{
     }
 
     async makeApiCall(url) {
+        this.setState(() =>({
+            loading: true,
+        }))
+
         let response = await fetch(url);
         let jsonState = {
             currentPage: "",
@@ -110,9 +116,15 @@ class SearchBase extends React.Component{
         else {
             console.log(response.status)
             this.setState(() => ({
-                trefleDown: true
+                trefleDown: true,
+                loading: false,
             }))
         }
+
+        this.setState(() =>({
+            loading: false,
+        }))
+
         return jsonState
 
     }
@@ -173,15 +185,12 @@ class SearchBase extends React.Component{
                             filter={this.state.filter}
                         />
                     </Col>
-                    <Col sm={8}>
-                        <div className='sb-container'>
-                            <div>
-                                <SearchBar 
-                                    plantList={this.plantList}
-                                    onSubmit={this.handleSubmit}
-                                />
-                            </div>
-
+                    <Col sm={8} className='sb-wrapper'>
+                            <SearchBar 
+                                className='sb' 
+                                plantList={this.plantList}
+                                onSubmit={this.handleSubmit}
+                            />
                             <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
                                 <Toast.Header>
                                     <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
@@ -190,21 +199,23 @@ class SearchBase extends React.Component{
                                 </Toast.Header>
                                 <Toast.Body>Our data source is currently unavailable. Please try again later!</Toast.Body>
                             </Toast>
-
-                            <SearchContent 
-                                value={searchValue}
-                                resultList={(this.state.currentResults).reduce((acc, element) => {
-                                    acc.push(element.name)
-                                    return acc
-                                }, [])}
-                                newPage={this.changePage}
-                                onSubmit={this.handleSubmit}
-                                slugs={(this.state.currentResults).reduce((acc, element) => {
-                                    acc.push(element.slug)
-                                    return acc
-                                }, [])}
-                            />
-                        </div>
+                            {this.state.loading ?
+                                <LoadingSpinner className="spinner" />
+                                :
+                                <SearchContent 
+                                    value={searchValue}
+                                    resultList={(this.state.currentResults).reduce((acc, element) => {
+                                        acc.push(element.name)
+                                        return acc
+                                    }, [])}
+                                    newPage={this.changePage}
+                                    onSubmit={this.handleSubmit}
+                                    slugs={(this.state.currentResults).reduce((acc, element) => {
+                                        acc.push(element.slug)
+                                        return acc
+                                    }, [])}
+                                />
+                            }
                     </Col>
                 </Row>
             </Container>
