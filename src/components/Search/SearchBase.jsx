@@ -51,7 +51,8 @@ class SearchBase extends React.Component{
         const filter_obj = this.state.filter
         let filter_str = ''
         let key = Object.keys(filter_obj)[0]
-        let url = "https://trefle.io/api/v1/species/search?token=" 
+        let cors_url = "https://cors-anywhere.herokuapp.com/"
+        let url = cors_url + "https://trefle.io/api/v1/species/search?token=" 
             + process.env.REACT_APP_TREFLE_API_TOKEN
         if(!value){
             url = "https://trefle.io/api/v1/species?token=" 
@@ -119,7 +120,8 @@ class SearchBase extends React.Component{
     async changePage(next) {
         let newPage = (next ? this.state.nextPage : this.state.prevPage)
         if (newPage) {
-            let url = "https://trefle.io" + newPage + "&token=" 
+            let cors_url = "https://cors-anywhere.herokuapp.com/"
+            let url = cors_url + "https://trefle.io" + newPage + "&token=" 
                 + process.env.REACT_APP_TREFLE_API_TOKEN
 
             let jsonState = await this.makeApiCall(url)

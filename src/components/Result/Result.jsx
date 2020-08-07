@@ -265,7 +265,8 @@ class Result extends React.Component{
     }
 
     async afterPageLoads() {
-        let url = "https://trefle.io/api/v1/plants/" + ((window.location.href).split("/"))[4] + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+        let cors_url = "https://cors-anywhere.herokuapp.com/"
+        let url = cors_url + "https://trefle.io/api/v1/plants/" + ((window.location.href).split("/"))[4] + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
         await this.makeApiCall(url)
 
         this.setState(() => ({

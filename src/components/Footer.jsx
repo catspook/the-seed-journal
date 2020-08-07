@@ -20,16 +20,16 @@ class Footer extends React.Component {
                         <div className="col-sm">
                             <Row className='d-flex justify-content-around'>
                                 <Col xs={12} md={6} lg={3} className='d-flex justify-content-center'>
-                                    <p><small>&copy;{new Date().getFullYear()} <a href='https://github.com/kaigoos' class='accent-dark'>Kyle Gustke</a>, <a href='https://github.com/HiceS' class='accent-dark'>Shawn Hice</a>, <a href='https://github.com/catspook' class='accent-dark'>Casper Rutz</a></small></p>
+                                    <p><small>&copy;{new Date().getFullYear()} <a href='https://github.com/kaigoos' className='accent-dark'>Kyle Gustke</a>, <a href='https://github.com/HiceS' className='accent-dark'>Shawn Hice</a>, <a href='https://github.com/catspook' className='accent-dark'>Casper Rutz</a></small></p>
                                 </Col> 
                                 <Col xs={6} md={6} lg={3} className='d-flex justify-content-center'>
                                     <p><small>All Rights Reserved</small></p>
                                 </Col>
                                 <Col xs={6} md={6} lg={3} className='d-flex justify-content-center'>
-                                    <p><small>Data sourced from <a href='https://trefle.io/' class='accent-dark'>Trefle</a></small></p>
+                                    <p><small>Data sourced from <a href='https://trefle.io/' className='accent-dark'>Trefle</a></small></p>
                                 </Col>
                                 <Col xs={12} md={6} lg={3} className='d-flex justify-content-center'>
-                                    <p><small><a href="https://github.com/catspook/the-seed-journal" class='accent-dark'>Contribution Guidelines</a></small></p>
+                                    <p><small><a href="https://github.com/catspook/the-seed-journal" className='accent-dark'>Contribution Guidelines</a></small></p>
                                 </Col>
                             </Row>
                         </div>
