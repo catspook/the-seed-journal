@@ -2,6 +2,7 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import '../../styles/scss/SearchFilter.scss'
 
 const filters = require('./search_filter.json')
 
@@ -138,11 +139,12 @@ class SearchFilter extends React.Component{
     renderList() {
         return (
             Object.keys(filters).map((key, index) =>
-                <Container key={index}>
+                <Container key={index} className="choice-con" fluid="true">
                     <Row>
                         <Col 
                             as="button" 
                             onClick={(event) => this.handleButton(event, index)}
+                            className='choice-btn'
                         >
                             {filters[key].title}
                         </Col>
@@ -156,39 +158,42 @@ class SearchFilter extends React.Component{
 
     render() {
         return(
-            <Container className="filter-container">
-                <Row>
-                    <Col>Show</Col> 
-                    <Col>
+            <Container className="root-con" fluid="true">
+                <Row className="f-title">Options</Row>
+                <Row className="op-con">
+                    <Col className="f-rad">
                         <input 
                             type="radio" 
                             id="lower" 
                             name="option"
                             onClick={(e) => this.props.handleOrder(e)}
                             defaultChecked
+                            disabled={!this.state.open ? true : false}
                         />
                         <label htmlFor="lower">Lower</label>
                     </Col>
-                    <Col>
+                    <Col className="f-rad">
                         <input 
                             type="radio" 
                             id="higher" 
                             name="option"
                             onClick={(e) => this.props.handleOrder(e)}
+                            disabled={!this.state.open ? true : false}
                         />
-                        <label htmlFor="higher">Higher</label>
+                        <label htmlFor="higher" className="lab-mid">Higher</label>
                     </Col>
-                    <Col>
+                    <Col className="f-rad">
                         <input 
                             type="radio" 
                             id="range" 
                             name="option"
                             onClick={(e) => this.props.handleOrder(e)}
+                            disabled={!this.state.open ? true : false}
                         />
                         <label htmlFor="range">Range</label>
                     </Col>
-                    {this.renderList()}
                 </Row>
+                {this.renderList()}
             </Container>
         )
     }
