@@ -17,4 +17,16 @@
   width: 40%;
 }
 
+.result-row {
+  margin: 5%;
+}
+
+.ph-chart {
+  margin: 35%;
+}
+
+.toast {
+  color: black;
+}
+
 /*# sourceMappingURL=Body.css.map */

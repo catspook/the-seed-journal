@@ -6,8 +6,6 @@ import {
     Button
 } from 'react-bootstrap';
 
-import '../../styles/scss/SearchBar.scss';
-
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)

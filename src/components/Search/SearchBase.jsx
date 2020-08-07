@@ -7,7 +7,6 @@ import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
 import SearchFilter from './SearchFilter'
 import LoadingSpinner from '../LoadingSpinner'
-import "../../styles/scss/SearchBase.scss"
 
 const names = require('./common_names.json')
 

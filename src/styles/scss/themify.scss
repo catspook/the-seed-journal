@@ -46,6 +46,10 @@
         @each $param-name, $color-value in $params {
             .#{$param-name} {
                 color: #{$color-value};
+
+                button:hover{
+                    color: #{darken($color-value, 10%)};
+                }
             }
 
             .#{$param-name}-background {
@@ -54,6 +58,14 @@
 
             .#{$param-name}::selection {
                 background: #{$color-value};
+            }
+        }
+    }
+
+    ##{$theme}{
+        .no-hover{
+            button:hover{
+                // none
             }
         }
     }

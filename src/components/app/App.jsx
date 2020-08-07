@@ -16,6 +16,7 @@ import Cookies from 'universal-cookie';
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
 import '../../styles/css/typography.css';
+import '../../styles/css/Search.css';
 
 class App extends React.Component {
   constructor(props){
@@ -91,12 +92,12 @@ class App extends React.Component {
 				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
-					<Route path="/about">
-                            <About/>
-						</Route>
+            <Route path="/about">
+              <About/>
+            </Route>
 
 						<Route path="/plant/:plantID">
-                            <Result></Result>
+              <Result></Result>
 						</Route>
 
 						<Route path="/search">
