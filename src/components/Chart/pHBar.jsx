@@ -21,8 +21,8 @@ class PhBar extends React.Component{
             13: "rgba(126, 65, 180, 1)",
         }
         this.state = {
-            min: this.props.min,
-            max: this.props.max,
+            min: (this.props.children)[3],
+            max: (this.props.children)[1],
             valid: true,
         }
     }
@@ -57,8 +57,8 @@ class PhBar extends React.Component{
         const repeat = [0,1,2,3,4,5,6,7,8,9]
         const phVal =[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
         return(
-                <div className="container chart">
-                    <h5>pH Range</h5>
+                <div className="container chart ph-chart">
+                    <h4>pH Range</h4>
                     <div className="ph-scale">
                         {
                             Object.keys(this.ph).map((key,index) =>
@@ -76,11 +76,11 @@ class PhBar extends React.Component{
                                             <div className="tick"></div>}
                                         {this.setUniqueKey(index, value) === this.state.min * 10 &&
                                             <div className="min-container">
-                                                <span className="min">min: {this.state.min}</span>
+                                                <span className="min">min</span>
                                             </div>}
                                         {this.setUniqueKey(index, value) === this.state.max * 10 - 1 &&
                                             <div className="max-container">
-                                                <span className="max">max: {this.state.max}</span>
+                                                <span className="max">max</span>
                                             </div>}
                                     </div>
                                 )
@@ -97,6 +97,7 @@ class PhBar extends React.Component{
                         }
                     </div>
                     {!this.state.valid && this.renderInvalid()}
+                    <p><b>Minimum pH</b> {this.state.min}, <b>Maximum pH</b> {this.state.max}</p>
                 </div>
         )
     }
