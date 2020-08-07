@@ -1,5 +1,13 @@
 {"light":{"title":"Light","type":"range","param":"light","values":["0","1","2","3","4","5","6","7","8","9","10"],
  "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)","rgba(100,100,100,1)","rgba(125,125,125,1)","rgba(150,150,150,1)","rgba(175,175,175,1)","rgba(200,200,200,1)","rgba(225,225,225,1)","rgba(250,250,250,1)"]},
  "toxicity":{"title":"Toxicity","type":"range","param":"toxicity","values":["none","low","medium","high"],
- "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)"]}
+ "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)"]},
+ "atmospheric_humidity":{"title":"Humidity","type":"range","param":"atmospheric_humidity","values":["0","1","2","3","4","5","6","7","8","9","10"],
+ "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)","rgba(100,100,100,1)","rgba(125,125,125,1)","rgba(150,150,150,1)","rgba(175,175,175,1)","rgba(200,200,200,1)","rgba(225,225,225,1)","rgba(250,250,250,1)"]},
+ "soil_texture":{"title":"Soil Texture","type":"range","param":"soil_texture","values":["0","1","2","3","4","5","6","7","8","9","10"],
+ "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)","rgba(100,100,100,1)","rgba(125,125,125,1)","rgba(150,150,150,1)","rgba(175,175,175,1)","rgba(200,200,200,1)","rgba(225,225,225,1)","rgba(250,250,250,1)"]},
+ "soil_nutriments":{"title":"Soil Nutriments","type":"range","param":"soil_nutriments","values":["0","1","2","3","4","5","6","7","8","9","10"],
+ "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)","rgba(100,100,100,1)","rgba(125,125,125,1)","rgba(150,150,150,1)","rgba(175,175,175,1)","rgba(200,200,200,1)","rgba(225,225,225,1)","rgba(250,250,250,1)"]},
+ "soil_salinity":{"title":"Soil Salinity","type":"range","param":"soil_salinity","values":["0","1","2","3","4","5","6","7","8","9","10"],
+ "graph_colors":["rgba(0,0,0,1)","rgba(25,25,25,1)","rgba(50,50,50,1)","rgba(75,75,75,1)","rgba(100,100,100,1)","rgba(125,125,125,1)","rgba(150,150,150,1)","rgba(175,175,175,1)","rgba(200,200,200,1)","rgba(225,225,225,1)","rgba(250,250,250,1)"]}
 }
