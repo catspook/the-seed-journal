@@ -11,9 +11,9 @@ class SearchBar extends React.Component {
     }
 
     onTextChanged = (e) => {
-        //Find matchin regex to input value every time it is updated
+        //Find matching regex to input value every time it is updated
         //Change slice to change the max number of matches to show
-       const value = e.target.value 
+       const value = e
        let fixed_value = value.replace(/[^'`\-A-Za-z\s]/gi, '')
        let suggestions = [];
        if(fixed_value.length > 0){
@@ -50,8 +50,13 @@ class SearchBar extends React.Component {
         return(
             <div style={listStyle}>
                 <ul className='suggestions'>
-                    {suggestions.map((item) => 
-                        <li onClick={() => this.selectSuggestion(item)}>{item}</li>)}
+                    {
+                        suggestions.map((item, index) => 
+                        <li 
+                            onClick={() => this.selectSuggestion(item)}
+                            key={index}
+                        >{item}</li>)
+                    }
                 </ul>
             </div>
         )
@@ -62,18 +67,12 @@ class SearchBar extends React.Component {
         return(
             <div>
                 <form className='search-bar' 
-                      onClick={() => this.myInput.focus()}
                       onSubmit = {(event) => this.props.onSubmit(event, text)}
                 >
                     <div className='input-buttons'> 
                         <input
                             value={text} 
-                            onChange={this.onTextChanged} 
-                            //On blur saves state of input and continues suggestion on focus
-                            //...which it does, but it also breaks clicking on a suggestion
-                            //onBlur={() => this.selectSuggestion(text)}
-                            //onFocus={this.onTextChanged}
-                            ref={(input) => this.myInput = input}
+                            onChange={(event) => this.onTextChanged(event.target.value)} 
                             type='text'/>
                         <input type="image" alt="search" id="searchButton" src="https://img.icons8.com/cotton/64/000000/search--v2.png" onClick={() => this.selectSuggestion(this.state.text)}/>
                     </div>

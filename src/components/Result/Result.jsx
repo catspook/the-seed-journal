@@ -78,6 +78,7 @@ class Result extends React.Component{
             forms: "none listed",
             subvarieties: "none listed",
             trefleDown: false,
+            load: false,
         }
     }
 
@@ -249,7 +250,8 @@ class Result extends React.Component{
                 hybrids: hybridsList,
                 forms: formsList,
                 subvarieties: subvarietiesList,
-                trefleDown: false
+                trefleDown: false,
+                load: false,
             }))
         }
         else {
@@ -266,6 +268,7 @@ class Result extends React.Component{
 
         this.setState(() => ({
             slug: ((window.location.href).split("/"))[4],
+            load: true,
         }))
     }
 
@@ -396,7 +399,7 @@ class Result extends React.Component{
 
     render(){
         return(
-            this.renderResults()
+            this.state.load && this.renderResults()
         )
     }
 }
