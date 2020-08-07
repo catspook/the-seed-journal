@@ -11,9 +11,9 @@ class Result extends React.Component{
         super(props)
         this.state = {
             slug: '',
-            image_url: "http://placekitten.com/g/200/300",
-            common_name: 'none listed',
-            scientific_name: 'none listed',
+            image_url: null,
+            common_name: null,
+            scientific_name: '(Species not found)',
             author: 'none listed',
             bibliography: 'none listed',
             main_common_name: 'none listed',
@@ -90,7 +90,7 @@ class Result extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
-                
+
             let eng_common_names = "not listed"
             if (json.data.main_species.common_names.eng !== undefined) {
                 eng_common_names = (json.data.main_species.common_names.eng).join(", ")
@@ -274,6 +274,8 @@ class Result extends React.Component{
         const toggleShowTrefleDown = () => this.setState(() => ({
             trefleDown: false
         }));
+        const has_common_name = (this.state.common_name != null ? true : false)
+        const has_image = (this.state.image_url != null ? true : false)
 
         return (
             <Container>
@@ -287,87 +289,105 @@ class Result extends React.Component{
                 </Toast>
 
                 <Row>
+                    <form>
+                        <button className='print-button' onclick="window.print()">Print</button>
+                        <button className='fav-button'>Favorite</button>
+                    </form> 
+                </Row>
+                <Row>
                     <Col>
+                        {has_common_name ? <h1><b>{this.state.common_name}</b></h1> : null}
+                        <h3><b>{this.state.scientific_name}</b></h3>
+                        <p><b>Genus</b> {this.state.genus}</p>
+                        <p><b>Family</b> {this.state.family}</p>
+                        <p><b>First recorded by</b> {this.state.author} <b>in</b> {this.state.bibliography}</p>
+                        <p><b>Also known as</b> {this.state.common_names}</p>
+                        <br />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <h4><b>Appearance</b></h4>
+                        <p><b>Flower colors</b> {this.state.flower_color}</p>
+                        <p><b>Are flowers conspicuous?</b> {this.state.flower_conspicuous}</p>
+                        <p><b>Flowers bloom during</b> {this.state.bloom_months}</p>
+                        <p><b>Foliage texture</b> {this.state.texture}</p>
+                        <p><b>Foliage colors</b> {this.state.colors}</p>
+                        <p><b>Does foliage stay year-round?</b> {this.state.leaf_retention}</p>
+                        <p><b>Fruit or seed color</b> {this.state.fruit_or_seed_color}</p>
+                        <p><b>Fruit or seed shape</b> {this.state.shape}</p>
+                        <p><b>Are fruit or seeds conspicuous?</b> {this.state.fruit_or_seed_conspicuous}</p>
+                        <p><b>Fruit grows during</b> {this.state.fruit_months}</p>
+                        <br />
+                    </Col>
+                    <Col xs={12} md={6}>
                         <div className='image-holder' height='500px'>
-                            <img src={this.state.image_url} height='100%' width='100%' alt={this.state.common_name}></img>
-                            <PlantRadar>
-                                light={this.state.light}
-                                humidity={this.state.atmospheric_humidity}
-                                salinity={this.state.soil_salinity}
-                                nutriments={this.state.soil_nutriments}
-                                texture={this.state.soil_texture}
-                            </PlantRadar>
-                            <PhBar>
-                                max={this.state.ph_max}
-                                min={this.state.ph_min}
-                            </PhBar>
+                            {has_image ? <img src={this.state.image_url} height='100%' width='100%' alt={this.state.scientific_name}></img> : null}
                         </div>
                     </Col>
-                    <Col>
-                        <form>
-                            <button className='print-button' onclick="window.print()">Print</button>
-                            <button className='fav-button'>Favorite</button>
-                        </form> 
-                        <div className='results-container-pic' overflow='auto'>
-                            <h1><b>{this.state.common_name}</b></h1>
-                            <h3><b>{this.state.scientific_name}</b></h3>
-                            <p><b>Genus</b> {this.state.genus}</p>
-                            <p><b>Family</b> {this.state.family}</p>
-                            <p><b>First recorded by</b> {this.state.author} <b>in</b> {this.state.bibliography}</p>
-                            <p><b>Also known as</b> {this.state.common_names}</p>
-                            <br />
-                            <h4><b>Appearance</b></h4>
-                            <p><b>Flower colors</b> {this.state.flower_color}</p>
-                            <p><b>Are flowers conspicuous?</b> {this.state.flower_conspicuous}</p>
-                            <p><b>Flowers bloom during</b> {this.state.bloom_months}</p>
-                            <p><b>Foliage texture</b> {this.state.texture}</p>
-                            <p><b>Foliage colors</b> {this.state.colors}</p>
-                            <p><b>Does foliage stay year-round?</b> {this.state.leaf_retention}</p>
-                            <p><b>Fruit or seed color</b> {this.state.fruit_or_seed_color}</p>
-                            <p><b>Fruit or seed shape</b> {this.state.shape}</p>
-                            <p><b>Are fruit or seeds conspicuous?</b> {this.state.fruit_or_seed_conspicuous}</p>
-                            <p><b>Fruit grows during</b> {this.state.fruit_months}</p>
-                            <br />
+                </Row>
 
-                            <h4><b>Specifications</b></h4>
-                            <p><b>Shape and orientation</b> {this.state.orientation}</p>
-                            <p><b>Ligneous type</b> {this.state.ligneous_type}</p>
-                            <p><b>Growth form</b> {this.state.growth_form}</p>
-                            <p><b>Growth rate</b> {this.state.growth_rate}</p>
-                            <p><b>Average height (cm)</b> {this.state.ave_height}</p>
-                            <p><b>Maximum height (cm)</b> {this.state.max_height}</p>
-                            <p><b>Nitrogen fixation</b> {this.state.nitrogen}</p>
-                            <p><b>Toxicity</b> {this.state.toxicity}</p>
-                            <br />
+                <Row>
+                    <Col xs={12} md={6}>
+                        <h4><b>Specifications</b></h4>
+                        <p><b>Shape and orientation</b> {this.state.orientation}</p>
+                        <p><b>Ligneous type</b> {this.state.ligneous_type}</p>
+                        <p><b>Growth form</b> {this.state.growth_form}</p>
+                        <p><b>Growth rate</b> {this.state.growth_rate}</p>
+                        <p><b>Average height (cm)</b> {this.state.ave_height}</p>
+                        <p><b>Maximum height (cm)</b> {this.state.max_height}</p>
+                        <p><b>Nitrogen fixation</b> {this.state.nitrogen}</p>
+                        <p><b>Toxicity</b> {this.state.toxicity}</p>
+                        <br />
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <PlantRadar>
+                            light={this.state.light}
+                            humidity={this.state.atmospheric_humidity}
+                            salinity={this.state.soil_salinity}
+                            nutriments={this.state.soil_nutriments}
+                            texture={this.state.soil_texture}
+                        </PlantRadar>
+                    </Col>
+                </Row>   
 
-                            <h4><b>Agricultural Information</b></h4>
-                            <p><b>Duration</b> {this.state.duration}</p>
-                            <p><b>Description</b> {this.state.description}</p>
-                            <p><b>Plant grows during</b> {this.state.growth_months}</p>
-                            <p><b>Sowing</b> {this.state.sowing}</p>
-                            <p><b>Days to harvest</b> {this.state.days_to_harvest}</p>
-                            <p><b>Row spacing (cm)</b> {this.state.row_spacing}</p>
-                            <p><b>Spread (cm)</b> {this.state.spread}</p>
-                            <p><b>Precipitation needed (mm)</b> {this.state.min_precip} to {this.state.max_precip}</p>
-                            <p><b>Minimum root depth (cm)</b> {this.state.min_root_depth}</p>
-                            <p><b>Temperature range (degrees Fahrenheight)</b> {this.state.min_temp_f} to {this.state.max_temp_f}</p>
-                            <br />
-                                
-                            <h4><b>Distribution</b></h4>
-                            <p><b>Native to</b> {this.state.native}</p>
-                            <p><b>Introduced to</b> {this.state.introduced}</p>
-                            <br />
+                <Row>
+                    <Col xs={12} md={6}>
+                        <h4><b>Agricultural Information</b></h4>
+                        <p><b>Duration</b> {this.state.duration}</p>
+                        <p><b>Description</b> {this.state.description}</p>
+                        <p><b>Plant grows during</b> {this.state.growth_months}</p>
+                        <p><b>Sowing</b> {this.state.sowing}</p>
+                        <p><b>Days to harvest</b> {this.state.days_to_harvest}</p>
+                        <p><b>Row spacing (cm)</b> {this.state.row_spacing}</p>
+                        <p><b>Spread (cm)</b> {this.state.spread}</p>
+                        <p><b>Precipitation needed (mm)</b> {this.state.min_precip} to {this.state.max_precip}</p>
+                        <p><b>Minimum root depth (cm)</b> {this.state.min_root_depth}</p>
+                        <p><b>Temperature range (degrees Fahrenheight)</b> {this.state.min_temp_f} to {this.state.max_temp_f}</p>
+                        <br />
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <PhBar>
+                            max={this.state.ph_max}
+                            min={this.state.ph_min}
+                        </PhBar>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={12}>
+                        <h4><b>Distribution</b></h4>
+                        <p><b>Native to</b> {this.state.native}</p>
+                        <p><b>Introduced to</b> {this.state.introduced}</p>
+                        <br />
 
-                            <h4><b>Related Plants</b></h4>
-                            <p><b>Synonyms</b> {this.state.synonyms}</p>
-                            <p><b>Species</b> {this.state.species}</p>
-                            <p><b>Subpecies</b> {this.state.subspecies}</p>
-                            <p><b>Varieties</b> {this.state.varieties}</p>
-                            <p><b>Hybrids</b> {this.state.hybrids}</p>
-                            <p><b>Forms</b> {this.state.forms}</p>
-                            <p><b>Subvarieties</b> {this.state.subvarieties}</p>
-
-                        </div>
+                        <h4><b>Related Plants</b></h4>
+                        <p><b>Synonyms</b> {this.state.synonyms}</p>
+                        <p><b>Species</b> {this.state.species}</p>
+                        <p><b>Subpecies</b> {this.state.subspecies}</p>
+                        <p><b>Varieties</b> {this.state.varieties}</p>
+                        <p><b>Hybrids</b> {this.state.hybrids}</p>
+                        <p><b>Forms</b> {this.state.forms}</p>
+                        <p><b>Subvarieties</b> {this.state.subvarieties}</p>
                     </Col>
                 </Row>
             </Container>
