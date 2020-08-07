@@ -6,6 +6,7 @@
   column-rule-color: #178949;
   text-emphasis-color: #115937;
   border-color: #133D28;
+  error: #C62F3E;
 }
 
 #light .primary {
@@ -53,6 +54,9 @@
 #light .accent-darker::selection {
   background: #133D28;
 }
+#light .error {
+  color: #C62F3E;
+}
 
 #dark {
   background-color: #0B0B0B;
@@ -62,6 +66,7 @@
   column-rule-color: #178949;
   text-emphasis-color: #115937;
   border-color: #133D28;
+  error: #D44957;
 }
 
 #dark .primary {
@@ -83,31 +88,34 @@
   background: #EDEFF1;
 }
 #dark .accent {
-  color: #178949;
+  color: #29DB76;
 }
 #dark .accent-background {
-  background-color: #178949;
+  background-color: #29DB76;
 }
 #dark .accent::selection {
-  background: #178949;
+  background: #29DB76;
 }
 #dark .accent-dark {
-  color: #115937;
+  color: #21C066;
 }
 #dark .accent-dark-background {
-  background-color: #115937;
+  background-color: #21C066;
 }
 #dark .accent-dark::selection {
-  background: #115937;
+  background: #21C076;
 }
 #dark .accent-darker {
-  color: #133D28;
+  color: #1EB35F;
 }
 #dark .accent-darker-background {
-  background-color: #133D28;
+  background-color: #1EB35F;
 }
 #dark .accent-darker::selection {
-  background: #133D28;
+  background: #1EB35F;
+}
+#dark .error {
+  color: #D44957;
 }
 
 /*# sourceMappingURL=themify.css.map */

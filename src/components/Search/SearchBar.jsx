@@ -70,7 +70,9 @@ class SearchBar extends React.Component {
                       onSubmit = {(event) => this.props.onSubmit(event, text)}
                 >
                     <div className='input-buttons'> 
+                        <label for='search-bar' className='d-none'>Search:</label>
                         <input
+                            id='search-bar'
                             value={text} 
                             onChange={(event) => this.onTextChanged(event.target.value)} 
                             type='text'/>
