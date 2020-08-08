@@ -14,6 +14,7 @@
 @each $theme, $params in $themes {
     // generates the overall theme attributes
     ##{$theme} {
+
         // primary
         background-color: theme_item("#{$theme}", "primary");
         color: theme_item("#{$theme}", "secondary");
@@ -26,12 +27,29 @@
         // specifics
         text-emphasis-color: theme_item("#{$theme}", "accent-dark");    // this could just be the above variable .darken.
         border-color: theme_item("#{$theme}", "accent-darker");         // this could just be the above variable .darken.
+
+        *:focus, *.active {
+            // these are strictly for the bootstrap fixes
+            outline: none !important;
+            box-shadow: none !important;
+
+            outline-color: theme_item("#{$theme}", "accent") !important;
+            border-color: theme_item("#{$theme}", "accent-darker") !important;
+        }
+ 
+        *::-webkit-scrollbar-thumb {
+            background-color: theme_item("#{$theme}", "accent");
+        }
     }
 
     ##{$theme} {
         @each $param-name, $color-value in $params {
             .#{$param-name} {
                 color: #{$color-value};
+
+                button:hover{
+                    color: #{darken($color-value, 10%)};
+                }
             }
 
             .#{$param-name}-background {
@@ -43,5 +61,4 @@
             }
         }
     }
-
 }

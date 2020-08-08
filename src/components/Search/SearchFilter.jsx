@@ -2,7 +2,6 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import '../../styles/scss/SearchFilter.scss'
 
 const filters = require('./search_filter.json')
 
@@ -144,9 +143,8 @@ class SearchFilter extends React.Component{
                         <Col 
                             as="button" 
                             onClick={(event) => this.handleButton(event, index)}
-                            className='choice-btn'
-                        >
-                            {filters[key].title}
+                            className='choice-btn secondary'
+                        >{filters[key].title}
                         </Col>
                         {index === this.state.clicked && this.state.open 
                             && this.renderCheckBox(filters, key)}

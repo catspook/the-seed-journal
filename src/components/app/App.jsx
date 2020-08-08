@@ -11,42 +11,40 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Cookies from 'universal-cookie';
-
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
 import '../../styles/css/typography.css';
+import '../../styles/css/Search.css';
 
 class App extends React.Component {
   constructor(props){
       super(props)
 
-      const cookies = new Cookies();
-
-      var fav = cookies.get('favorites', { path: '/' });
-
-      if (fav === null) {
-        fav = [];
-      }
-
       // only ever add to the favorites list as we re-write it each time.
       this.state ={
           page: 0,
-          theme: "light",
-          favorites: fav,
-          cookies: cookies
+          theme: "light"
       }
 
       this.handlePage = this.handlePage.bind(this)
   }
 
-  
-  componentDidMount() {
+  saveLocal(name, key){
+    var ls = require('local-storage');
+    return ls.set(name, key);
+  }
 
+  getLocal(name){
+    var ls = require('local-storage');
+    return ls.get(name);
+  }
+
+  componentDidMount() {
+    console.log(this.saveLocal("test1", "howdy"));
+    console.log(this.getLocal("test1"));
   }
 
   componentWillUnmount() {
-    this.state.cookies.set('favorites', JSON.stringify(this.state.favorites));
   }
 
   // Change the page number depeding on the button that was
@@ -54,7 +52,7 @@ class App extends React.Component {
   handlePage(event) {
     const btnId = Number(event.target.id)
 
-    if (event.target.id === 'Theme'){
+    if (event.target.id === 'Theme' || event.target.id === 'ThemeIcon'){
       let temp = '';
       if (this.state.theme === 'dark'){
         temp = 'light';
@@ -79,12 +77,12 @@ class App extends React.Component {
 				<div className="content-container">
 					<Header onClick={this.handlePage}/>
 					<Switch>
-					<Route path="/about">
-                            <About/>
-						</Route>
+            <Route path="/about">
+              <About/>
+            </Route>
 
 						<Route path="/plant/:plantID">
-                            <Result></Result>
+              <Result></Result>
 						</Route>
 
 						<Route path="/search">

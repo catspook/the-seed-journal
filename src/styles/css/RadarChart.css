@@ -1,0 +1,26 @@
+.spec-chart {
+  background: #EDEFF1;
+  color: #0B0B0B;
+  border: 0px solid black;
+  border-radius: 20px;
+}
+
+.legend {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+  display: inline;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=RadarChart.css.map */

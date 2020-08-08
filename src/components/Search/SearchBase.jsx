@@ -5,16 +5,19 @@ import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
-import SearchFilter from './SearchFilter'
+// import SearchFilter from './SearchFilter'
 import LoadingSpinner from '../LoadingSpinner'
-import "../../styles/scss/SearchBase.scss"
 
 const names = require('./common_names.json')
 
 class SearchBase extends React.Component{
     constructor(props) {
         super(props)
+        
         this.plantList = JSON.parse(names)
+        
+        var fav = require('local-storage').get('favorites');
+
         this.state = {
             searchValue: '',
             filter: {},
@@ -28,12 +31,45 @@ class SearchBase extends React.Component{
             plantResult: "",
             option: "lower",
             loading: false,
+            favorites: fav
         }
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateFilterConditions = this.updateFilterConditions.bind(this)
         this.handleOrderOption = this.handleOrderOption.bind(this)
+    }
+
+    /*
+
+    setCookies(plantName) {
+        const cookies = new Cookies({ path: '../' });
+        var fav = cookies.get('favorites');
+    
+        if (fav) {
+          fav.push(plantName);
+        }else {
+          fav = [plantName]
+        }
+    
+        cookies.set('favorites', fav);
+    }
+
+    getCookies() {
+        const cookies = new Cookies({ path: '../' });
+
+        var fav = cookies.get('favorites');
+    
+        if (fav) {
+          return fav;
+        }else {
+          return null;
+        }
+    }
+
+    */
+
+    getLocal(name){
     }
 
     handleOrderOption(event){
@@ -175,18 +211,23 @@ class SearchBase extends React.Component{
             trefleDown: false
         }));
 
+        const favorites = this.state.favorites;
+        let favoritesRender;
+
+        if (favorites != null){
+        favoritesRender = <div>
+            { favorites.map((value) => 
+                <p className='center testAlign'>{value}</p>
+            )}
+            </div>;
+        }else {
+            favoritesRender = <p className='center testAlign'>No Favorites are saved :(</p>
+        }
+
         return (
             <Container className="search-container" fluid="true">
                 <Row>
-                    <Col sm={4} className="f-col">
-                        <SearchFilter calssName="filter"
-                            updateFilterConditions={this.updateFilterConditions}
-                            handleOrder={this.handleOrderOption}
-                            option={this.state.option}
-                            filter={this.state.filter}
-                        />
-                    </Col>
-                    <Col sm={8} className='sb-wrapper'>
+                    <Col lg className='sb-wrapper'>
                             <SearchBar 
                                 className='sb' 
                                 plantList={this.plantList}
@@ -200,7 +241,10 @@ class SearchBase extends React.Component{
                                 </Toast.Header>
                                 <Toast.Body>Our data source is currently unavailable. Please try again later!</Toast.Body>
                             </Toast>
-                            {this.state.loading ?
+                    </Col>
+                </Row>
+                <Row>
+                {this.state.loading ?
                                 <LoadingSpinner className="spinner" />
                                 :
                                 <SearchContent 
@@ -217,6 +261,19 @@ class SearchBase extends React.Component{
                                     }, [])}
                                 />
                             }
+                 </Row>
+                 <Row>
+                    <Col lg className='addTop'>
+                        <div className='center testAlign'>
+                            <h4>Favorites:</h4>
+                        </div>
+                        {favoritesRender}
+                    </Col>
+                    <Col sm className='overlay'>
+                    </Col>
+                    <Col lg className='addTop'>
+                        <h4 className='center'>Random Plant in your Area <button aria-label='locationButton' className="btn secondary-background" id='locationButton'><i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'></i></button> </h4>
+                        
                     </Col>
                 </Row>
             </Container>

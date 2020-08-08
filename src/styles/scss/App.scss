@@ -31,6 +31,7 @@
 // Main Content
 
 .page-container {
+  transition: all 0.4s ease-out;
   display: flex;
   flex-direction: column;
   min-height: 100vh; // 100% of the user's screen
@@ -43,6 +44,7 @@
 // Footer Section
 
 .footer {
+  transition: all 0.4s ease-out;
   padding-top: 3em;
   position: relative;
   bottom: 0px;
@@ -56,4 +58,33 @@
   // use pads
   margin-left: 0px;
   margin-right: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+
+.search-size{
+  margin-top: 1em;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.addTop {
+  margin-top: 2em;
+}
+
+.overlay {
+  pointer-events: none;
+}
+
+#locationButton {
+  margin-left: 1em;
 }

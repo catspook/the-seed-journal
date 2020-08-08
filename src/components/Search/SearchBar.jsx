@@ -1,5 +1,11 @@
-import React from "react"
-import '../../styles/scss/SearchBar.scss'
+import React from "react";
+
+import {
+    InputGroup,
+    FormControl,
+    Button,
+    Row,
+} from 'react-bootstrap';
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -13,9 +19,10 @@ class SearchBar extends React.Component {
     onTextChanged = (e) => {
         //Find matching regex to input value every time it is updated
         //Change slice to change the max number of matches to show
-       const value = e
+       const value = e.target.value
        let fixed_value = value.replace(/[^'`\-A-Za-z\s]/gi, '')
        let suggestions = [];
+
        if(fixed_value.length > 0){
            let first = fixed_value.charAt(0)
            if (first in this.props.plantList) {
@@ -39,25 +46,29 @@ class SearchBar extends React.Component {
     renderSuggestions () {
         //Render the contents of matching regex in an unordered list
         //Make the list element clickable to fill the input field
-        const { suggestions } =this.state;
+        let { suggestions } = this.state;
+
         if(suggestions.length === 0){
             return null
         }
-        const listStyle = {
-            height: "110px",
-            overflow: "auto"
-        };
+
+        // display at most 8 results
+        if (suggestions.length > 8){
+            suggestions = suggestions.slice(0, 7);
+        }
+
         return(
-            <div style={listStyle}>
-                <ul className='suggestions'>
+            <div className="search-size prediction-container">
                     {
-                        suggestions.map((item, index) => 
-                        <li 
-                            onClick={() => this.selectSuggestion(item)}
-                            key={index}
-                        >{item}</li>)
+                        suggestions.map((item, index) =>
+                            <Row 
+                                onClick={() => this.selectSuggestion(item)}
+                                key={index}
+                                className="justify-content-center predictions-res show primary secondary-background">
+                               <p>{item}</p>
+                            </Row>
+                        )
                     }
-                </ul>
             </div>
         )
     }
@@ -65,22 +76,22 @@ class SearchBar extends React.Component {
     render() {
         const { text } = this.state;
         return(
-            <div>
-                <form className='search-bar' 
-                      onSubmit = {(event) => this.props.onSubmit(event, text)}
-                >
-                    <div className='input-buttons'> 
-                        <label for='search-bar' className='d-none'>Search:</label>
-                        <input
-                            id='search-bar'
-                            value={text} 
-                            onChange={(event) => this.onTextChanged(event.target.value)} 
-                            type='text'/>
-                        <input type="image" alt="search" id="searchButton" src="https://img.icons8.com/cotton/64/000000/search--v2.png" onClick={() => this.selectSuggestion(this.state.text)}/>
-                    </div>
-                    {this.renderSuggestions()}
-                </form>
-            </div>
+            <form className="search-size" onSubmit = {(event) => this.props.onSubmit(event, text)}>
+                <InputGroup className="mb-3 input-group-lg">
+                    <InputGroup.Prepend>
+                        <Button variant="btn secondary-background" onClick={() => this.selectSuggestion(this.state.text)}><i className="fa fa-search primary"></i></Button>
+                    </InputGroup.Prepend>
+                    <FormControl
+                        value={text} 
+                        onChange={this.onTextChanged}
+                        placeholder="lavender"
+                        aria-label="Plant Search Box"
+                        aria-describedby="search-p"
+                        ref = {(input) => this.myInput = input}
+                    />
+                </InputGroup>
+                {this.renderSuggestions()}
+            </form>
         )
     }
 }

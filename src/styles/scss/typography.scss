@@ -26,10 +26,17 @@ $p-font-sizes: (
 );
 
 $h1-font-sizes: (
-  null  : 28px,
-  480px : 35px,
-  640px : 45px,
-  1024px: 40px,
+  null  : 32px,
+  480px : 40px,
+  640px : 50px,
+  1024px: 60px,
+);
+
+$search-width: (
+  null  : 200px,
+  480px : 250px,
+  640px : 330px,
+  1024px: 480px,
 );
 
 @mixin font-size($fs-map) {
@@ -45,10 +52,27 @@ $h1-font-sizes: (
     }
 }
 
+@mixin search-sizer($fs-map) {
+    @each $fs-breakpoint, $fs-size in $fs-map {
+        @if $fs-breakpoint == null {
+            width: $fs-size;
+        }
+        @else {
+            @media screen and (min-width: $fs-breakpoint) {
+                width: $fs-size;
+            }
+        }
+    }
+}
+
 p {
     @include font-size($p-font-sizes);
 }
 
 h1 {
     @include font-size($h1-font-sizes);
+}
+
+.search-size {
+    @include search-sizer($search-width);
 }

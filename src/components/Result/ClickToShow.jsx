@@ -37,7 +37,7 @@ class ClickToShow extends React.Component{
                     this.state.category.map((key,index) => {
                         return (
                             <p key ={index}>
-                                <b className='accent-dark'>
+                                <b className='accent'>
                                     {category[index] + ' '} 
                                 </b>
                                 {this.state.data[index]}

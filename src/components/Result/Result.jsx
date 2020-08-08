@@ -324,25 +324,25 @@ class Result extends React.Component{
                     <Col>
                         <h1><b>{this.state.common_name}</b></h1>
                         <h2><b>{this.state.scientific_name}</b></h2>
-                        <p><b className='accent-dark'>Genus</b> {this.state.genus}</p>
-                        <p><b className='accent-dark'>Family</b> {this.state.family}</p>
-                        <p><b className='accent-dark'>First recorded by</b> {this.state.author} <b className='accent-dark'>in</b> {this.state.bibliography}</p>
-                        <p><b className='accent-dark'>Also known as</b> {this.state.common_names}</p>
+                        <p><b className='accent'>Genus</b> {this.state.genus}</p>
+                        <p><b className='accent'>Family</b> {this.state.family}</p>
+                        <p><b className='accent'>First recorded by</b> {this.state.author} <b className='accent'>in</b> {this.state.bibliography}</p>
+                        <p><b className='accent'>Also known as</b> {this.state.common_names}</p>
                     </Col>
                 </Row>
                 <Row className='result-row'>
                     <Col xs={12} md={6}>
                         <h3><b>Appearance</b></h3>
-                        <p><b className='accent-dark'>Flower colors</b> {this.state.flower_color}</p>
-                        <p><b className='accent-dark'>Are flowers conspicuous?</b> {this.state.flower_conspicuous}</p>
-                        <p><b className='accent-dark'>Flowers bloom during</b> {this.state.bloom_months}</p>
-                        <p><b className='accent-dark'>Foliage texture</b> {this.state.texture}</p>
-                        <p><b className='accent-dark'>Foliage colors</b> {this.state.colors}</p>
-                        <p><b className='accent-dark'>Does foliage stay year-round?</b> {this.state.leaf_retention}</p>
-                        <p><b className='accent-dark'>Fruit or seed color</b> {this.state.fruit_or_seed_color}</p>
-                        <p><b className='accent-dark'>Fruit or seed shape</b> {this.state.shape}</p>
-                        <p><b className='accent-dark'>Are fruit or seeds conspicuous?</b> {this.state.fruit_or_seed_conspicuous}</p>
-                        <p><b className='accent-dark'>Fruit grows during</b> {this.state.fruit_months}</p>
+                        <p><b className='accent'>Flower colors</b> {this.state.flower_color}</p>
+                        <p><b className='accent'>Are flowers conspicuous?</b> {this.state.flower_conspicuous}</p>
+                        <p><b className='accent'>Flowers bloom during</b> {this.state.bloom_months}</p>
+                        <p><b className='accent'>Foliage texture</b> {this.state.texture}</p>
+                        <p><b className='accent'>Foliage colors</b> {this.state.colors}</p>
+                        <p><b className='accent'>Does foliage stay year-round?</b> {this.state.leaf_retention}</p>
+                        <p><b className='accent'>Fruit or seed color</b> {this.state.fruit_or_seed_color}</p>
+                        <p><b className='accent'>Fruit or seed shape</b> {this.state.shape}</p>
+                        <p><b className='accent'>Are fruit or seeds conspicuous?</b> {this.state.fruit_or_seed_conspicuous}</p>
+                        <p><b className='accent'>Fruit grows during</b> {this.state.fruit_months}</p>
                     </Col>
                     <Col xs={12} md={6}>
                         <div className='image-holder' height='500px'>
@@ -354,14 +354,14 @@ class Result extends React.Component{
                 <Row className='result-row'>
                     <Col xs={12} md={6}>
                         <h3><b>Specifications</b></h3>
-                        <p><b className='accent-dark'>Shape and orientation</b> {this.state.orientation}</p>
-                        <p><b className='accent-dark'>Ligneous type</b> {this.state.ligneous_type}</p>
-                        <p><b className='accent-dark'>Growth form</b> {this.state.growth_form}</p>
-                        <p><b className='accent-dark'>Growth rate</b> {this.state.growth_rate}</p>
-                        <p><b className='accent-dark'>Average height (cm)</b> {this.state.ave_height}</p>
-                        <p><b className='accent-dark'>Maximum height (cm)</b> {this.state.max_height}</p>
-                        <p><b className='accent-dark'>Nitrogen fixation</b> {this.state.nitrogen}</p>
-                        <p><b className='accent-dark'>Toxicity</b> {this.state.toxicity}</p>
+                        <p><b className='accent'>Shape and orientation</b> {this.state.orientation}</p>
+                        <p><b className='accent'>Ligneous type</b> {this.state.ligneous_type}</p>
+                        <p><b className='accent'>Growth form</b> {this.state.growth_form}</p>
+                        <p><b className='accent'>Growth rate</b> {this.state.growth_rate}</p>
+                        <p><b className='accent'>Average height (cm)</b> {this.state.ave_height}</p>
+                        <p><b className='accent'>Maximum height (cm)</b> {this.state.max_height}</p>
+                        <p><b className='accent'>Nitrogen fixation</b> {this.state.nitrogen}</p>
+                        <p><b className='accent'>Toxicity</b> {this.state.toxicity}</p>
                     </Col>
                     <Col xs={12} md={6}>
                         <PlantRadar>
@@ -377,16 +377,16 @@ class Result extends React.Component{
                 <Row className='result-row'>
                     <Col xs={12} md={6}>
                         <h3><b>Agricultural Information</b></h3>
-                        <p><b className='accent-dark'>Duration</b> {this.state.duration}</p>
-                        <p><b className='accent-dark'>Description</b> {this.state.description}</p>
-                        <p><b className='accent-dark'>Plant grows during</b> {this.state.growth_months}</p>
-                        <p><b className='accent-dark'>Sowing</b> {this.state.sowing}</p>
-                        <p><b className='accent-dark'>Days to harvest</b> {this.state.days_to_harvest}</p>
-                        <p><b className='accent-dark'>Row spacing (cm)</b> {this.state.row_spacing}</p>
-                        <p><b className='accent-dark'>Spread (cm)</b> {this.state.spread}</p>
-                        <p><b className='accent-dark'>Precipitation needed (mm)</b> {this.state.min_precip} to {this.state.max_precip}</p>
-                        <p><b className='accent-dark'>Minimum root depth (cm)</b> {this.state.min_root_depth}</p>
-                        <p><b className='accent-dark'>Temperature range (degrees Fahrenheight)</b> {this.state.min_temp_f} to {this.state.max_temp_f}</p>
+                        <p><b className='accent'>Duration</b> {this.state.duration}</p>
+                        <p><b className='accent'>Description</b> {this.state.description}</p>
+                        <p><b className='accent'>Plant grows during</b> {this.state.growth_months}</p>
+                        <p><b className='accent'>Sowing</b> {this.state.sowing}</p>
+                        <p><b className='accent'>Days to harvest</b> {this.state.days_to_harvest}</p>
+                        <p><b className='accent'>Row spacing (cm)</b> {this.state.row_spacing}</p>
+                        <p><b className='accent'>Spread (cm)</b> {this.state.spread}</p>
+                        <p><b className='accent'>Precipitation needed (mm)</b> {this.state.min_precip} to {this.state.max_precip}</p>
+                        <p><b className='accent'>Minimum root depth (cm)</b> {this.state.min_root_depth}</p>
+                        <p><b className='accent'>Temperature range (degrees Fahrenheight)</b> {this.state.min_temp_f} to {this.state.max_temp_f}</p>
                     </Col>
                     <Col xs={12} md={6}>
                         <PhBar>

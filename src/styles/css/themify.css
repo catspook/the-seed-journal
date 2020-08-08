@@ -1,16 +1,27 @@
 #light {
   background-color: #EDEFF1;
-  color: #0B0B0B;
-  text-decoration-color: #178949;
-  outline-color: #178949;
-  column-rule-color: #178949;
-  text-emphasis-color: #115937;
-  border-color: #133D28;
-  error: #C62F3E;
+  color: #141414;
+  text-decoration-color: #1A7A52;
+  outline-color: #1A7A52;
+  column-rule-color: #1A7A52;
+  text-emphasis-color: #176D49;
+  border-color: #157A53;
+}
+#light *:focus, #light *.active {
+  outline: none !important;
+  box-shadow: none !important;
+  outline-color: #1A7A52 !important;
+  border-color: #157A53 !important;
+}
+#light *::-webkit-scrollbar-thumb {
+  background-color: #1A7A52;
 }
 
 #light .primary {
   color: #EDEFF1;
+}
+#light .primary button:hover {
+  color: #d0d6db;
 }
 #light .primary-background {
   background-color: #EDEFF1;
@@ -19,103 +30,132 @@
   background: #EDEFF1;
 }
 #light .secondary {
-  color: #0B0B0B;
+  color: #141414;
+}
+#light .secondary button:hover {
+  color: black;
 }
 #light .secondary-background {
-  background-color: #0B0B0B;
+  background-color: #141414;
 }
 #light .secondary::selection {
-  background: #0B0B0B;
+  background: #141414;
 }
 #light .accent {
-  color: #178949;
+  color: #1A7A52;
+}
+#light .accent button:hover {
+  color: #115036;
 }
 #light .accent-background {
-  background-color: #178949;
+  background-color: #1A7A52;
 }
 #light .accent::selection {
-  background: #178949;
+  background: #1A7A52;
 }
 #light .accent-dark {
-  color: #115937;
+  color: #176D49;
+}
+#light .accent-dark button:hover {
+  color: #0e432d;
 }
 #light .accent-dark-background {
-  background-color: #115937;
+  background-color: #176D49;
 }
 #light .accent-dark::selection {
-  background: #115937;
+  background: #176D49;
 }
 #light .accent-darker {
-  color: #133D28;
+  color: #157A53;
+}
+#light .accent-darker button:hover {
+  color: #0e4e35;
 }
 #light .accent-darker-background {
-  background-color: #133D28;
+  background-color: #157A53;
 }
 #light .accent-darker::selection {
-  background: #133D28;
-}
-#light .error {
-  color: #C62F3E;
+  background: #157A53;
 }
 
 #dark {
-  background-color: #0B0B0B;
-  color: #EDEFF1;
-  text-decoration-color: #178949;
-  outline-color: #178949;
-  column-rule-color: #178949;
-  text-emphasis-color: #115937;
-  border-color: #133D28;
-  error: #D44957;
+  background-color: #282a36;
+  color: #f8f8f2;
+  text-decoration-color: #bd93f9;
+  outline-color: #bd93f9;
+  column-rule-color: #bd93f9;
+  text-emphasis-color: #8232f4;
+  border-color: #510ab6;
+}
+#dark *:focus, #dark *.active {
+  outline: none !important;
+  box-shadow: none !important;
+  outline-color: #bd93f9 !important;
+  border-color: #510ab6 !important;
+}
+#dark *::-webkit-scrollbar-thumb {
+  background-color: #bd93f9;
 }
 
 #dark .primary {
-  color: #0B0B0B;
+  color: #282a36;
+}
+#dark .primary button:hover {
+  color: #121319;
 }
 #dark .primary-background {
-  background-color: #0B0B0B;
+  background-color: #282a36;
 }
 #dark .primary::selection {
-  background: #0B0B0B;
+  background: #282a36;
 }
 #dark .secondary {
-  color: #EDEFF1;
+  color: #f8f8f2;
+}
+#dark .secondary button:hover {
+  color: #e6e6d1;
 }
 #dark .secondary-background {
-  background-color: #EDEFF1;
+  background-color: #f8f8f2;
 }
 #dark .secondary::selection {
-  background: #EDEFF1;
+  background: #f8f8f2;
 }
 #dark .accent {
-  color: #29DB76;
+  color: #bd93f9;
+}
+#dark .accent button:hover {
+  color: #9f63f6;
 }
 #dark .accent-background {
-  background-color: #29DB76;
+  background-color: #bd93f9;
 }
 #dark .accent::selection {
-  background: #29DB76;
+  background: #bd93f9;
 }
 #dark .accent-dark {
-  color: #21C066;
+  color: #8232f4;
+}
+#dark .accent-dark button:hover {
+  color: #660de6;
 }
 #dark .accent-dark-background {
-  background-color: #21C066;
+  background-color: #8232f4;
 }
 #dark .accent-dark::selection {
-  background: #21C076;
+  background: #8232f4;
 }
 #dark .accent-darker {
-  color: #1EB35F;
+  color: #510ab6;
+}
+#dark .accent-darker button:hover {
+  color: #3b0786;
 }
 #dark .accent-darker-background {
-  background-color: #1EB35F;
+  background-color: #510ab6;
 }
 #dark .accent-darker::selection {
-  background: #1EB35F;
-}
-#dark .error {
-  color: #D44957;
+  background: #510ab6;
 }
 
 /*# sourceMappingURL=themify.css.map */
