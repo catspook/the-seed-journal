@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
-import SearchFilter from './SearchFilter'
+// import SearchFilter from './SearchFilter'
 import LoadingSpinner from '../LoadingSpinner'
 
 const names = require('./common_names.json')
@@ -177,15 +177,7 @@ class SearchBase extends React.Component{
         return (
             <Container className="search-container" fluid="true">
                 <Row>
-                    <Col sm={4} className="f-col">
-                        <SearchFilter calssName="filter"
-                            updateFilterConditions={this.updateFilterConditions}
-                            handleOrder={this.handleOrderOption}
-                            option={this.state.option}
-                            filter={this.state.filter}
-                        />
-                    </Col>
-                    <Col sm={8} className='sb-wrapper'>
+                    <Col lg className='sb-wrapper'>
                             <SearchBar 
                                 className='sb' 
                                 plantList={this.plantList}

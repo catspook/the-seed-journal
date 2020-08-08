@@ -74,11 +74,9 @@ input {
 
 .f-title {
   padding: 15px;
-  color: #EDEFF1;
   font-weight: bold;
   display: flex;
   justify-content: center;
-  background-color: #133D28;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
@@ -108,8 +106,6 @@ input {
   cursor: pointer;
   height: 100%;
   width: 100%;
-  background-color: #115937;
-  color: #EDEFF1;
   display: flex;
   justify-content: center;
   align-items: center;
