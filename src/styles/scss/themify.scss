@@ -37,9 +37,8 @@
             border-color: theme_item("#{$theme}", "accent-darker") !important;
         }
  
-        ::-webkit-scrollbar-thumb {
+        *::-webkit-scrollbar-thumb {
             background-color: theme_item("#{$theme}", "accent");
-            // border-radius: 0px;
         }
     }
 

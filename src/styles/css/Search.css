@@ -178,4 +178,8 @@ input {
   justify-content: center;
 }
 
+.testAlign {
+  align-items: flex-start;
+}
+
 /*# sourceMappingURL=Search.css.map */

@@ -9972,4 +9972,21 @@ h3 {
   margin-top: 1em;
 }
 
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.addTop {
+  margin-top: 2em;
+}
+
+.overlay {
+  pointer-events: none;
+}
+
+#locationButton {
+  margin-left: 1em;
+}
+
 /*# sourceMappingURL=App.css.map */

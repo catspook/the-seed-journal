@@ -272,7 +272,7 @@ class SearchBase extends React.Component{
                     <Col sm className='overlay'>
                     </Col>
                     <Col lg className='addTop'>
-                        <h4 className='center'>Random Plant in your Area <i aria-label='locationService' className="fa fa-paint-brush primary" id='locationService'></i> </h4>
+                        <h4 className='center'>Random Plant in your Area <button aria-label='locationButton' className="btn secondary-background" id='locationButton'><i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'></i></button> </h4>
                         
                     </Col>
                 </Row>

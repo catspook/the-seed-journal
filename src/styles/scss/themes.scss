@@ -8,10 +8,10 @@ $themes: (
     accent-darker: #157A53,
   ),
   dark: (
-    primary: #141414,
-    secondary: #EDEFF1,
-    accent: #29DB76,
-    accent-dark: #21C066,
-    accent-darker: #1EB35F,
+    primary: #282a36,
+    secondary: #f8f8f2,
+    accent: #bd93f9,
+    accent-dark: darken(#bd93f9, 20%),
+    accent-darker: darken(#bd93f9, 40%),
   ),
 );
