@@ -326,7 +326,7 @@ class Result extends React.Component{
                         <Row className='d-flex justify-content-between align-items-center'>
                             <h1><b>{this.state.common_name}</b></h1>
                             <label for="fave-button" className='d-none'>Favorite</label>
-                            <Button variant="btn secondary-background" id="fave-button" onClick={() => console.log("FAVE!")}><a className='primary'>Favorite!</a></Button>
+                            <Button variant="btn secondary-background" id="fave-button" onClick={() => console.log("FAVE!")}><span className='primary'>Favorite!</span></Button>
                         </Row>
                         <h2><b>{this.state.scientific_name}</b></h2>
                         <p><b className='accent'>Genus</b> {this.state.genus}</p>
