@@ -155,3 +155,34 @@ input {
 .result-container{
     width: 100%;
 }
+
+
+
+// Predictions stylings
+
+// prediction container
+.prediction-container{
+    height: auto;
+    overflow: auto;
+
+    p {
+        margin: 0;
+
+        margin-top: .2em;
+        margin-bottom: .2em;
+
+        padding: 0;
+    }
+}
+
+// prediction individual item
+.predictions-res{
+    transition: all 0.4s ease-out;
+    opacity: 0;
+    margin-top: .5em;
+}
+
+// prediction individual item
+.predictions-res.show{
+    opacity: 1;
+}

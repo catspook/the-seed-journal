@@ -145,4 +145,25 @@ input {
   width: 100%;
 }
 
+.prediction-container {
+  height: auto;
+  overflow: auto;
+}
+.prediction-container p {
+  margin: 0;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  padding: 0;
+}
+
+.predictions-res {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  margin-top: 0.5em;
+}
+
+.predictions-res.show {
+  opacity: 1;
+}
+
 /*# sourceMappingURL=Search.css.map */

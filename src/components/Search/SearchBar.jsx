@@ -3,7 +3,8 @@ import React from "react";
 import {
     InputGroup,
     FormControl,
-    Button
+    Button,
+    Row,
 } from 'react-bootstrap';
 
 class SearchBar extends React.Component {
@@ -20,8 +21,8 @@ class SearchBar extends React.Component {
         //Change slice to change the max number of matches to show
        const value = e.target.value
        let fixed_value = value.replace(/[^'`\-A-Za-z\s]/gi, '')
-
        let suggestions = [];
+
        if(fixed_value.length > 0){
            let first = fixed_value.charAt(0)
            if (first in this.props.plantList) {
@@ -45,25 +46,29 @@ class SearchBar extends React.Component {
     renderSuggestions () {
         //Render the contents of matching regex in an unordered list
         //Make the list element clickable to fill the input field
-        const { suggestions } =this.state;
+        let { suggestions } = this.state;
+
         if(suggestions.length === 0){
             return null
         }
-        const listStyle = {
-            height: "110px",
-            overflow: "auto"
-        };
+
+        // display at most 8 results
+        if (suggestions.length > 8){
+            suggestions = suggestions.slice(0, 7);
+        }
+
         return(
-            <div style={listStyle}>
-                <ul className='suggestions'>
+            <div className="search-size prediction-container">
                     {
-                        suggestions.map((item, index) => 
-                        <li 
-                            onClick={() => this.selectSuggestion(item)}
-                            key={index}
-                        >{item}</li>)
+                        suggestions.map((item, index) =>
+                            <Row 
+                                onClick={() => this.selectSuggestion(item)}
+                                key={index}
+                                className="justify-content-center predictions-res show primary secondary-background">
+                                {item}
+                            </Row>
+                        )
                     }
-                </ul>
             </div>
         )
     }
