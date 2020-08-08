@@ -74,14 +74,8 @@ class PhBar extends React.Component{
                                         {this.setUniqueKey(index, value) !== 0 && 
                                             this.setUniqueKey(index, value) % 2 === 0 &&
                                             <div className="tick"></div>}
-                                        {this.setUniqueKey(index, value) === this.state.min * 10 &&
-                                            <div className="min-container">
-                                                <span className="min">min</span>
-                                            </div>}
-                                        {this.setUniqueKey(index, value) === this.state.max * 10 - 1 &&
-                                            <div className="max-container">
-                                                <span className="max">max</span>
-                                            </div>}
+                                        {this.setUniqueKey(index, value) === this.state.min * 10}
+                                        {this.setUniqueKey(index, value) === this.state.max * 10 - 1}
                                     </div>
                                 )
                             )

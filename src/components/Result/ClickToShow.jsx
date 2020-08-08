@@ -10,13 +10,15 @@ class ClickToShow extends React.Component{
             category: this.props.category,
             data: this.props.data,
             open: this.props.open,
+            message: "click to show",
         }
         this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick(){
         this.setState(() => ({
-            open: !this.state.open
+            open: !this.state.open,
+            message: (this.state.message === "click to show" ? "click to hide" : "click to show")
         }))
     }
     
@@ -24,12 +26,12 @@ class ClickToShow extends React.Component{
         const category = this.state.category
         return(
             <div className="click-wrapper">
-                <h3 
-                    onClick={this.handleClick}
-                    className="h-click"
-                >
-                    <b>{this.props.header}</b>
-                </h3>
+                    <h3 
+                        onClick={this.handleClick}
+                        className="h-click"
+                    >
+                        <b>{this.props.header} <small>{this.state.message}</small></b>
+                    </h3>
                 {
                     this.state.open &&
                     this.state.category.map((key,index) => {
