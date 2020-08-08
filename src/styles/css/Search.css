@@ -148,6 +148,12 @@ input {
 .prediction-container {
   height: auto;
   overflow: auto;
+  position: relative;
+}
+@media screen and (min-width: 1600px) {
+  .prediction-container {
+    position: absolute;
+  }
 }
 .prediction-container p {
   margin: 0;
@@ -164,6 +170,12 @@ input {
 
 .predictions-res.show {
   opacity: 1;
+}
+
+.searchSub {
+  display: flex;
+  margin-top: 2em;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=Search.css.map */

@@ -65,7 +65,7 @@ class SearchBar extends React.Component {
                                 onClick={() => this.selectSuggestion(item)}
                                 key={index}
                                 className="justify-content-center predictions-res show primary secondary-background">
-                                {item}
+                               <p>{item}</p>
                             </Row>
                         )
                     }

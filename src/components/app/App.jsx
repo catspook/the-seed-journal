@@ -11,8 +11,6 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Cookies from 'universal-cookie';
-
 import '../../styles/scss/App.scss';
 import '../../styles/css/themify.css';
 import '../../styles/css/typography.css';
@@ -22,41 +20,28 @@ class App extends React.Component {
   constructor(props){
       super(props)
 
-      const cookies = new Cookies();
-
-      var fav = cookies.get('favorites', { path: '/' });
-
-      if (fav === null) {
-        fav = [];
-      }
-
       // only ever add to the favorites list as we re-write it each time.
       this.state ={
           page: 0,
-          theme: "light",
-          favorites: fav,
-          cookies: cookies
+          theme: "light"
       }
 
       this.handlePage = this.handlePage.bind(this)
   }
 
-  setCookies(plantName) {
-    const cookies = new Cookies({ path: '../' });
-    var fav = cookies.get('favorites');
-
-    if (fav) {
-      fav.push(plantName);
-    }else {
-      fav = [plantName]
-    }
-
-    cookies.set('favorites', fav);
+  saveLocal(name, key){
+    var ls = require('local-storage');
+    return ls.set(name, key);
   }
 
-  
+  getLocal(name){
+    var ls = require('local-storage');
+    return ls.get(name);
+  }
+
   componentDidMount() {
-    this.setCookies("tyoyooyoyoy");
+    console.log(this.saveLocal("test1", "howdy"));
+    console.log(this.getLocal("test1"));
   }
 
   componentWillUnmount() {
@@ -67,7 +52,7 @@ class App extends React.Component {
   handlePage(event) {
     const btnId = Number(event.target.id)
 
-    if (event.target.id === 'Theme'){
+    if (event.target.id === 'Theme' || event.target.id === 'ThemeIcon'){
       let temp = '';
       if (this.state.theme === 'dark'){
         temp = 'light';

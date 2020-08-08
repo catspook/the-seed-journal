@@ -71,3 +71,16 @@
 .search-size{
   margin-top: 1em;
 }
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.addTop {
+  margin-top: 2em;
+}
+
+.overlay {
+  pointer-events: none;
+}
