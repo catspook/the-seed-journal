@@ -7,7 +7,7 @@ class ResultList extends React.Component {
         let url = "http://" + base_url + "/plant/" + (this.props.slugs)[index]
         return (
             <li className='results' key={index}>
-                <a key={index} href={url} target="_blank" rel="noopener noreferrer" className='accent-dark'>
+                <a key={index} href={url} target="_blank" rel="noopener noreferrer" className='accent'>
                     { name }
                 </a>
             </li>

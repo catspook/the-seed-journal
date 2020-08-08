@@ -84,7 +84,7 @@ class SearchBar extends React.Component {
                     <FormControl
                         value={text} 
                         onChange={this.onTextChanged}
-                        placeholder="dwarf boy"
+                        placeholder="lavender"
                         aria-label="Plant Search Box"
                         aria-describedby="search-p"
                         ref = {(input) => this.myInput = input}
