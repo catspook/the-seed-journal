@@ -71,24 +71,22 @@ class SearchBar extends React.Component {
     render() {
         const { text } = this.state;
         return(
-            <div>
-                <form className='' onSubmit = {(event) => this.props.onSubmit(event, text)}>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Prepend>
-                                <Button variant="btn secondary-background" onClick={() => this.selectSuggestion(this.state.text)}><i className="fa fa-search primary"></i></Button>
-                            </InputGroup.Prepend>
-                            <FormControl
-                                value={text} 
-                                onChange={this.onTextChanged}
-                                placeholder="dwarf boy"
-                                aria-label="Plant Search Box"
-                                aria-describedby="search-p"
-                                ref = {(input) => this.myInput = input}
-                            />
-                        </InputGroup>
-                        {this.renderSuggestions()}
-                </form>
-            </div>
+            <form className="search-size" onSubmit = {(event) => this.props.onSubmit(event, text)}>
+                <InputGroup className="mb-3 input-group-lg">
+                    <InputGroup.Prepend>
+                        <Button variant="btn secondary-background" onClick={() => this.selectSuggestion(this.state.text)}><i className="fa fa-search primary"></i></Button>
+                    </InputGroup.Prepend>
+                    <FormControl
+                        value={text} 
+                        onChange={this.onTextChanged}
+                        placeholder="dwarf boy"
+                        aria-label="Plant Search Box"
+                        aria-describedby="search-p"
+                        ref = {(input) => this.myInput = input}
+                    />
+                </InputGroup>
+                {this.renderSuggestions()}
+            </form>
         )
     }
 }

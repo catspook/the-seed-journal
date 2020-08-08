@@ -46,4 +46,23 @@ h1 {
   }
 }
 
+.search-size {
+  width: 200px;
+}
+@media screen and (min-width: 480px) {
+  .search-size {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .search-size {
+    width: 330px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .search-size {
+    width: 480px;
+  }
+}
+
 /*# sourceMappingURL=typography.css.map */
