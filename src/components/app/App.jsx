@@ -82,7 +82,7 @@ class App extends React.Component {
             </Route>
 
 						<Route path="/plant/:plantID">
-              <Result></Result>
+                            <Result></Result>
 						</Route>
 
 						<Route path="/search">

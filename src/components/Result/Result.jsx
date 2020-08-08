@@ -2,6 +2,7 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 import Toast from 'react-bootstrap/Toast'
 import PhBar from '../Chart/pHBar'
 import PlantRadar from '../Chart/RadarChart'
@@ -322,7 +323,11 @@ class Result extends React.Component{
 
                 <Row className='result-row'>
                     <Col>
-                        <h1><b>{this.state.common_name}</b></h1>
+                        <Row className='d-flex justify-content-between align-items-center'>
+                            <h1><b>{this.state.common_name}</b></h1>
+                            <label for="fave-button" className='d-none'>Favorite</label>
+                            <Button variant="btn secondary-background" id="fave-button" onClick={() => console.log("FAVE!")}><a className='primary'>Favorite!</a></Button>
+                        </Row>
                         <h2><b>{this.state.scientific_name}</b></h2>
                         <p><b className='accent'>Genus</b> {this.state.genus}</p>
                         <p><b className='accent'>Family</b> {this.state.family}</p>

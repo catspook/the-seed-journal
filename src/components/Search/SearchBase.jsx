@@ -232,6 +232,7 @@ class SearchBase extends React.Component{
                                 className='sb' 
                                 plantList={this.plantList}
                                 onSubmit={this.handleSubmit}
+                                searching={true}
                             />
                             <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
                                 <Toast.Header>
@@ -243,7 +244,7 @@ class SearchBase extends React.Component{
                             </Toast>
                     </Col>
                 </Row>
-                <Row>
+                <Row className='d-flex justify-content-center'>
                 {this.state.loading ?
                                 <LoadingSpinner className="spinner" />
                                 :

@@ -13,6 +13,7 @@ class SearchBar extends React.Component {
         this.state = {
             suggestions: [],
             text: '',
+            searching: this.props.searching,
         }
     }
 
@@ -20,7 +21,7 @@ class SearchBar extends React.Component {
         //Find matching regex to input value every time it is updated
         //Change slice to change the max number of matches to show
        const value = e.target.value
-       let fixed_value = value.replace(/[^'`\-A-Za-z\s]/gi, '')
+       let fixed_value = value.replace(/[^'`.\-A-Za-z\s]/gi, '')
        let suggestions = [];
 
        if(fixed_value.length > 0){
@@ -43,6 +44,12 @@ class SearchBar extends React.Component {
         }))
     }
 
+    submitSearch(event) {
+        this.selectSuggestion(this.state.text)
+        this.props.onSubmit(event, this.state.text)
+    }
+
+
     renderSuggestions () {
         //Render the contents of matching regex in an unordered list
         //Make the list element clickable to fill the input field
@@ -59,15 +66,14 @@ class SearchBar extends React.Component {
 
         return(
             <div className="search-size prediction-container">
-                    {
-                        suggestions.map((item, index) =>
+                    { this.state.searching ? suggestions.map((item, index) =>
                             <Row 
                                 onClick={() => this.selectSuggestion(item)}
                                 key={index}
                                 className="justify-content-center predictions-res show primary secondary-background">
-                               <p>{item}</p>
+                                <p>{item}</p>
                             </Row>
-                        )
+                        ) : null
                     }
             </div>
         )
@@ -75,19 +81,19 @@ class SearchBar extends React.Component {
     
     render() {
         const { text } = this.state;
+
         return(
-            <form className="search-size" onSubmit = {(event) => this.props.onSubmit(event, text)}>
+            <form className="search-size" onSubmit = {(event) => this.submitSearch(event)}>
                 <InputGroup className="mb-3 input-group-lg">
                     <InputGroup.Prepend>
-                        <Button variant="btn secondary-background" onClick={() => this.selectSuggestion(this.state.text)}><i className="fa fa-search primary"></i></Button>
+                        <Button variant="btn secondary-background" onClick={(event) => this.submitSearch(event)}><i className="fa fa-search primary"></i></Button>
                     </InputGroup.Prepend>
                     <FormControl
                         value={text} 
                         onChange={this.onTextChanged}
                         placeholder="lavender"
                         aria-label="Plant Search Box"
-                        aria-describedby="search-p"
-                        ref = {(input) => this.myInput = input}
+                        ref={(input) => this.myInput = input}
                     />
                 </InputGroup>
                 {this.renderSuggestions()}
