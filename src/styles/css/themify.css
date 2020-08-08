@@ -1,6 +1,6 @@
 #light {
   background-color: #EDEFF1;
-  color: #0B0B0B;
+  color: #141414;
   text-decoration-color: #1A7A52;
   outline-color: #1A7A52;
   column-rule-color: #1A7A52;
@@ -30,16 +30,16 @@
   background: #EDEFF1;
 }
 #light .secondary {
-  color: #0B0B0B;
+  color: #141414;
 }
 #light .secondary button:hover {
   color: black;
 }
 #light .secondary-background {
-  background-color: #0B0B0B;
+  background-color: #141414;
 }
 #light .secondary::selection {
-  background: #0B0B0B;
+  background: #141414;
 }
 #light .accent {
   color: #1A7A52;
@@ -79,7 +79,7 @@
 }
 
 #dark {
-  background-color: #0B0B0B;
+  background-color: #141414;
   color: #EDEFF1;
   text-decoration-color: #29DB76;
   outline-color: #29DB76;
@@ -98,16 +98,16 @@
 }
 
 #dark .primary {
-  color: #0B0B0B;
+  color: #141414;
 }
 #dark .primary button:hover {
   color: black;
 }
 #dark .primary-background {
-  background-color: #0B0B0B;
+  background-color: #141414;
 }
 #dark .primary::selection {
-  background: #0B0B0B;
+  background: #141414;
 }
 #dark .secondary {
   color: #EDEFF1;
