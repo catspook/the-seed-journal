@@ -83,20 +83,25 @@ class PlantRadar extends React.Component{
                     this.state.nutriments,
                     this.state.texture,
                 ],
+                pointRadius: 5,
               },
             ]
           };
 
         return (
-            <Container className='chart'>
+            <Container className='chart' fluid="true">
                 <Row>
                     <Col>
                         <h4>Plant Specifications</h4>
                         <div className='spec-chart'>
                             <Radar 
+                                aria-label="Radar Chart"
+                                role ="img"
                                 ref={(element) => this.setRefrence(element)}
                                 data={data}
+                                height={250}
                                 options={{
+                                    responsive: false,
                                     legend: false,
                                     legendCallback: function(chart) {
                                         var text = [];
@@ -111,7 +116,8 @@ class PlantRadar extends React.Component{
                                             for (var i=0; i < chart.data.labels.length; i++) {
                                                 text.push('<li>')
                                                 text.push(`<div 
-                                                    class="legend" 
+                                                    class="legend accent" 
+                                                    value="${item}"
                                                     style="background-color:
                                                     ${item.pointBackgroundColor[i]}">
                                                     </div>`)
@@ -128,12 +134,19 @@ class PlantRadar extends React.Component{
                                             beginAtZero: true,
                                             max: 10,
                                             min: 0,
-                                            stepSize: 1
+                                            stepSize: 1,
+                                            showLabelBackdrop: false,
+                                        },
+                                        pointLabels: {
+                                            display: false,
+                                        },
+                                        gridLines:{
                                         }
                                     },
                                     tooltips: {
                                         enabled: true,
                                         mode: 'label',
+                                        bodyFontSize: 17,
                                         callbacks: {
                                             title:function(item, data){
                                                 return
@@ -144,7 +157,7 @@ class PlantRadar extends React.Component{
                                                 return text
                                             }
                                         }
-                                    }
+                                    },
                                 }}
                             />
                         </div>
