@@ -202,18 +202,20 @@ class SearchBase extends React.Component{
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        let url = this.addFilterToURL(value)
-        let jsonState = await this.makeApiCall(url)
+        if(value){
+            let url = this.addFilterToURL(value)
+            let jsonState = await this.makeApiCall(url)
 
-        this.setState(() => ({
-            searchValue: value,
-            currentPage: jsonState.currentPage,
-            firstPage: jsonState.firstPage,
-            nextPage: jsonState.nextPage,
-            prevPage: jsonState.prevPage,
-            lastPage: jsonState.lastPage,
-            currentResults: jsonState.currentResults
-        }))
+            this.setState(() => ({
+                searchValue: value,
+                currentPage: jsonState.currentPage,
+                firstPage: jsonState.firstPage,
+                nextPage: jsonState.nextPage,
+                prevPage: jsonState.prevPage,
+                lastPage: jsonState.lastPage,
+                currentResults: jsonState.currentResults
+            }))
+        }
     }
 
     renderSearchList(searchValue){
