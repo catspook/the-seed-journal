@@ -55,6 +55,11 @@ class PlantRadar extends React.Component{
    }
 
     render() {
+        let theme = document.getElementById("Theme");
+        if (!theme){
+            theme = "Light"
+        }
+
         const data = {
             labels: ['Light','Atmospheric Humidity', 'Soil Salinity', 'Soil Nutriments', 'Soil Texture'] ,
             datasets: [

@@ -14,6 +14,7 @@
 @each $theme, $params in $themes {
     // generates the overall theme attributes
     ##{$theme} {
+
         // primary
         background-color: theme_item("#{$theme}", "primary");
         color: theme_item("#{$theme}", "secondary");
@@ -61,13 +62,4 @@
             }
         }
     }
-
-    ##{$theme}{
-        .no-hover{
-            button:hover{
-                // none
-            }
-        }
-    }
-
 }
