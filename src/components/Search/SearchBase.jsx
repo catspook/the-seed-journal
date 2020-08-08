@@ -31,7 +31,8 @@ class SearchBase extends React.Component{
             plantResult: "",
             option: "lower",
             loading: false,
-            favorites: fav
+            favorites: fav,
+            noResults: false,
         }
 
         this.changePage = this.changePage.bind(this)
@@ -132,28 +133,39 @@ class SearchBase extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
-            jsonState.currentPage = json.links.self
-            jsonState.firstPage = (json.links.first ? json.links.first : null)
-            jsonState.nextPage = (json.links.next ? json.links.next : null)
-            jsonState.prevPage = (json.links.prev ? json.links.prev : null)
-            jsonState.lastPage = (json.links.last ? json.links.last : null)
-            jsonState.currentResults = (json.data).reduce((acc, element) => {
-                let addName = (element.common_name != null ? element.common_name : element.scientific_name)
-                acc.push({
-                    name: addName,
-                    slug: element.slug
-                })
-                return acc
-            }, []);
-            this.setState(() => ({
-                trefleDown: false
-            }))
+            console.log(json)
+            if (json.meta.total === 0) {
+                this.setState(() => ({
+                    trefleDown: false,
+                    noResults: true
+                }))
+            }
+            else {
+                jsonState.currentPage = json.links.self
+                jsonState.firstPage = (json.links.first ? json.links.first : null)
+                jsonState.nextPage = (json.links.next ? json.links.next : null)
+                jsonState.prevPage = (json.links.prev ? json.links.prev : null)
+                jsonState.lastPage = (json.links.last ? json.links.last : null)
+                jsonState.currentResults = (json.data).reduce((acc, element) => {
+                    let addName = (element.common_name != null ? element.common_name : element.scientific_name)
+                    acc.push({
+                        name: addName,
+                        slug: element.slug
+                    })
+                    return acc
+                }, []);
+                this.setState(() => ({
+                    trefleDown: false,
+                    noResults: false
+                }))
+            }
         }
         else {
             console.log(response.status)
             this.setState(() => ({
                 trefleDown: true,
                 loading: false,
+                noResults: false,
             }))
         }
 
@@ -244,6 +256,7 @@ class SearchBase extends React.Component{
                             </Toast>
                     </Col>
                 </Row>
+                { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
                 <Row className='d-flex justify-content-center'>
                 {this.state.loading ?
                                 <LoadingSpinner className="spinner" />
