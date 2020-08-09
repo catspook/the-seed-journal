@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
-// import SearchFilter from './SearchFilter'
+import SearchFilter from './SearchFilter'
 import LoadingSpinner from '../LoadingSpinner'
 
 const names = require('./common_names.json')
@@ -256,7 +256,10 @@ class SearchBase extends React.Component{
                             </Toast>
                     </Col>
                 </Row>
-                { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
+                <Col className='sb-wrapper'>
+                    <SearchFilter />
+                    { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
+                </Col>
                 <Row className='d-flex justify-content-center'>
                 {this.state.loading ?
                                 <LoadingSpinner className="spinner" />

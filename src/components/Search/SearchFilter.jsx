@@ -2,6 +2,9 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Dropdown from 'react-bootstrap/Dropdown'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 const filters = require('./search_filter.json')
 
@@ -154,10 +157,47 @@ class SearchFilter extends React.Component{
         )
     }
 
+
+    render() {
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                Click the magnifying glass to submit your search!
+            </Tooltip>
+        );
+
+        return(
+            <Row className='d-flex justify-content-center'>
+               <OverlayTrigger
+                    placement="top"
+                    delay={{ show: 100, hide: 100 }}
+                    overlay={renderTooltip}
+                >
+                <Dropdown className='dropdown-light'>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic" className='secondary-background primary accent-border'>
+                        Search by Category
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item className='drop-menu' href="#/action-1">Low Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Medium Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Lots of Sunlight</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Low Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Medium Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">High Humidity</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+                </OverlayTrigger>
+            </Row>
+        )
+    }
+}
+
+/*
     render() {
         return(
             <Container className="root-con" fluid="true">
-                <Row className="f-title">Options</Row>
+                <Row className="f-title">Filter</Row>
+
                 <Row className="op-con">
                     <Col className="f-rad">
                         <input 
@@ -196,5 +236,5 @@ class SearchFilter extends React.Component{
         )
     }
 }
-
+*/
 export default SearchFilter

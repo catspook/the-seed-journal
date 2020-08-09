@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
     InputGroup,
     FormControl,
@@ -82,7 +81,7 @@ class SearchBar extends React.Component {
     render() {
         const { text } = this.state;
 
-        return(
+        return (
             <form className="search-size" onSubmit = {(event) => this.submitSearch(event)}>
                 <InputGroup className="mb-3 input-group-lg">
                     <InputGroup.Prepend>
