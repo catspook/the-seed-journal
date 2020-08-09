@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
 import SearchBar from './SearchBar'
 import SearchContent from './SearchContent'
-// import SearchFilter from './SearchFilter'
+import SearchFilter from './SearchFilter'
 import LoadingSpinner from '../LoadingSpinner'
 
 const names = require('./common_names.json')
@@ -20,7 +20,7 @@ class SearchBase extends React.Component{
 
         this.state = {
             searchValue: '',
-            filter: {},
+            filter: [],
             currentPage: "",
             firstPage: "",
             nextPage: "",
@@ -38,41 +38,30 @@ class SearchBase extends React.Component{
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.updateFilterConditions = this.updateFilterConditions.bind(this)
         this.handleOrderOption = this.handleOrderOption.bind(this)
         this.handleRandom = this.handleRandom.bind(this)
+        this.handleFiliter = this.handleFilter.bind(this)
     }
 
-    /*
-
-    setCookies(plantName) {
-        const cookies = new Cookies({ path: '../' });
-        var fav = cookies.get('favorites');
-    
-        if (fav) {
-          fav.push(plantName);
-        }else {
-          fav = [plantName]
+    handleFilter(num){
+        let filter = []
+        if(num !== 0){
+            if(num <= 3){
+                filter.push('light')
+            }
+            else{
+                filter.push('atmospheric_humidity')
+            }
+            if(num % 3 === 1) 
+                filter.push([0, 3])
+            else if(num % 3 === 2)
+                filter.push([4, 7])
+            else
+                filter.push([8, 10])
         }
-    
-        cookies.set('favorites', fav);
-    }
-
-    getCookies() {
-        const cookies = new Cookies({ path: '../' });
-
-        var fav = cookies.get('favorites');
-    
-        if (fav) {
-          return fav;
-        }else {
-          return null;
-        }
-    }
-
-    */
-
-    getLocal(name){
+        this.setState(() => ({
+            filter: filter,
+        }))
     }
 
     async handleRandom(event){
@@ -108,16 +97,9 @@ class SearchBase extends React.Component{
         }))
     }
 
-    updateFilterConditions(obj){
-        this.setState(() => ({
-            filter: obj
-        }))
-    }
-
     addFilterToURL(value){
-        const filter_obj = this.state.filter
+        const filter = this.state.filter
         let filter_str = ''
-        let key = Object.keys(filter_obj)[0]
         let cors_url = "https://cors-anywhere.herokuapp.com/"
         let url = cors_url + "https://trefle.io/api/v1/species/search?token=" 
             + process.env.REACT_APP_TREFLE_API_TOKEN
@@ -125,21 +107,13 @@ class SearchBase extends React.Component{
             url = "https://trefle.io/api/v1/species?token=" 
                 + process.env.REACT_APP_TREFLE_API_TOKEN
         }
-
-        if(this.state.filter[key]) {
-            if(this.state.option === "lower"){
-                filter_str = filter_str.concat(`&${filter_obj[key]
-                    .type}[${key}]=,${filter_obj[key].values}`)
-            } 
-            else {
-                filter_str = filter_str.concat(`&${filter_obj[key]
-                    .type}[${key}]=${filter_obj[key].values}`)
-            }
-
+        if(filter.length > 0) {
+            filter_str = filter_str.concat(`&range[${filter[0]}]=${filter[1]}`)
             url = url.concat(filter_str)
         }
         if(value)
             url = url.concat(`&q=${value}`)
+        console.log(url)
 
         return url
     }
@@ -237,7 +211,7 @@ class SearchBase extends React.Component{
     async handleSubmit(event, value) {
         event.preventDefault()
 
-        if(value){
+        if(value || this.state.filter.length !== 0){
             let url = this.addFilterToURL(value)
             let jsonState = await this.makeApiCall(url)
 
@@ -248,7 +222,8 @@ class SearchBase extends React.Component{
                 nextPage: jsonState.nextPage,
                 prevPage: jsonState.prevPage,
                 lastPage: jsonState.lastPage,
-                currentResults: jsonState.currentResults
+                currentResults: jsonState.currentResults,
+                filter: [],
             }))
         }
     }
@@ -294,7 +269,10 @@ class SearchBase extends React.Component{
                             </Toast>
                     </Col>
                 </Row>
-                { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
+                <Col className='sb-wrapper'>
+                    <SearchFilter handleFilter={this.handleFiliter} filter={this.state.filter}/>
+                    { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
+                </Col>
                 <Row className='d-flex justify-content-center'>
                 {this.state.loading ?
                                 <LoadingSpinner className="spinner" />
