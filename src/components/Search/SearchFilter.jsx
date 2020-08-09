@@ -17,6 +17,7 @@ class SearchFilter extends React.Component{
             category: ['None', 'Low Sunlight', 'Medium Sunlight', 'Lots of Sunlight', 'Low Humidity', 'Medium Humidity', 'High Humidity'],
             title: 'Search by Category'
         }
+        this.handleSelect = this.handleSelect.bind(this)
     }
 
     handleSelect(event){
@@ -35,6 +36,9 @@ class SearchFilter extends React.Component{
 
 
     render() {
+        let title = this.state.title
+        if(this.props.filter.length === 0)
+            title = "Search by Category"
         const renderTooltip = (props) => (
             <Tooltip id="button-tooltip" {...props}>
                 Click the magnifying glass to submit your search!
@@ -48,18 +52,20 @@ class SearchFilter extends React.Component{
                     delay={{ show: 100, hide: 100 }}
                     overlay={renderTooltip}
                 >
-                <Dropdown className='dropdown-light'>
+                <Dropdown className='dropdown-light' onSelect={this.handleSelect}>
                     <Dropdown.Toggle variant="success" id="dropdown-basic" className='secondary-background primary accent-border'>
-                        Search by Category
+                        {title}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item className='drop-menu' href="#/action-1">Low Sunlight</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' href="#/action-2">Medium Sunlight</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' href="#/action-2">Lots of Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="0">Low Sunlight</Dropdown.Item>
                         <Dropdown.Divider />
-                        <Dropdown.Item className='drop-menu' href="#/action-2">Low Humidity</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' href="#/action-2">Medium Humidity</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' href="#/action-2">High Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="1">Low Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="2">Medium Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="3">Lots of Sunlight</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item className='drop-menu' eventKey="4">Low Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="5">Medium Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="6">High Humidity</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 </OverlayTrigger>
