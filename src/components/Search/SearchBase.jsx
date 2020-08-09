@@ -95,7 +95,7 @@ class SearchBase extends React.Component{
             const json = await this.makeApiCall(url)
             const data_num = Math.floor(Math.random() * json.currentResults.length)
             slug = json.currentResults[data_num].slug
-            const slug_url = `https://trefle.io/api/v1/species/${slug}?token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
+            const slug_url = cors_url + `https://trefle.io/api/v1/species/${slug}?token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
             image_count = await this.makeApiCall(slug_url, true)
         }
         return slug
@@ -268,7 +268,7 @@ class SearchBase extends React.Component{
             let base_url = (current_url.split("/"))[2]
             favoritesRender = (<div>
                 { favorites.map((value) => 
-                    <p className='center testAlign'><a className="accent" href={"http://" + base_url + "/plant/" + value}>{value}</a></p>
+                    <p className='center testAlign'><a className="accent" href={"http://" + base_url + "/plant/" + value} target="_blank" rel="noopener noreferrer" >{value}</a></p>
                 )}
                 </div>);
         }else {
@@ -324,7 +324,7 @@ class SearchBase extends React.Component{
                     <Col sm className='overlay'>
                     </Col>
                     <Col lg className='addTop'>
-                        <h4 className='center'>Random Plant in your Area 
+                        <h4 className='center'>Random Plant 
                             <button onClick={this.handleRandom} aria-label='locationButton' className="btn secondary-background" id='locationButton'>
                                 <i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'>
                         </i></button> </h4>
