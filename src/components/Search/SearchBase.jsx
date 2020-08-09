@@ -269,8 +269,10 @@ class SearchBase extends React.Component{
                             </Toast>
                     </Col>
                 </Row>
-                <SearchFilter handleFilter={this.handleFiliter} filter={this.state.filter}/>
-                { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
+                <Col className='sb-wrapper'>
+                    <SearchFilter handleFilter={this.handleFiliter} filter={this.state.filter}/>
+                    { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
+                </Col>
                 <Row className='d-flex justify-content-center'>
                 {this.state.loading ?
                                 <LoadingSpinner className="spinner" />

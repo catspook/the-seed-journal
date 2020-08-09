@@ -33,35 +33,33 @@ class SearchFilter extends React.Component{
         this.props.handleFilter(num)
     }
 
+
     render() {
-        let title = this.state.title
-        if(this.props.filter.length === 0)
-            title = "Search by Category"
         const renderTooltip = (props) => (
             <Tooltip id="button-tooltip" {...props}>
                 Click the magnifying glass to submit your search!
             </Tooltip>
-        );        return(
+        );
+
+        return(
             <Row className='d-flex justify-content-center'>
                <OverlayTrigger
                     placement="top"
                     delay={{ show: 100, hide: 100 }}
                     overlay={renderTooltip}
                 >
-                <Dropdown className='dropdown-light' onSelect={(e) => this.handleSelect(e)}>
+                <Dropdown className='dropdown-light'>
                     <Dropdown.Toggle variant="success" id="dropdown-basic" className='secondary-background primary accent-border'>
-                        {title}
+                        Search by Category
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item className='drop-menu' eventKey="0">{this.state.category[0]}</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-1">Low Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Medium Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Lots of Sunlight</Dropdown.Item>
                         <Dropdown.Divider />
-                        <Dropdown.Item className='drop-menu' eventKey="1">{this.state.category[1]}</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="2">{this.state.category[2]}</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="3">{this.state.category[3]}</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item className='drop-menu' eventKey="4">{this.state.category[4]}</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="5">{this.state.category[5]}</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="6">{this.state.category[6]}</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Low Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">Medium Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' href="#/action-2">High Humidity</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 </OverlayTrigger>
