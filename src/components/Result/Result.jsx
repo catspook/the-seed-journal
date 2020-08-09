@@ -16,7 +16,21 @@ const hypericum = require('./trefle-hypericum-mutilum.json')
 class Result extends React.Component{
     constructor(props) {
         super(props)
+
+        var fav = this.getLocal('favorites');
+        if (fav){
+            if (fav.includes(((window.location.href).split("/"))[4])){
+                fav = true;
+            }
+            else {
+                fav = false;
+            }
+        }else {
+            fav = false;
+        }
+
         this.state = {
+            favorite: fav,
             response_status: '',
             slug: '',
             image_url: null,
@@ -88,6 +102,15 @@ class Result extends React.Component{
             trefleDown: false,
             load: false,
         }
+    }
+
+    setLocal(name, key){
+        var ls = require('local-storage');
+        return ls.set(name, key);
+    }
+
+    getLocal(name){
+        return require('local-storage').get(name);
     }
 
     componentDidMount() {
@@ -297,18 +320,98 @@ class Result extends React.Component{
         let url = cors_url + "https://trefle.io/api/v1/plants/" + plantName + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
         await this.makeApiCall(url, plantName)
 
+        
+        var fav = this.getLocal('favorites');
+
+        if (fav === null){
+            fav = false
+        }else {
+            if (fav.includes(((window.location.href).split("/"))[4])){
+                fav = true;
+            }else {
+                fav = false;
+            }
+        }
+
         this.setState(() => ({
+            favorite: fav,
             slug: ((window.location.href).split("/"))[4],
             load: true,
         }))
     }
 
+    onFavorite = (e) => {
+        console.log("Adding favorite:");
+        var fav = this.getLocal('favorites');
+
+        if (fav === null){
+            console.log("\t - Favorites doesn't exist yet (creating)");
+            fav = [];
+        }
+
+        if (!fav.includes(((window.location.href).split("/"))[4])){
+            console.log("\t - Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
+            fav.push(((window.location.href).split("/"))[4]);
+        }else {
+            console.log("\t - ERROR: Favorites already has [" + ((window.location.href).split("/"))[4] + "]");
+        }
+
+        this.setLocal('favorites', fav);
+        console.log("\t - setting favorites [" + fav + "]");
+
+        console.log("\t - Reading state was [" + this.state.favorite + "]");
+        this.setState(() => ({
+            favorite: true
+        }))
+        console.log("\t - Setting state to [" + this.state.favorite + "]");
+    }
+
+    onUnFavorite = (e) => {
+        console.log("Removing favorite:");
+        var fav = this.getLocal('favorites');
+
+        if (fav === null){
+            console.log("\t - Favorites doesn't exist yet (creating)");
+            fav = [];
+        }else{
+            if (fav.includes(((window.location.href).split("/"))[4])){
+                console.log("\t - Favorites has [" + ((window.location.href).split("/"))[4] + "]");
+                const index = fav.indexOf(((window.location.href).split("/"))[4]);
+                if (index > -1) {
+                    fav.splice(index, 1);
+                }
+            }else{
+                console.log("\t - ERROR: Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
+            }
+        }
+
+        this.setLocal('favorites', fav);
+        console.log("\t - setting favorites [" + fav + "]");
+
+        console.log("\t - Reading state was [" + this.state.favorite + "]");
+        this.setState(() => ({
+            favorite: false
+        }))
+        console.log("\t - Setting state to [" + this.state.favorite + "]");
+    }
+
     renderResults(){
-        const showTrefleDown = this.state.trefleDown
+        const showTrefleDown = this.state.trefleDown;
+
         const toggleShowTrefleDown = () => this.setState(() => ({
             trefleDown: false
         }));
-        const has_image = (this.state.image_url != null ? true : false)
+
+        const has_image = (this.state.image_url != null ? true : false);
+
+        var favorites;
+        console.log(this.state.favorite);
+
+        if (this.state.favorite){
+            favorites = <Button variant="btn secondary-background" id="fave-button" onClick={() => this.onUnFavorite()}><i aria-label='favoriteIcon' className="fa fa-heart accent" id='favoriteIcon'></i></Button>
+        }else {
+            favorites = <Button variant="btn secondary-background" id="fave-button" onClick={() => this.onFavorite()}><i aria-label='favoriteIcon' className="fa fa-heart primary" id='favoriteIcon'></i></Button>
+        }
 
         return (
             <Container>
@@ -325,8 +428,8 @@ class Result extends React.Component{
                     <Col>
                         <Row className='d-flex justify-content-between align-items-center'>
                             <h1><b>{this.state.common_name}</b></h1>
-                            <label for="fave-button" className='d-none'>Favorite</label>
-                            <Button variant="btn secondary-background" id="fave-button" onClick={() => console.log("FAVE!")}><span className='primary'>Favorite!</span></Button>
+                            <label htmlFor="fave-button" className='d-none'>Favorite</label>
+                            {favorites}
                         </Row>
                         <h2><b>{this.state.scientific_name}</b></h2>
                         <p><b className='accent'>Genus</b> {this.state.genus}</p>
