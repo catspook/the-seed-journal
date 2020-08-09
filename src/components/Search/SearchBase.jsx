@@ -79,6 +79,7 @@ class SearchBase extends React.Component{
         const page = Math.floor(Math.random() * this.state.pageMax) + 1
         const cors_url = "https://cors-anywhere.herokuapp.com/"
         let url = cors_url + `https://trefle.io/api/v1/species?filter_not[image_url]=null&page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
+        console.log(url)
         const json = await this.makeApiCall(url)
         const data_num = Math.floor(Math.random() * json.currentResults.length)
         slug = json.currentResults[data_num].slug
@@ -240,7 +241,19 @@ class SearchBase extends React.Component{
         return (
             <Container className="search-container" fluid="true">
                 <Row>
-                    <Col lg className='sb-wrapper'>
+                    <Col md={{order: 1}} className='addTop'>
+                        <div className='center testAlign'>
+                            <h4>Favorites:</h4>
+                        </div>
+                        {favoritesRender}
+                    </Col>
+                    <Col md={{order: 3}}  className='addTop'>
+                        <h5 className='center'>Go to a Random Plant 
+                            <button onClick={this.handleRandom} aria-label='locationButton' className="btn secondary-background" id='locationButton'>
+                                <i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'>
+                        </i></button> </h5>
+                    </Col>
+                    <Col md={{order: 2}} className='sb-wrapper'>
                             <SearchBar 
                                 className='sb' 
                                 plantList={this.plantList}
@@ -280,22 +293,6 @@ class SearchBase extends React.Component{
                                 />
                             }
                  </Row>
-                 <Row>
-                    <Col lg className='addTop'>
-                        <div className='center testAlign'>
-                            <h4>Favorites:</h4>
-                        </div>
-                        {favoritesRender}
-                    </Col>
-                    <Col sm className='overlay'>
-                    </Col>
-                    <Col lg className='addTop'>
-                        <h4 className='center'>Go to a Random Plant 
-                            <button onClick={this.handleRandom} aria-label='locationButton' className="btn secondary-background" id='locationButton'>
-                                <i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'>
-                        </i></button> </h4>
-                    </Col>
-                </Row>
             </Container>
         )
     }
