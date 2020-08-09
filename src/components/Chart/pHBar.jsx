@@ -49,7 +49,7 @@ class PhBar extends React.Component{
 
     renderInvalid(){
         return(
-            <span className="error">No pH Information Available</span>
+            <span className="error accent">No pH Information Available</span>
         )
     }
 
