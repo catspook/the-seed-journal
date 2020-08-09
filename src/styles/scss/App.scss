@@ -60,14 +60,6 @@
   margin-right: 0px;
 }
 
-::-webkit-scrollbar {
-  width: 1em;
-}
- 
-::-webkit-scrollbar-track {
-  box-shadow: none;
-}
-
 .search-size{
   margin-top: 1em;
 }
@@ -91,4 +83,13 @@
 
 .fa-heart{
   transition: all 0.2s ease-out;
+}
+
+// This is 100% necessary - the only way it will work
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #606060;
 }

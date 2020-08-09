@@ -170,7 +170,7 @@ input {
 
 .predictions-res.show {
   transition: all 0.2s ease-out;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .predictions-res.show:hover {
