@@ -264,11 +264,13 @@ class SearchBase extends React.Component{
         let favoritesRender;
 
         if (favorites != null){
-        favoritesRender = <div>
-            { favorites.map((value) => 
-                <p className='center testAlign'>{value}</p>
-            )}
-            </div>;
+            let current_url = window.location.href
+            let base_url = (current_url.split("/"))[2]
+            favoritesRender = (<div>
+                { favorites.map((value) => 
+                    <p className='center testAlign'><a className="accent" href={"http://" + base_url + "/plant/" + value}>{value}</a></p>
+                )}
+                </div>);
         }else {
             favoritesRender = <p className='center testAlign'>No Favorites are saved :(</p>
         }
