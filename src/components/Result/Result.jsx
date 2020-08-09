@@ -7,6 +7,7 @@ import Toast from 'react-bootstrap/Toast'
 import PhBar from '../Chart/pHBar'
 import PlantRadar from '../Chart/RadarChart'
 import ClickToShow from './ClickToShow'
+import '../../styles/scss/Result.scss'
 
 const canina = require('./trefle-rosa-canina.json')
 const daphne = require('./trefle-daphne-striata.json')
