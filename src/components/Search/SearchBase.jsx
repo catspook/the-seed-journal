@@ -33,12 +33,14 @@ class SearchBase extends React.Component{
             loading: false,
             favorites: fav,
             noResults: false,
+            pageMax: 22883,
         }
 
         this.changePage = this.changePage.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.updateFilterConditions = this.updateFilterConditions.bind(this)
         this.handleOrderOption = this.handleOrderOption.bind(this)
+        this.handleRandom = this.handleRandom.bind(this)
     }
 
     /*
@@ -71,6 +73,27 @@ class SearchBase extends React.Component{
     */
 
     getLocal(name){
+    }
+
+    async handleRandom(event){
+        event.preventDefault()
+        let current_url = window.location.href
+        let base_url = (current_url.split("/"))[2]
+        let slug = await this.getSlug()
+        let url = "http://" + base_url + "/plant/" + slug
+        console.log(url)
+        window.open(url, "_blank", "noopener noreferrer")
+    }
+
+    // Get the slug of a random plant 
+    async getSlug(){
+        const page = Math.floor(Math.random() * this.state.pageMax) + 1
+        const cors_url = "https://cors-anywhere.herokuapp.com/"
+        let url = cors_url + `https://trefle.io/api/v1/species?page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
+        const json = await this.makeApiCall(url)
+        const data_num = Math.floor(Math.random() * json.currentResults.length)
+        const slug = json.currentResults[data_num].slug
+        return slug
     }
 
     handleOrderOption(event){
@@ -133,7 +156,6 @@ class SearchBase extends React.Component{
 
         if (response.status === 200) {
             let json = await response.json();
-            console.log(json)
             if (json.meta.total === 0) {
                 this.setState(() => ({
                     trefleDown: false,
@@ -237,7 +259,6 @@ class SearchBase extends React.Component{
         }else {
             favoritesRender = <p className='center testAlign'>No Favorites are saved :(</p>
         }
-
         return (
             <Container className="search-container" fluid="true">
                 <Row>
@@ -288,8 +309,10 @@ class SearchBase extends React.Component{
                     <Col sm className='overlay'>
                     </Col>
                     <Col lg className='addTop'>
-                        <h4 className='center'>Random Plant in your Area <button aria-label='locationButton' className="btn secondary-background" id='locationButton'><i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'></i></button> </h4>
-                        
+                        <h4 className='center'>Random Plant in your Area 
+                            <button onClick={this.handleRandom} aria-label='locationButton' className="btn secondary-background" id='locationButton'>
+                                <i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'>
+                        </i></button> </h4>
                     </Col>
                 </Row>
             </Container>
