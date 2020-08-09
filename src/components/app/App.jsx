@@ -20,16 +20,22 @@ class App extends React.Component {
   constructor(props){
       super(props)
 
+      var theme = this.getLocal("theme");
+
+      if (theme === null){
+        theme = "light";
+      }
+
       // only ever add to the favorites list as we re-write it each time.
       this.state ={
           page: 0,
-          theme: "light"
+          theme: theme
       }
 
       this.handlePage = this.handlePage.bind(this)
   }
 
-  saveLocal(name, key){
+  setLocal(name, key){
     var ls = require('local-storage');
     return ls.set(name, key);
   }
@@ -40,8 +46,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.saveLocal("test1", "howdy"));
-    console.log(this.getLocal("test1"));
+
   }
 
   componentWillUnmount() {
@@ -53,12 +58,15 @@ class App extends React.Component {
     const btnId = Number(event.target.id)
 
     if (event.target.id === 'Theme' || event.target.id === 'ThemeIcon'){
+
       let temp = '';
       if (this.state.theme === 'dark'){
         temp = 'light';
       } else {
         temp = 'dark';
       }
+
+      this.setLocal("theme", temp);
         
       this.setState(() => ({
         theme: temp,

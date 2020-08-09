@@ -341,58 +341,58 @@ class Result extends React.Component{
     }
 
     onFavorite = (e) => {
-        console.log("Adding favorite:");
+        // console.log("Adding favorite:");
         var fav = this.getLocal('favorites');
 
         if (fav === null){
-            console.log("\t - Favorites doesn't exist yet (creating)");
+            // console.log("\t - Favorites doesn't exist yet (creating)");
             fav = [];
         }
 
         if (!fav.includes(((window.location.href).split("/"))[4])){
-            console.log("\t - Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
+            // console.log("\t - Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
             fav.push(((window.location.href).split("/"))[4]);
         }else {
-            console.log("\t - ERROR: Favorites already has [" + ((window.location.href).split("/"))[4] + "]");
+            // console.log("\t - ERROR: Favorites already has [" + ((window.location.href).split("/"))[4] + "]");
         }
 
         this.setLocal('favorites', fav);
-        console.log("\t - setting favorites [" + fav + "]");
+        // console.log("\t - setting favorites [" + fav + "]");
 
-        console.log("\t - Reading state was [" + this.state.favorite + "]");
+        // console.log("\t - Reading state was [" + this.state.favorite + "]");
         this.setState(() => ({
             favorite: true
         }))
-        console.log("\t - Setting state to [" + this.state.favorite + "]");
+        // console.log("\t - Setting state to [" + this.state.favorite + "]");
     }
 
     onUnFavorite = (e) => {
-        console.log("Removing favorite:");
+        // console.log("Removing favorite:");
         var fav = this.getLocal('favorites');
 
         if (fav === null){
-            console.log("\t - Favorites doesn't exist yet (creating)");
+            // console.log("\t - Favorites doesn't exist yet (creating)");
             fav = [];
         }else{
             if (fav.includes(((window.location.href).split("/"))[4])){
-                console.log("\t - Favorites has [" + ((window.location.href).split("/"))[4] + "]");
+                // console.log("\t - Favorites has [" + ((window.location.href).split("/"))[4] + "]");
                 const index = fav.indexOf(((window.location.href).split("/"))[4]);
                 if (index > -1) {
                     fav.splice(index, 1);
                 }
             }else{
-                console.log("\t - ERROR: Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
+                // console.log("\t - ERROR: Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
             }
         }
 
         this.setLocal('favorites', fav);
-        console.log("\t - setting favorites [" + fav + "]");
+        // console.log("\t - setting favorites [" + fav + "]");
 
-        console.log("\t - Reading state was [" + this.state.favorite + "]");
+        // console.log("\t - Reading state was [" + this.state.favorite + "]");
         this.setState(() => ({
             favorite: false
         }))
-        console.log("\t - Setting state to [" + this.state.favorite + "]");
+        // console.log("\t - Setting state to [" + this.state.favorite + "]");
     }
 
     renderResults(){
@@ -405,7 +405,7 @@ class Result extends React.Component{
         const has_image = (this.state.image_url != null ? true : false);
 
         var favorites;
-        console.log(this.state.favorite);
+        // console.log(this.state.favorite);
 
         if (this.state.favorite){
             favorites = <Button variant="btn secondary-background" id="fave-button" onClick={() => this.onUnFavorite()}><i aria-label='favoriteIcon' className="fa fa-heart accent" id='favoriteIcon'></i></Button>
