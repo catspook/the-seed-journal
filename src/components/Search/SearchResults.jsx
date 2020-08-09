@@ -1,20 +1,20 @@
-import React from "react"
+import React from 'react'
 
 class ResultList extends React.Component {
-    createItem(name, index) {
+    createItem(name, index){
         let current_url = window.location.href
-        let base_url = (current_url.split("/"))[2]
-        let url = "http://" + base_url + "/plant/" + (this.props.slugs)[index]
+        let base_url = (current_url.split('/'))[2]
+        let url = 'http://' + base_url + '/plant/' + (this.props.slugs)[index]
         return (
             <li className='results' key={index}>
-                <a key={index} href={url} target="_blank" rel="noopener noreferrer" className='accent'>
+                <a key={index} href={url} target='_blank' rel='noopener noreferrer' className='accent'>
                     { name }
                 </a>
             </li>
         )
     }
 
-    render() {
+    render(){
         return (
             <div className='result-container'>
                 <ul>

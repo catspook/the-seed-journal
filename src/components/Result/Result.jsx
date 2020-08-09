@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -14,19 +14,18 @@ const daphne = require('./trefle-daphne-striata.json')
 const hypericum = require('./trefle-hypericum-mutilum.json')
 
 class Result extends React.Component{
-    constructor(props) {
+    constructor(props){
         super(props)
 
-        var fav = this.getLocal('favorites');
+        var fav = this.getLocal('favorites')
         if (fav){
-            if (fav.includes(((window.location.href).split("/"))[4])){
-                fav = true;
-            }
-            else {
-                fav = false;
+            if (fav.includes(((window.location.href).split('/'))[4])){
+                fav = true
+            }else {
+                fav = false
             }
         }else {
-            fav = false;
+            fav = false
         }
 
         this.state = {
@@ -44,80 +43,80 @@ class Result extends React.Component{
             common_names: 'none listed',
             //distribution
             native: 'none listed',
-            introduced: "none listed",
+            introduced: 'none listed',
             //flower
-            flower_color: "none listed",
-            flower_conspicuous: "none listed",
+            flower_color: 'none listed',
+            flower_conspicuous: 'none listed',
             //foliage
-            texture: "none listed",
-            foliage_color: "unkown",
-            leaf_retention: "none listed",
+            texture: 'none listed',
+            foliage_color: 'unkown',
+            leaf_retention: 'none listed',
             //fruit_or_seed
-            fruit_or_seed_conspicuous: "none listed",
-            fruit_or_seed_color: "none listed",
-            shape: "none listed",
-            seed_persistence: "none listed",
+            fruit_or_seed_conspicuous: 'none listed',
+            fruit_or_seed_color: 'none listed',
+            shape: 'none listed',
+            seed_persistence: 'none listed',
             //specifications
-            ligneous_type: "none listed",
-            growth_form: "none listed",
-            growth_habit: "none listed",
-            growth_rate: "none listed",
-            ave_height: "none listed",
-            max_height: "none listed",
-            nitrogen: "none listed",
-            orientation: "none listed",
-            toxicity: "none listed",
+            ligneous_type: 'none listed',
+            growth_form: 'none listed',
+            growth_habit: 'none listed',
+            growth_rate: 'none listed',
+            ave_height: 'none listed',
+            max_height: 'none listed',
+            nitrogen: 'none listed',
+            orientation: 'none listed',
+            toxicity: 'none listed',
             //growth
-            description: "none listed",
-            sowing: "none listed",
-            days_to_harvest: "none listed",
-            row_spacing: "none listed",
-            spread: "none listed",
-            ph_max: "none listed",
-            ph_min: "none listed",
-            growth_months: "none listed",
-            bloom_months: "none listed",
-            fruit_months: "none listed",
-            min_precip: "none listed",
-            max_precip: "none listed",
-            min_root_depth: "none listed",
-            min_temp_f: "none listed",
-            max_temp_f: "none listed",
-            synonyms: "none listed",
-            light: "none listed",
-            atmospheric_humidity: "none listed",
-            soil_salinity: "none listed",
-            soil_nutriments: "none listed",
-            soil_texture: "none listed",
+            description: 'none listed',
+            sowing: 'none listed',
+            days_to_harvest: 'none listed',
+            row_spacing: 'none listed',
+            spread: 'none listed',
+            ph_max: 'none listed',
+            ph_min: 'none listed',
+            growth_months: 'none listed',
+            bloom_months: 'none listed',
+            fruit_months: 'none listed',
+            min_precip: 'none listed',
+            max_precip: 'none listed',
+            min_root_depth: 'none listed',
+            min_temp_f: 'none listed',
+            max_temp_f: 'none listed',
+            synonyms: 'none listed',
+            light: 'none listed',
+            atmospheric_humidity: 'none listed',
+            soil_salinity: 'none listed',
+            soil_nutriments: 'none listed',
+            soil_texture: 'none listed',
 
-            genus: "none listed",
-            family_common: "none listed",
-            family: "none listed",
-            species: "none listed",
-            subspecies: "none listed",
-            varieties: "none listed",
-            hybrids: "none listed",
-            forms: "none listed",
-            subvarieties: "none listed",
+            genus: 'none listed',
+            family_common: 'none listed',
+            family: 'none listed',
+            species: 'none listed',
+            subspecies: 'none listed',
+            varieties: 'none listed',
+            hybrids: 'none listed',
+            forms: 'none listed',
+            subvarieties: 'none listed',
             trefleDown: false,
             load: false,
         }
     }
 
     setLocal(name, key){
-        var ls = require('local-storage');
-        return ls.set(name, key);
+        var ls = require('local-storage')
+        return ls.set(name, key)
     }
 
     getLocal(name){
-        return require('local-storage').get(name);
+        return require('local-storage').get(name)
     }
 
-    componentDidMount() {
+    componentDidMount(){
         this.afterPageLoads()
     }
 
-    async makeApiCall(url, plantName) {
+    async makeApiCall(url, plantName){
         let okayToSet = false
         let json = {}
         let response = {}
@@ -125,17 +124,14 @@ class Result extends React.Component{
         if (plantName === 'rosa-canina') {
             okayToSet = true
             json = canina
-        }
-        else if (plantName === 'daphne-striata') {
+        }else if (plantName === 'daphne-striata') {
             okayToSet = true
             json = daphne
-        }
-        else if (plantName === 'hypericum-mutilum') {
+        }else if (plantName === 'hypericum-mutilum') {
             okayToSet = true
             json = hypericum
-        }
-        else {
-            response = await fetch(url);
+        }else {
+            response = await fetch(url)
             if (response.status === 200) {
                 okayToSet = true
                 json = await response.json()
@@ -143,91 +139,91 @@ class Result extends React.Component{
         }
 
         if (okayToSet) {
-            let eng_common_names = "not listed"
+            let eng_common_names = 'not listed'
             if (json.data.main_species.common_names.eng !== undefined) {
-                eng_common_names = (json.data.main_species.common_names.eng).join(", ")
+                eng_common_names = (json.data.main_species.common_names.eng).join(', ')
             }
 
-            let flower_conspic = "not listed"
+            let flower_conspic = 'not listed'
             if (json.data.main_species.flower.conspicuous != null) {
-                flower_conspic = (json.data.main_species.flower.conspicuous ? "yes" : "no")
+                flower_conspic = (json.data.main_species.flower.conspicuous ? 'yes' : 'no')
             }
-            let leaf_ret = "not listed"
+            let leaf_ret = 'not listed'
             if (json.data.main_species.foliage.leaf_retention != null) {
-                leaf_ret = (json.data.main_species.foliage.leaf_retention ? "yes" : "no")
+                leaf_ret = (json.data.main_species.foliage.leaf_retention ? 'yes' : 'no')
             }
-            let fruit_conspic = "not listed"
+            let fruit_conspic = 'not listed'
             if (json.data.main_species.fruit_or_seed.conspicuous != null) {
-                fruit_conspic = (json.data.main_species.fruit_or_seed.conspicuous ? "yes" : "no")
+                fruit_conspic = (json.data.main_species.fruit_or_seed.conspicuous ? 'yes' : 'no')
             }
-            let seed_pers = "not listed"
+            let seed_pers = 'not listed'
             if (json.data.main_species.fruit_or_seed.seed_persistence != null) {
-                seed_pers = (json.data.main_species.fruit_or_seed.seed_persistence ? "yes" : "no")
+                seed_pers = (json.data.main_species.fruit_or_seed.seed_persistence ? 'yes' : 'no')
             }
 
-            let synonymsList = "";
+            let synonymsList = ''
             if (json.data.main_species.synonyms !== []) {
                 synonymsList = (json.data.main_species.synonyms).reduce((acc, element) => {
-                    let this_name = (element.name != null ? element.name : "none listed")
+                    let this_name = (element.name != null ? element.name : 'none listed')
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            synonymsList = synonymsList.join(", ")
-            let speciesList = "none listed";
+            synonymsList = synonymsList.join(', ')
+            let speciesList = 'none listed'
             if (json.data.species !== []) {
                 speciesList = (json.data.species).reduce((acc, element) => {
-                    let this_name = (element.common_name != null ? (element.common_name + " (" + element.scientific_name + ")") : element.scientific_name)
+                    let this_name = (element.common_name != null ? (element.common_name + ' (' + element.scientific_name + ')') : element.scientific_name)
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            speciesList = speciesList.join(", ")
-            let subspeciesList = "none listed";
+            speciesList = speciesList.join(', ')
+            let subspeciesList = 'none listed'
             if (json.data.subspecies !== []) {
                 subspeciesList = (json.data.subspecies).reduce((acc, element) => {
-                    let this_name = (element.common_name != null ? (element.common_name + " (" + element.scientific_name + ")") : element.scientific_name)
+                    let this_name = (element.common_name != null ? (element.common_name + ' (' + element.scientific_name + ')') : element.scientific_name)
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            subspeciesList = subspeciesList.join(", ")
-            let varietiesList = "none listed";
+            subspeciesList = subspeciesList.join(', ')
+            let varietiesList = 'none listed'
             if (json.data.varieties !== []) {
                 varietiesList = (json.data.varieties).reduce((acc, element) => {
-                    let this_name = (element.common_name != null ? (element.common_name + " (" + element.scientific_name + ")") : element.scientific_name)
+                    let this_name = (element.common_name != null ? (element.common_name + ' (' + element.scientific_name + ')') : element.scientific_name)
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            varietiesList = varietiesList.join(", ")
-            let hybridsList = "none listed";
+            varietiesList = varietiesList.join(', ')
+            let hybridsList = 'none listed'
             if (json.data.hybrids !== []) {
                 hybridsList = (json.data.hybrids).reduce((acc, element) => {
-                    let this_name = (element.common_name != null ? (element.common_name + " (" + element.scientific_name + ")") : element.scientific_name)
+                    let this_name = (element.common_name != null ? (element.common_name + ' (' + element.scientific_name + ')') : element.scientific_name)
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            hybridsList = hybridsList.join(", ")
-            let formsList = "none listed";
+            hybridsList = hybridsList.join(', ')
+            let formsList = 'none listed'
             if (json.data.forms !== []) {
                 formsList = (json.data.forms).reduce((acc, element) => {
-                    let this_name = (element.common_name != null ? (element.common_name + " (" + element.scientific_name + ")") : element.scientific_name)
+                    let this_name = (element.common_name != null ? (element.common_name + ' (' + element.scientific_name + ')') : element.scientific_name)
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            formsList = formsList.join(", ")
-            let subvarietiesList = "none listed";
+            formsList = formsList.join(', ')
+            let subvarietiesList = 'none listed'
             if (json.data.subvarieties !== []) {
                 subvarietiesList = (json.data.subvarieties).reduce((acc, element) => {
-                    let this_name = (element.common_name != null ? (element.common_name + " (" + element.scientific_name + ")") : element.scientific_name)
+                    let this_name = (element.common_name != null ? (element.common_name + ' (' + element.scientific_name + ')') : element.scientific_name)
                     acc.push(this_name)
                     return acc
-                }, []);
+                }, [])
             }
-            subvarietiesList = subvarietiesList.join(", ")
+            subvarietiesList = subvarietiesList.join(', ')
 
             this.setState(() => ({
                 image_url: (json.data.image_url != null ? json.data.image_url : this.state.image_url),
@@ -239,21 +235,21 @@ class Result extends React.Component{
 
                 main_common_name: (json.data.main_species.common_name != null ? json.data.main_species.common_name : this.state.main_common_name),
                 main_scientific_name: (json.data.main_species.scientific_name != null ? json.data.main_species.scientific_name : this.state.main_scientific_name),
-                duration: (json.data.main_species.duration != null ? (json.data.main_species.duration).join(", ") : this.state.duration),
+                duration: (json.data.main_species.duration != null ? (json.data.main_species.duration).join(', ') : this.state.duration),
                 common_names: eng_common_names,
                 //distribution
-                native: (json.data.main_species.distribution.native != null ? (json.data.main_species.distribution.native).join(", ") : this.state.native),
-                introduced: (json.data.main_species.distribution.introduced != null ? (json.data.main_species.distribution.introduced).join(", ") : this.state.introduced),
+                native: (json.data.main_species.distribution.native != null ? (json.data.main_species.distribution.native).join(', ') : this.state.native),
+                introduced: (json.data.main_species.distribution.introduced != null ? (json.data.main_species.distribution.introduced).join(', ') : this.state.introduced),
                 //flower
-                flower_color: (json.data.main_species.flower.color != null ? (json.data.main_species.flower.color).join(", ") : this.state.flower_color),
+                flower_color: (json.data.main_species.flower.color != null ? (json.data.main_species.flower.color).join(', ') : this.state.flower_color),
                 flower_conspicuous: flower_conspic,
                 //foliage
                 texture: (json.data.main_species.foliage.texture != null ? json.data.main_species.foliage.texture : this.state.texture),
-                foliage_color: (json.data.main_species.foliage.color != null ? (json.data.main_species.foliage.color).join(", ") : this.state.foliage_color),
+                foliage_color: (json.data.main_species.foliage.color != null ? (json.data.main_species.foliage.color).join(', ') : this.state.foliage_color),
                 leaf_retention: leaf_ret,
                 //fruit_or_seed
                 fruit_or_seed_conspicuous: fruit_conspic,
-                fruit_or_seed_color: (json.data.main_species.fruit_or_seed.color != null ? (json.data.main_species.fruit_or_seed.color).join(", ") : this.state.fruit_or_seed_color),
+                fruit_or_seed_color: (json.data.main_species.fruit_or_seed.color != null ? (json.data.main_species.fruit_or_seed.color).join(', ') : this.state.fruit_or_seed_color),
                 shape: (json.data.main_species.fruit_or_seed.shape != null ? json.data.main_species.fruit_or_seed.shape : this.state.shape),
                 seed_persistence: seed_pers,
                 //specifications
@@ -304,8 +300,7 @@ class Result extends React.Component{
                 trefleDown: false,
                 load: false,
             }))
-        }
-        else {
+        }else {
             console.log(response.status)
             this.setState(() => ({
                 trefleDown: true,
@@ -314,111 +309,96 @@ class Result extends React.Component{
         }
     }
 
-    async afterPageLoads() {
-        let cors_url = "https://cors-anywhere.herokuapp.com/"
-        let plantName = ((window.location.href).split("/"))[4]
-        let url = cors_url + "https://trefle.io/api/v1/plants/" + plantName + "?token=" + process.env.REACT_APP_TREFLE_API_TOKEN
+    async afterPageLoads(){
+        let cors_url = 'https://cors-anywhere.herokuapp.com/'
+        let plantName = ((window.location.href).split('/'))[4]
+        let url = cors_url + 'https://trefle.io/api/v1/plants/' + plantName + '?token=' + process.env.REACT_APP_TREFLE_API_TOKEN
         await this.makeApiCall(url, plantName)
 
         
-        var fav = this.getLocal('favorites');
+        var fav = this.getLocal('favorites')
 
         if (fav === null){
             fav = false
         }else {
-            if (fav.includes(((window.location.href).split("/"))[4])){
-                fav = true;
+            if (fav.includes(((window.location.href).split('/'))[4])){
+                fav = true
             }else {
-                fav = false;
+                fav = false
             }
         }
 
         this.setState(() => ({
             favorite: fav,
-            slug: ((window.location.href).split("/"))[4],
+            slug: ((window.location.href).split('/'))[4],
             load: true,
         }))
     }
 
     onFavorite = (e) => {
-        // console.log("Adding favorite:");
-        var fav = this.getLocal('favorites');
+        var fav = this.getLocal('favorites')
 
         if (fav === null){
-            // console.log("\t - Favorites doesn't exist yet (creating)");
-            fav = [];
+            fav = []
         }
 
-        if (!fav.includes(((window.location.href).split("/"))[4])){
-            // console.log("\t - Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
-            fav.push(((window.location.href).split("/"))[4]);
+        if (!fav.includes(((window.location.href).split('/'))[4])){
+            fav.push(((window.location.href).split('/'))[4])
         }else {
-            // console.log("\t - ERROR: Favorites already has [" + ((window.location.href).split("/"))[4] + "]");
         }
 
-        this.setLocal('favorites', fav);
-        // console.log("\t - setting favorites [" + fav + "]");
+        this.setLocal('favorites', fav)
 
-        // console.log("\t - Reading state was [" + this.state.favorite + "]");
         this.setState(() => ({
             favorite: true
         }))
-        // console.log("\t - Setting state to [" + this.state.favorite + "]");
     }
 
     onUnFavorite = (e) => {
-        // console.log("Removing favorite:");
-        var fav = this.getLocal('favorites');
+        var fav = this.getLocal('favorites')
 
         if (fav === null){
-            // console.log("\t - Favorites doesn't exist yet (creating)");
-            fav = [];
+            fav = []
         }else{
-            if (fav.includes(((window.location.href).split("/"))[4])){
-                // console.log("\t - Favorites has [" + ((window.location.href).split("/"))[4] + "]");
-                const index = fav.indexOf(((window.location.href).split("/"))[4]);
+            if (fav.includes(((window.location.href).split('/'))[4])){
+                const index = fav.indexOf(((window.location.href).split('/'))[4])
                 if (index > -1) {
-                    fav.splice(index, 1);
+                    fav.splice(index, 1)
                 }
             }else{
-                // console.log("\t - ERROR: Favorites doesn't have [" + ((window.location.href).split("/"))[4] + "]");
             }
         }
 
-        this.setLocal('favorites', fav);
-        // console.log("\t - setting favorites [" + fav + "]");
+        this.setLocal('favorites', fav)
 
-        // console.log("\t - Reading state was [" + this.state.favorite + "]");
         this.setState(() => ({
             favorite: false
         }))
-        // console.log("\t - Setting state to [" + this.state.favorite + "]");
     }
 
     renderResults(){
-        const showTrefleDown = this.state.trefleDown;
+        const showTrefleDown = this.state.trefleDown
 
         const toggleShowTrefleDown = () => this.setState(() => ({
             trefleDown: false
-        }));
+        }))
 
-        const has_image = (this.state.image_url != null ? true : false);
+        const has_image = (this.state.image_url != null ? true : false)
 
-        var favorites;
-        // console.log(this.state.favorite);
+        var favorites
 
         if (this.state.favorite){
-            favorites = <Button variant="btn secondary-background" id="fave-button" onClick={() => this.onUnFavorite()}><i aria-label='favoriteIcon' className="fa fa-heart accent" id='favoriteIcon'></i></Button>
+            favorites = <Button variant='btn secondary-background' id='fave-button' onClick={() => this.onUnFavorite()}><i aria-label='favoriteIcon' className='fa fa-heart accent' id='favoriteIcon'></i></Button>
         }else {
-            favorites = <Button variant="btn secondary-background" id="fave-button" onClick={() => this.onFavorite()}><i aria-label='favoriteIcon' className="fa fa-heart primary" id='favoriteIcon'></i></Button>
+            favorites = <Button variant='btn secondary-background' id='fave-button' onClick={() => this.onFavorite()}><i aria-label='favoriteIcon' className='fa fa-heart primary' id='favoriteIcon'></i></Button>
         }
 
         return (
             <Container>
                 <Toast show={showTrefleDown} onClose={toggleShowTrefleDown} className='toast'>
                     <Toast.Header>
-                        <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-                        <strong className="mr-auto">Data Sync Error</strong>
+                        <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
+                        <strong className='mr-auto'>Data Sync Error</strong>
                         <small>Error: {this.state.response_status}</small>
                     </Toast.Header>
                     <Toast.Body>Our data source is currently unavailable. Please refresh this page in a few moments!</Toast.Body>
@@ -428,7 +408,7 @@ class Result extends React.Component{
                     <Col>
                         <Row className='d-flex justify-content-between align-items-center'>
                             <h1><b>{this.state.common_name}</b></h1>
-                            <label htmlFor="fave-button" className='d-none'>Favorite</label>
+                            <label htmlFor='fave-button' className='d-none'>Favorite</label>
                             {favorites}
                         </Row>
                         <h2><b>{this.state.scientific_name}</b></h2>
@@ -506,8 +486,8 @@ class Result extends React.Component{
                 <Row className='result-row'>
                     <Col>
                         <ClickToShow 
-                            header={"Distribution"}
-                            category={["Native To", "Introduced To"]}
+                            header={'Distribution'}
+                            category={['Native To', 'Introduced To']}
                             data={[
                                 this.state.native,
                                 this.state.introduced
@@ -521,8 +501,8 @@ class Result extends React.Component{
                     <Col>
                         <ClickToShow
                             header={'Related Plants'}
-                            category={["Synonyms", "Species", "Subspecies", "Varieties",
-                                       "Subvarieties", "Hybrids", "Forms"]}
+                            category={['Synonyms', 'Species', 'Subspecies', 'Varieties',
+                                       'Subvarieties', 'Hybrids', 'Forms']}
                             data={[
                                 this.state.synonyms, 
                                 this.state.species, 

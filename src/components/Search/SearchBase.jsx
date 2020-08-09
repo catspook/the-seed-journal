@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -11,25 +11,25 @@ import LoadingSpinner from '../LoadingSpinner'
 const names = require('./common_names.json')
 
 class SearchBase extends React.Component{
-    constructor(props) {
+    constructor(props){
         super(props)
         
         this.plantList = JSON.parse(names)
         
-        var fav = require('local-storage').get('favorites');
+        var fav = require('local-storage').get('favorites')
 
         this.state = {
             searchValue: '',
             filter: [],
-            currentPage: "",
-            firstPage: "",
-            nextPage: "",
-            prevPage: "",
-            lastPage: "",
+            currentPage: '',
+            firstPage: '',
+            nextPage: '',
+            prevPage: '',
+            lastPage: '',
             currentResults: [],
             trefleDown: false,
-            plantResult: "",
-            option: "lower",
+            plantResult: '',
+            option: 'lower',
             loading: false,
             favorites: fav,
             noResults: false,
@@ -67,19 +67,18 @@ class SearchBase extends React.Component{
     async handleRandom(event){
         event.preventDefault()
         let current_url = window.location.href
-        let base_url = (current_url.split("/"))[2]
+        let base_url = (current_url.split('/'))[2]
         let slug = await this.getSlug()
-        let url = "http://" + base_url + "/plant/" + slug
-        window.open(url, "_blank", "noopener noreferrer")
+        let url = 'http://' + base_url + '/plant/' + slug
+        window.open(url, '_blank', 'noopener noreferrer')
     }
 
     // Get the slug of a random plant 
     async getSlug(){
         let slug = ''
         const page = Math.floor(Math.random() * this.state.pageMax) + 1
-        const cors_url = "https://cors-anywhere.herokuapp.com/"
+        const cors_url = 'https://cors-anywhere.herokuapp.com/'
         let url = cors_url + `https://trefle.io/api/v1/species?filter_not[image_url]=null&page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
-        console.log(url)
         const json = await this.makeApiCall(url)
         const data_num = Math.floor(Math.random() * json.currentResults.length)
         slug = json.currentResults[data_num].slug
@@ -96,11 +95,11 @@ class SearchBase extends React.Component{
     addFilterToURL(value){
         const filter = this.state.filter
         let filter_str = ''
-        let cors_url = "https://cors-anywhere.herokuapp.com/"
-        let url = cors_url + "https://trefle.io/api/v1/species/search?token=" 
+        let cors_url = 'https://cors-anywhere.herokuapp.com/'
+        let url = cors_url + 'https://trefle.io/api/v1/species/search?token=' 
             + process.env.REACT_APP_TREFLE_API_TOKEN
         if(!value){
-            url = "https://trefle.io/api/v1/species?token=" 
+            url = 'https://trefle.io/api/v1/species?token=' 
                 + process.env.REACT_APP_TREFLE_API_TOKEN
         }
         if(filter.length > 0) {
@@ -109,29 +108,27 @@ class SearchBase extends React.Component{
         }
         if(value)
             url = url.concat(`&q=${value}`)
-        console.log(url)
 
-        console.log(url)
         return url
     }
 
-    async makeApiCall(url) {
+    async makeApiCall(url){
         this.setState(() =>({
             loading: true,
         }))
 
-        let response = await fetch(url);
+        let response = await fetch(url)
         let jsonState = {
-            currentPage: "",
+            currentPage: '',
             currentResults: [],
-            firstPage: "",
-            nextPage: "",
-            prevPage: "",
-            lastPage: "",
+            firstPage: '',
+            nextPage: '',
+            prevPage: '',
+            lastPage: '',
         }
 
         if (response.status === 200) {
-            let json = await response.json();
+            let json = await response.json()
             if (json.meta.total === 0) {
                 this.setState(() => ({
                     trefleDown: false,
@@ -151,7 +148,7 @@ class SearchBase extends React.Component{
                         slug: element.slug
                     })
                     return acc
-                }, []);
+                }, [])
                 this.setState(() => ({
                     trefleDown: false,
                     noResults: false
@@ -175,11 +172,11 @@ class SearchBase extends React.Component{
 
     }
 
-    async changePage(next) {
+    async changePage(next){
         let newPage = (next ? this.state.nextPage : this.state.prevPage)
         if (newPage) {
-            let cors_url = "https://cors-anywhere.herokuapp.com/"
-            let url = cors_url + "https://trefle.io" + newPage + "&token=" 
+            let cors_url = 'https://cors-anywhere.herokuapp.com/'
+            let url = cors_url + 'https://trefle.io' + newPage + '&token=' 
                 + process.env.REACT_APP_TREFLE_API_TOKEN
 
             let jsonState = await this.makeApiCall(url)
@@ -197,7 +194,7 @@ class SearchBase extends React.Component{
     // Change search to the entered text on submission
     // and reset search index on new search
     // and do api call on results
-    async handleSubmit(event, value) {
+    async handleSubmit(event, value){
         event.preventDefault()
 
         if(value || this.state.filter.length !== 0){
@@ -222,24 +219,24 @@ class SearchBase extends React.Component{
         const showTrefleDown = this.state.trefleDown
         const toggleShowTrefleDown = () => this.setState(() => ({
             trefleDown: false
-        }));
+        }))
 
-        const favorites = this.state.favorites;
-        let favoritesRender;
+        const favorites = this.state.favorites
+        let favoritesRender
 
         if (favorites != null){
             let current_url = window.location.href
-            let base_url = (current_url.split("/"))[2]
+            let base_url = (current_url.split('/'))[2]
             favoritesRender = (<div>
                 { favorites.map((value) => 
-                    <p className='center testAlign'><a className="accent" href={"http://" + base_url + "/plant/" + value}>{value}</a></p>
+                    <p className='center testAlign'><a className='accent' href={'http://' + base_url + '/plant/' + value} target="_blank" rel="noopener noreferrer">{value}</a></p>
                 )}
-                </div>);
+            </div>)
         }else {
             favoritesRender = <p className='center testAlign'>No Favorites are saved :(</p>
         }
         return (
-            <Container className="search-container" fluid="true">
+            <Container className='search-container' fluid='true'>
                 <Row>
                     <Col md={{order: 1}} className='addTop'>
                         <div className='center testAlign'>
@@ -249,25 +246,25 @@ class SearchBase extends React.Component{
                     </Col>
                     <Col md={{order: 3}}  className='addTop'>
                         <h5 className='center'>Go to a Random Plant 
-                            <button onClick={this.handleRandom} aria-label='locationButton' className="btn secondary-background" id='locationButton'>
-                                <i aria-label='locationService' className="fa fa-location-arrow primary" id='locationService'>
-                        </i></button> </h5>
+                            <button onClick={this.handleRandom} aria-label='locationButton' className='btn secondary-background' id='locationButton'>
+                                <i aria-label='locationService' className='fa fa-location-arrow primary' id='locationService'>
+                                </i></button> </h5>
                     </Col>
                     <Col md={{order: 2}} className='sb-wrapper'>
-                            <SearchBar 
-                                className='sb' 
-                                plantList={this.plantList}
-                                onSubmit={this.handleSubmit}
-                                searching={true}
-                            />
-                            <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
-                                <Toast.Header>
-                                    <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-                                    <strong className="mr-auto">Search Error</strong>
-                                    <small>Now</small>
-                                </Toast.Header>
-                                <Toast.Body>Our data source is currently unavailable. Please try again later!</Toast.Body>
-                            </Toast>
+                        <SearchBar 
+                            className='sb' 
+                            plantList={this.plantList}
+                            onSubmit={this.handleSubmit}
+                            searching={true}
+                        />
+                        <Toast show={showTrefleDown} onClose={toggleShowTrefleDown}>
+                            <Toast.Header>
+                                <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
+                                <strong className='mr-auto'>Search Error</strong>
+                                <small>Now</small>
+                            </Toast.Header>
+                            <Toast.Body>Our data source is currently unavailable. Please try again later!</Toast.Body>
+                        </Toast>
                     </Col>
                 </Row>
                 <Col className='sb-wrapper'>
@@ -275,24 +272,24 @@ class SearchBase extends React.Component{
                     { this.state.noResults ? <p className='error accent'>No results found. Try another search!</p> : null }
                 </Col>
                 <Row className='d-flex justify-content-center'>
-                {this.state.loading ?
-                                <LoadingSpinner className="spinner" />
-                                :
-                                <SearchContent 
-                                    value={searchValue}
-                                    resultList={(this.state.currentResults).reduce((acc, element) => {
-                                        acc.push(element.name)
-                                        return acc
-                                    }, [])}
-                                    newPage={this.changePage}
-                                    onSubmit={this.handleSubmit}
-                                    slugs={(this.state.currentResults).reduce((acc, element) => {
-                                        acc.push(element.slug)
-                                        return acc
-                                    }, [])}
-                                />
-                            }
-                 </Row>
+                    {this.state.loading ?
+                        <LoadingSpinner className='spinner' />
+                        :
+                        <SearchContent 
+                            value={searchValue}
+                            resultList={(this.state.currentResults).reduce((acc, element) => {
+                                acc.push(element.name)
+                                return acc
+                            }, [])}
+                            newPage={this.changePage}
+                            onSubmit={this.handleSubmit}
+                            slugs={(this.state.currentResults).reduce((acc, element) => {
+                                acc.push(element.slug)
+                                return acc
+                            }, [])}
+                        />
+                    }
+                </Row>
             </Container>
         )
     }

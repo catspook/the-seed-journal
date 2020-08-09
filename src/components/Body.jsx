@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 import SearchBase from './Search/SearchBase'
 import '../styles/scss/Body.scss'
 
 class Body extends React.Component {
     handleRandom(){
         let current_url = window.location.href
-        let base_url = (current_url.split("/"))[2]
+        let base_url = (current_url.split('/'))[2]
         let slug =this.handleRandom()
-        let url = "http://" + base_url + "/plant/" + slug
+        let url = 'http://' + base_url + '/plant/' + slug
         this.setState(() => ({
             random_url: url,
         }))
@@ -17,7 +17,7 @@ class Body extends React.Component {
     // Get the slug of a random plant 
     async getSlug(){
         const page = Math.floor(Math.random() * this.state.pageMax) + 1
-        const cors_url = "https://cors-anywhere.herokuapp.com/"
+        const cors_url = 'https://cors-anywhere.herokuapp.com/'
         let url = cors_url + `https://trefle.io/api/v1/species?page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
         const json = await this.makeApiCall(url)
         const data_num = Math.floor(Math.random() * json.currentResults.length)
@@ -34,7 +34,7 @@ class Body extends React.Component {
         )
     }
 
-    render() {
+    render(){
         return (
             <div className='body'>
                 {this.renderHome()}

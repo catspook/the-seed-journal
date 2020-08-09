@@ -1,10 +1,10 @@
-import React from "react"
-import ResultList from "./SearchResults"
+import React from 'react'
+import ResultList from './SearchResults'
 
 class SearchContent extends React.Component {
 
     // Render next and previous button and the search result list
-    renderList(results) {
+    renderList(results){
         let length = results.length
         if(length > 0) {
             return (
@@ -23,7 +23,7 @@ class SearchContent extends React.Component {
         }
     }
 
-    render() {
+    render(){
         return (
             <div>
                 {this.renderList(this.props.resultList)}
