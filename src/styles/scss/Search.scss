@@ -164,8 +164,10 @@ input {
     overflow: auto;
     position: relative;
 
+    margin-bottom: 2em;
+
     @media screen and (min-width: 1600px) {
-        position: absolute;
+        position: relative;
     }
 
     p {

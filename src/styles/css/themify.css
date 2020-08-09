@@ -14,8 +14,8 @@
   border-color: #157A53 !important;
 }
 
-body::-webkit-scrollbar-thumb #light {
-  background-color: #1A7A52;
+#light::-webkit-scrollbar-thumb {
+  background-color: #1A7A52 !important;
 }
 
 #light::-webkit-scrollbar-track {
@@ -87,9 +87,6 @@ body::-webkit-scrollbar-thumb #light {
 #light .accent-darker::selection {
   background: #157A53;
 }
-#light .accent-border {
-  border-color: #157A53 !important;
-}
 
 #dark {
   background-color: #282a36;
@@ -107,7 +104,7 @@ body::-webkit-scrollbar-thumb #light {
   border-color: #510ab6 !important;
 }
 
-body::-webkit-scrollbar-thumb #dark {
+#dark::-webkit-scrollbar-thumb {
   background-color: #bd93f9 !important;
 }
 
@@ -179,9 +176,6 @@ body::-webkit-scrollbar-thumb #dark {
 }
 #dark .accent-darker::selection {
   background: #510ab6;
-}
-#dark .accent-border {
-  border-color: #510ab6 !important;
 }
 
 /*# sourceMappingURL=themify.css.map */

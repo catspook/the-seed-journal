@@ -9989,4 +9989,8 @@ h3 {
   width: 1em;
 }
 
+*::-webkit-scrollbar-thumb {
+  background-color: #606060;
+}
+
 /*# sourceMappingURL=App.css.map */
