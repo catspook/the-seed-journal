@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 
 import '../../styles/scss/App.scss';
-import '../../styles/css/themify.css';
+import '../../styles/scss/themify.scss';
 import '../../styles/css/typography.css';
 import '../../styles/css/Search.css';
 
@@ -43,13 +43,6 @@ class App extends React.Component {
   getLocal(name){
     var ls = require('local-storage');
     return ls.get(name);
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
   }
 
   // Change the page number depeding on the button that was

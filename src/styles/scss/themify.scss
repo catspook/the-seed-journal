@@ -36,10 +36,19 @@
             outline-color: theme_item("#{$theme}", "accent") !important;
             border-color: theme_item("#{$theme}", "accent-darker") !important;
         }
- 
-        *::-webkit-scrollbar-thumb {
-            background-color: theme_item("#{$theme}", "accent");
-        }
+    }
+
+    ##{$theme}::-webkit-scrollbar-thumb {
+        background-color: theme_item("#{$theme}", "accent") !important;
+    }
+
+    ##{$theme}::-webkit-scrollbar-track {
+        color: theme_item("#{$theme}", "secondary");
+        box-shadow: none;
+    }
+
+    ##{$theme}::-webkit-scrollbar-thumb:hover {
+        background: theme_item("#{$theme}", "accent-dark");
     }
 
     ##{$theme} {

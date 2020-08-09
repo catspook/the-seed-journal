@@ -9960,14 +9960,6 @@ h3 {
   margin-right: 0px;
 }
 
-::-webkit-scrollbar {
-  width: 1em;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: none;
-}
-
 .search-size {
   margin-top: 1em;
 }
@@ -9991,6 +9983,10 @@ h3 {
 
 .fa-heart {
   transition: all 0.2s ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
 }
 
 /*# sourceMappingURL=App.css.map */
