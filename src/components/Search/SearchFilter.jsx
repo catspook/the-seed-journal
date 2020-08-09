@@ -27,7 +27,7 @@ class SearchFilter extends React.Component{
         if(num === 0)
             title = "Search by Category"
         else
-            title = this.state.category[event]
+            title = this.state.category[num]
         this.setState(() => ({
             title: title
         }))
@@ -36,6 +36,7 @@ class SearchFilter extends React.Component{
 
 
     render() {
+        const category = this.state.category
         let title = this.state.title
         if(this.props.filter.length === 0)
             title = "Search by Category"
@@ -57,15 +58,15 @@ class SearchFilter extends React.Component{
                         {title}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item className='drop-menu' eventKey="0">Low Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="0">{category[0]}</Dropdown.Item>
                         <Dropdown.Divider />
-                        <Dropdown.Item className='drop-menu' eventKey="1">Low Sunlight</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="2">Medium Sunlight</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="3">Lots of Sunlight</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="1">{category[1]}</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="2">{category[2]}</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="3">{category[3]}</Dropdown.Item>
                         <Dropdown.Divider />
-                        <Dropdown.Item className='drop-menu' eventKey="4">Low Humidity</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="5">Medium Humidity</Dropdown.Item>
-                        <Dropdown.Item className='drop-menu' eventKey="6">High Humidity</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="4">{category[4]}</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="5">{category[5]}</Dropdown.Item>
+                        <Dropdown.Item className='drop-menu' eventKey="6">{category[6]}</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 </OverlayTrigger>
