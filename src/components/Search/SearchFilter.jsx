@@ -15,7 +15,7 @@ class SearchFilter extends React.Component{
             open: false,
             single: 0,
             category: ['None', 'Low Sunlight', 'Medium Sunlight', 'Lots of Sunlight', 'Low Humidity', 'Medium Humidity', 'High Humidity'],
-            title: 'Search by Category'
+            title: 'Filter by Category'
         }
         this.handleSelect = this.handleSelect.bind(this)
     }
