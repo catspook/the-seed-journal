@@ -50,7 +50,7 @@ class PlantRadar extends React.Component{
 
    renderInvalid(){
        return(
-           <span className="error">Some Information Unvailable</span>
+           <span className="accent">Some Information Unvailable</span>
        )
    }
 
