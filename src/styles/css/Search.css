@@ -169,6 +169,11 @@ input {
 }
 
 .predictions-res.show {
+  transition: all 0.2s ease-out;
+  opacity: 0.8;
+}
+
+.predictions-res.show:hover {
   opacity: 1;
 }
 
