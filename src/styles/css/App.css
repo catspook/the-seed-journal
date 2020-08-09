@@ -9989,4 +9989,8 @@ h3 {
   margin-left: 1em;
 }
 
+.fa-heart {
+  transition: all 0.2s ease-out;
+}
+
 /*# sourceMappingURL=App.css.map */
