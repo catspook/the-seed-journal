@@ -33,7 +33,7 @@ class SearchBase extends React.Component{
             loading: false,
             favorites: fav,
             noResults: false,
-            pageMax: 22883,
+            pageMax: 5168,
         }
 
         this.changePage = this.changePage.bind(this)
@@ -75,18 +75,13 @@ class SearchBase extends React.Component{
 
     // Get the slug of a random plant 
     async getSlug(){
-        let image_count = 0
         let slug = ''
-        while(image_count === 0) {
-            const page = Math.floor(Math.random() * this.state.pageMax) + 1
-            const cors_url = "https://cors-anywhere.herokuapp.com/"
-            let url = cors_url + `https://trefle.io/api/v1/species?page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
-            const json = await this.makeApiCall(url)
-            const data_num = Math.floor(Math.random() * json.currentResults.length)
-            slug = json.currentResults[data_num].slug
-            const slug_url = `https://trefle.io/api/v1/species/${slug}?token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
-            image_count = await this.makeApiCall(slug_url, true)
-        }
+        const page = Math.floor(Math.random() * this.state.pageMax) + 1
+        const cors_url = "https://cors-anywhere.herokuapp.com/"
+        let url = cors_url + `https://trefle.io/api/v1/species?filter_not[image_url]=null&page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`
+        const json = await this.makeApiCall(url)
+        const data_num = Math.floor(Math.random() * json.currentResults.length)
+        slug = json.currentResults[data_num].slug
         return slug
     }
 
@@ -115,16 +110,16 @@ class SearchBase extends React.Component{
             url = url.concat(`&q=${value}`)
         console.log(url)
 
+        console.log(url)
         return url
     }
 
-    async makeApiCall(url, slug=false) {
+    async makeApiCall(url) {
         this.setState(() =>({
             loading: true,
         }))
 
         let response = await fetch(url);
-        let image_count = ""
         let jsonState = {
             currentPage: "",
             currentResults: [],
@@ -143,7 +138,6 @@ class SearchBase extends React.Component{
                 }))
             }
             else {
-                if(!slug){
                 jsonState.currentPage = json.links.self
                 jsonState.firstPage = (json.links.first ? json.links.first : null)
                 jsonState.nextPage = (json.links.next ? json.links.next : null)
@@ -157,9 +151,6 @@ class SearchBase extends React.Component{
                     })
                     return acc
                 }, []);
-                } else {
-                    image_count = json.meta.images_count
-                }
                 this.setState(() => ({
                     trefleDown: false,
                     noResults: false
@@ -179,10 +170,7 @@ class SearchBase extends React.Component{
             loading: false,
         }))
 
-        if(slug)
-            return image_count
-        else
-            return jsonState
+        return jsonState
 
     }
 
