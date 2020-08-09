@@ -25,7 +25,7 @@ class SearchFilter extends React.Component{
         let title = ''
 
         if(num === 0)
-            title = "Search by Category"
+            title = "Filter by Category"
         else
             title = this.state.category[num]
         this.setState(() => ({
@@ -39,7 +39,7 @@ class SearchFilter extends React.Component{
         const category = this.state.category
         let title = this.state.title
         if(this.props.filter.length === 0)
-            title = "Search by Category"
+            title = "Filter by Category"
         const renderTooltip = (props) => (
             <Tooltip id="button-tooltip" {...props}>
                 Click the magnifying glass to submit your search!
