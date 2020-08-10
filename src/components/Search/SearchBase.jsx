@@ -307,12 +307,14 @@ class SearchBase extends React.Component {
             handleFilter={this.handleFiliter}
             filter={this.state.filter}
           />
+        </Col>
+        <Row className="d-flex justify-content-center">
           {this.state.noResults ? (
             <p className="error accent">
               No results found. Try another search!
             </p>
           ) : null}
-        </Col>
+        </Row>
         <Row className="d-flex justify-content-center">
           {this.state.loading ? (
             <LoadingSpinner className="spinner" />
