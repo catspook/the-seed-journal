@@ -1,21 +1,22 @@
 #light {
-  background-color: #EDEFF1;
+  background-color: #edeff1;
   color: #141414;
-  text-decoration-color: #1A7A52;
-  outline-color: #1A7A52;
-  column-rule-color: #1A7A52;
-  text-emphasis-color: #176D49;
-  border-color: #157A53;
+  text-decoration-color: #1a7a52;
+  outline-color: #1a7a52;
+  column-rule-color: #1a7a52;
+  text-emphasis-color: #176d49;
+  border-color: #157a53;
 }
-#light *:focus, #light *.active {
+#light *:focus,
+#light *.active {
   outline: none !important;
   box-shadow: none !important;
-  outline-color: #1A7A52 !important;
-  border-color: #157A53 !important;
+  outline-color: #1a7a52 !important;
+  border-color: #157a53 !important;
 }
 
 #light::-webkit-scrollbar-thumb {
-  background-color: #1A7A52 !important;
+  background-color: #1a7a52 !important;
 }
 
 #light::-webkit-scrollbar-track {
@@ -24,20 +25,20 @@
 }
 
 #light::-webkit-scrollbar-thumb:hover {
-  background: #176D49;
+  background: #176d49;
 }
 
 #light .primary {
-  color: #EDEFF1;
+  color: #edeff1;
 }
 #light .primary button:hover {
   color: #d0d6db;
 }
 #light .primary-background {
-  background-color: #EDEFF1;
+  background-color: #edeff1;
 }
 #light .primary::selection {
-  background: #EDEFF1;
+  background: #edeff1;
 }
 #light .secondary {
   color: #141414;
@@ -52,40 +53,40 @@
   background: #141414;
 }
 #light .accent {
-  color: #1A7A52;
+  color: #1a7a52;
 }
 #light .accent button:hover {
   color: #115036;
 }
 #light .accent-background {
-  background-color: #1A7A52;
+  background-color: #1a7a52;
 }
 #light .accent::selection {
-  background: #1A7A52;
+  background: #1a7a52;
 }
 #light .accent-dark {
-  color: #176D49;
+  color: #176d49;
 }
 #light .accent-dark button:hover {
   color: #0e432d;
 }
 #light .accent-dark-background {
-  background-color: #176D49;
+  background-color: #176d49;
 }
 #light .accent-dark::selection {
-  background: #176D49;
+  background: #176d49;
 }
 #light .accent-darker {
-  color: #157A53;
+  color: #157a53;
 }
 #light .accent-darker button:hover {
   color: #0e4e35;
 }
 #light .accent-darker-background {
-  background-color: #157A53;
+  background-color: #157a53;
 }
 #light .accent-darker::selection {
-  background: #157A53;
+  background: #157a53;
 }
 
 #dark {
@@ -97,7 +98,8 @@
   text-emphasis-color: #8232f4;
   border-color: #510ab6;
 }
-#dark *:focus, #dark *.active {
+#dark *:focus,
+#dark *.active {
   outline: none !important;
   box-shadow: none !important;
   outline-color: #bd93f9 !important;

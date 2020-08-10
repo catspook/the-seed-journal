@@ -81,16 +81,16 @@ input {
   border-top-right-radius: 2px;
 }
 
-.f-rad input[type=radio] {
+.f-rad input[type="radio"] {
   display: none;
 }
 
-.f-rad input[type=radio]:checked + label,
+.f-rad input[type="radio"]:checked + label,
 .Checked + label {
   background: #178949;
 }
 
-.f-rad input[type=radio]:disabled + label,
+.f-rad input[type="radio"]:disabled + label,
 .Checked + label {
   background: rgba(111, 111, 111, 0.5);
   color: rgba(15, 15, 15, 0.7);
@@ -123,12 +123,12 @@ input {
 }
 
 .op-con {
-  border-bottom: 2px #EDEFF1 solid;
+  border-bottom: 2px #edeff1 solid;
 }
 
 .lab-mid {
-  border-left: 1px #EDEFF1 solid;
-  border-right: 1px #EDEFF1 solid;
+  border-left: 1px #edeff1 solid;
+  border-right: 1px #edeff1 solid;
 }
 
 .results {
