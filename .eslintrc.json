@@ -34,5 +34,8 @@
             "error",
             "never"
         ]
-    }
+    },
+    "extends": [
+        "prettier"
+    ]
 }
