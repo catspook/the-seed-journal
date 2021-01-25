@@ -77,6 +77,7 @@ class SearchBase extends React.Component {
     let url =
       cors_url +
       `https://trefle.io/api/v1/species?filter_not[image_url]=null&page=${page}&token=${process.env.REACT_APP_TREFLE_API_TOKEN}`;
+    console.log("GET SLUG, ", url)
     const json = await this.makeApiCall(url);
     const data_num = Math.floor(Math.random() * json.currentResults.length);
     slug = json.currentResults[data_num].slug;
@@ -98,16 +99,24 @@ class SearchBase extends React.Component {
       cors_url +
       "https://trefle.io/api/v1/species/search?token=" +
       process.env.REACT_APP_TREFLE_API_TOKEN;
+      console.log("ADD FILTER 1, ", url)
     if (!value) {
       url =
+        cors_url +
         "https://trefle.io/api/v1/species?token=" +
         process.env.REACT_APP_TREFLE_API_TOKEN;
+      console.log("ADD FILTER 2, ", url)
     }
     if (filter.length > 0) {
       filter_str = filter_str.concat(`&range[${filter[0]}]=${filter[1]}`);
       url = url.concat(filter_str);
+      console.log("ADD FILTER 3, ", url)
     }
-    if (value) url = url.concat(`&q=${value}`);
+    if (value) {
+        url = url.concat(`&q=${value}`);
+        console.log("ADD FILTTER 4", url)
+    }
+    console.log("ADD FILTTER 5", url)
 
     return url;
   }
@@ -117,7 +126,9 @@ class SearchBase extends React.Component {
       loading: true,
     }));
 
+      console.log("HERE")
     let response = await fetch(url);
+      console.log("AFTTER FETCH")
     let jsonState = {
       currentPage: "",
       currentResults: [],
@@ -182,6 +193,7 @@ class SearchBase extends React.Component {
         newPage +
         "&token=" +
         process.env.REACT_APP_TREFLE_API_TOKEN;
+        console.log("CHANGE PAGE, ", url)
 
       let jsonState = await this.makeApiCall(url);
       this.setState(() => ({
@@ -203,6 +215,7 @@ class SearchBase extends React.Component {
 
     if (value || this.state.filter.length !== 0) {
       let url = this.addFilterToURL(value);
+      console.log("HANDLE SUBMIT, ", url)
       let jsonState = await this.makeApiCall(url);
 
       this.setState(() => ({

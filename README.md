@@ -5,6 +5,9 @@ This is a repository to hold the web application to give information regarding p
 
 The app is hosted by Heroku at [http://the-seed-journal.herokuapp.com](http://the-seed-journal.herokuapp.com).
 
+### Note 1/24/2021:
+Requests to the API this website uses are currently down due to a dependency breaking. I'm currently working on a solution. - Casper
+
 ## Building
 
 ### Development Dependencies
