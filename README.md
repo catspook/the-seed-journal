@@ -6,7 +6,9 @@ This is a repository to hold the web application to give information regarding p
 The app is hosted by Heroku at [http://the-seed-journal.herokuapp.com](http://the-seed-journal.herokuapp.com).
 
 ### Note 1/24/2021:
-Requests to the API this website uses are currently down due to a dependency breaking. I'm currently working on a solution. - Casper
+Requests to the API this website uses are currently down due to a dependency breaking. I'm currently working on a solution. 
+If you want to see what a result page looks like in the meantime, you can look at the pages for the [dwarf St. Johnswort](https://the-seed-journal.herokuapp.com/plant/hypericum-mutilum) and [dog rose](https://the-seed-journal.herokuapp.com/plant/rosa-canina).
+- Casper
 
 ## Building
 
